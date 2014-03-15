@@ -1,0 +1,10 @@
+prefix=/home/danny/Dropbox/naga/install_release/fftw
+exec_prefix=/home/danny/Dropbox/naga/install_release/fftw
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: FFTW
+Description: fast Fourier transform library
+Version: 3.3.3
+Libs: -L${libdir} -lfftw3  -lm
+Cflags: -I${includedir}
