@@ -1,4 +1,4 @@
-prefix=/home/danny/Dropbox/Naga/deploy/release/FFTW
+prefix=/home/danny/workspace/deploy/FFTW
 exec_prefix=${prefix}
 libdir=${exec_prefix}/lib64
 includedir=${prefix}/include

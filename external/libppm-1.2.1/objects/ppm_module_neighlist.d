@@ -1,0 +1,49 @@
+./objects/ppm_module_neighlist.o objects/ppm_module_neighlist.d: src/ppm_module_neighlist.f \
+ /usr/include/stdc-predef.h src/neighlist/ppm_clist_destroy.f \
+ src/neighlist/ppm_neighlist_MkNeighIdx.f \
+ src/neighlist/ppm_neighlist_clist.f src/neighlist/ppm_neighlist_vlist.f\
+# end of source dependencies for .o and .d files
+./objects/ppm_module_neighlist.o: \
+./objects/ppm_module_typedef.o \
+./objects/ppm_module_data.o \
+./objects/ppm_module_typedef.o \
+./objects/ppm_module_substart.o \
+./objects/ppm_module_substop.o \
+./objects/ppm_module_error.o \
+./objects/ppm_module_alloc.o \
+./objects/ppm_module_data.o \
+./objects/ppm_module_substart.o \
+./objects/ppm_module_substop.o \
+./objects/ppm_module_error.o \
+./objects/ppm_module_alloc.o \
+./objects/ppm_module_data.o \
+./objects/ppm_module_typedef.o \
+./objects/ppm_module_substart.o \
+./objects/ppm_module_substop.o \
+./objects/ppm_module_error.o \
+./objects/ppm_module_alloc.o \
+./objects/ppm_module_util_rank.o \
+./objects/ppm_module_check_id.o \
+./objects/ppm_module_data.o \
+./objects/ppm_module_typedef.o \
+./objects/ppm_module_substart.o \
+./objects/ppm_module_substop.o \
+./objects/ppm_module_error.o \
+./objects/ppm_module_alloc.o \
+./objects/ppm_module_util_rank.o \
+./objects/ppm_module_check_id.o \
+./objects/ppm_module_data.o \
+./objects/ppm_module_substart.o \
+./objects/ppm_module_substop.o \
+./objects/ppm_module_error.o \
+./objects/ppm_module_alloc.o \
+./objects/ppm_module_write.o \
+./objects/ppm_module_check_id.o \
+./objects/ppm_module_data.o \
+./objects/ppm_module_substart.o \
+./objects/ppm_module_substop.o \
+./objects/ppm_module_error.o \
+./objects/ppm_module_alloc.o \
+./objects/ppm_module_write.o \
+./objects/ppm_module_check_id.o \
+# end of module dependencies for .o file

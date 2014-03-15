@@ -19,14 +19,14 @@ DIR_BLD=/home/danny/workspace/ppml
 # =========================================================================== #
 # PPM clients
 # INSTALL_exClient=true
-# INSTALL_LJ=true
+INSTALL_LJ=true
 # INSTALL_NAGA=true
 # INSTALL_GRAY=true
 
 # dependencies
 # INSTALL_MPI=true
-# INSTALL_FFTW=true
 # INSTALL_RUBY=true
+# INSTALL_FFTW=true
 # INSTALL_METIS=true
 # INSTALL_PPMCORE=true
 # INSTALL_PPMNUMERICS=true
@@ -46,7 +46,8 @@ branchDevelop=false
 DIR_CLIENT=$DIR_BLD/ppm_clients
 
 SRC_exClient=$DIR_CLIENT/ppm_client_template
-SRC_LJ=$DIR_CLIENT/ppm_lj
+# SRC_LJ=$DIR_CLIENT/ppm_lj
+SRC_LJ=$DIR_CLIENT/ppm_lj_mod
 SRC_NAGA=$DIR_CLIENT/Naga
 
 # =========================================================================== #
@@ -68,14 +69,14 @@ SRC_METIS=$DIR_EXT/metis-4.0.3
 # SRC_METIS=$DIR_EXT/metis4/metis-4.0
 
 # PPM Core
-# SRC_PPMCORE=$DIR_EXT/libppm-1.2.1
+SRC_PPMCORE=$DIR_EXT/libppm-1.2.1
 # SRC_PPMCORE=$DIR_EXT/libppm-1.2.1-pristine
-SRC_PPMCORE=$DIR_EXT/ppmcore
+# SRC_PPMCORE=$DIR_EXT/ppmcore
 
 # PPM Numerics
+SRC_PPMNUMERICS=$DIR_EXT/libppmnumerics-r1036
 # SRC_PPMNUMERICS=$DIR_EXT/libppmnumerics-r1036+
-# SRC_PPMNUMERICS=$DIR_EXT/libppmnumerics-r1036
-SRC_PPMNUMERICS=$DIR_EXT/ppmnumerics
+# SRC_PPMNUMERICS=$DIR_EXT/ppmnumerics
 
 # =========================================================================== #
 # Specify the deployment directories
@@ -261,8 +262,8 @@ if [[ -v INSTALL_METIS ]]; then
 
 	make realclean
 	make
-	# cp -r $SRC_METIS/libmetis.a $DIR_DEPLOY_METIS
-	cp -r $SRC_METIS/* $DIR_DEPLOY_METIS
+	cp -r $SRC_METIS/libmetis.a $DIR_DEPLOY_METIS
+	# cp -r $SRC_METIS/* $DIR_DEPLOY_METIS
 	if $runTests; then
 		cd Graphs
 		echo $SRC_METIS/Graphs
@@ -293,13 +294,13 @@ if [[ -v INSTALL_PPMCORE ]]; then
 	echo '*********************************************'
 	rm -rf $DIR_DEPLOY_PPMCORE
 	mkdir -p $DIR_DEPLOY_PPMCORE
-	
 	cd $SRC_PPMCORE
-	if $branchDevelop; then
-		git checkout develop
-	else
-		git checkout master
-	fi
+
+	# if $branchDevelop; then
+	# 	git checkout develop
+	# else
+	# 	git checkout master
+	# fi
 
 	make clean
 	if $buildParallel; then
@@ -344,11 +345,11 @@ if [[ -v INSTALL_PPMNUMERICS ]]; then
 	mkdir -p $DIR_DEPLOY_PPMNUMERICS
 	cd $SRC_PPMNUMERICS
 
-	if $branchDevelop; then
-		git checkout develop
-	else
-		git checkout master
-	fi
+	# if $branchDevelop; then
+	# 	git checkout develop
+	# else
+	# 	git checkout master
+	# fi
 
 	make clean
 	if $buildParallel; then
@@ -382,17 +383,17 @@ fi
 # * molecular gas dynamics - Lennard-Jones Potential
 if [[ -v INSTALL_LJ ]]; then 
 	cd $SRC_LJ
-	make cleanall
+	make clean
 	make
 	# make DESTDIR=$DIR_DEPLOY_LJ PPMDIR=$DIR_DEPLOY_PPM_CORE PPMNUMDIR=$DIR_DEPLOY_PPMNUMERICS METISDIR=$DIR_DEPLOY_METIS
 	
-	if $buildParallel; then 	
-		# mpirun -n 1 ./lennardjones --debug 1
-		mpirun -n 1 ./lennardjones
-	else
-		./lennardjones
-		# ./lennardjones -N 300 -n 2000 -f 15
-	fi
+	# if $buildParallel; then 	
+	# 	# mpirun -n 1 ./lennardjones --debug 1
+	# 	mpirun -n 1 ./lennardjones
+	# else
+	# 	./lennardjones
+	# 	# ./lennardjones -N 300 -n 2000 -f 15
+	# fi
 fi
 # * diffusion in complex spaces - Particle Strength Exchange
 # Example PPM clients - v1.2.2
@@ -400,9 +401,9 @@ fi
 # PPML Client Generator examples
 # * web client for automatic code generation
 # * gray-scott client
-if [[ -v INSTALL_GRAY ]]; then
+# if [[ -v INSTALL_GRAY ]]; then
 
-fi
+# fi
 
 
 # =========================================================================== #

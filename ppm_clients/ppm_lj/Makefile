@@ -26,7 +26,7 @@ MODSRCS =	lj_module_global.f90 \
 #----------------------------------------------------------------------
 #  User parameters (set directories or true/false)
 #----------------------------------------------------------------------
-DIR_LINK = /home/danny/deploy
+DIR_LINK = /home/danny/workspace/deploy
 build_Parallel = true
 # build_Debug    = true
 
@@ -34,6 +34,7 @@ build_Parallel = true
 #  Compiler settings
 #----------------------------------------------------------------------
 INC_FFTW     = -I$(DIR_LINK)/FFTW/include
+# INC_PPM_CORE = -I$(DIR_LINK)/PPM_Core/include/ppm
 INC_PPM_CORE = -I$(DIR_LINK)/PPM_Core/include/ppm -I$(DIR_LINK)/PPM_Core/src
 INC_PPM_NUM  = -I$(DIR_LINK)/PPM_Numerics/include/ppm 
 INC          = $(INC_FFTW) $(INC_PPM_CORE) $(INC_PPM_NUM)
@@ -53,9 +54,9 @@ endif
 CPP = cpp
 
 ifdef build_Debug
-	FFLAGS      = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g -Wall -fbounds-check -fbacktrace	
+	FFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g -Wall -fbounds-check -fbacktrace	
 else
-	FFLAGS      = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -O3
+	FFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -O3
 endif
 
 ###### You shouldn't need to change anything below this line #############

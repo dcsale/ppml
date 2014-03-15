@@ -2,7 +2,7 @@
 # JOB INFORMATION
 #
 # TAG is appended to all output files
-TAG = ring3
+TAG = dannyTest
 
 #-------------------------------------------------
 # TIME STEPPING
@@ -69,7 +69,7 @@ IDUMP_RHS           = 0
 # 303 = periodic reprojection test
 # 304 = freespace reprojection test
 # 305 = test spectral derivatives
-FLOWCASE    = 3
+FLOWCASE    = 2
 
 ## PARAMETERS FOR FLOWCASE 2
 TORUS_RADIUS1 = 4.00

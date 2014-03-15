@@ -1,6 +1,6 @@
-prefix=/home/danny/Dropbox/naga/install_release/fftw
-exec_prefix=/home/danny/Dropbox/naga/install_release/fftw
-libdir=${exec_prefix}/lib
+prefix=/home/danny/workspace/deploy/FFTW
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib64
 includedir=${prefix}/include
 
 Name: FFTW

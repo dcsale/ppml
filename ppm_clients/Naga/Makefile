@@ -1,50 +1,64 @@
-DIR_BLD=/home/danny/ppm/ppm_clients/Naga
-DIR_LINK=/home/danny/deploy
 
-# some user parameters (comment/uncomment)
-build_Parallel = true
-# build_Debug    = true
-build_Local    = true
+# Directories where dependencies are installaed
+METISDIR  = /home/danny/workspace/deploy/Metis
+FFTWDIR   = /home/danny/workspace/deploy/FFTW
+PPMDIR    = /home/danny/workspace/deploy/PPM_Core
+# PPMNUMDIR = /home/danny/workspace/deploy/PPM_Numerics
 
-ifdef build_Parallel
-	FC = mpif90
-else
-	FC = gfortran
-endif
-CPP = cpp
+# Directory where to move the program when running 'make install'
+DESTDIR=.
 
-ifdef build_Debug
-	FCFLAGS     = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g -Wall -fbounds-check -fbacktrace
-	# FCFLAGS     = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g3
-else
-	FCFLAGS     = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -O3
-endif
+# Build settings (comment/uncomment)
+# build_Debug = true
+build_Local = true
 
-INC_PPM_CORE = -I$(DIR_LINK)/PPM_Core/include/ppm
-INC_PPM_NUM  = -I$(DIR_LINK)/PPM_Numerics/include/ppm
-INC_FFTW     = -I$(DIR_LINK)/FFTW/include
-# INC_PPM      = -I$(DIR_BLD)/ppm
-# INC_FFT      = -I$(DIR_BLD)/ppm/fft
-# INC_POISSON  = -I$(DIR_BLD)/ppm/poisson
-# INC          = $(INC_PPM_CORE) $(INC_PPM_NUM) $(INC_POISSON) $(INC_FFT) $(INC_FFTW)
-# INC          = $(INC_PPM_CORE) $(INC_FFTW) $(INC_POISSON) $(INC_FFT)
-INC          = $(INC_PPM_CORE) $(INC_FFTW)
-# INC          = $(INC_PPM_CORE) $(INC_FFTW) $(INC_PPM)
-# INC          = $(INC_PPM_CORE) $(INC_FFTW) $(INC_PPM) $(INC_FFT) $(INC_POISSON)
-# INC          = $(INC_PPM_CORE) $(INC_PPM_NUM) $(INC_FFTW)
+# Compiler flags and settings for my machine
+FC   = mpif90
+CPP  = cpp
+LIBS = -L$(PPMDIR)/lib64 -lppm -L$(METISDIR) -lmetis -L$(FFTWDIR)/lib64 -lfftw3
+INC  = -I$(PPMDIR)/include/ppm -I$(FFTWDIR)/include
+
+# FCFLAGS = $(INC)
+# FCFLAGS = $(INC) -O3 -g -Wall -ffree-form -fimplicit-none -fbounds-check
+FCFLAGS = $(INC) -ffree-form -fimplicit-none -g -Wall -fbounds-check -fbacktrace
+# ifdef build_Debug
+# 	FCFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g -Wall -fbounds-check -fbacktrace
+# 	# FCFLAGS     = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g3
+# else
+# 	FCFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -O3
+# endif
+
+
+# DIR_BLD=/home/danny/workspace/ppml/ppm_clients/Naga
+# DIR_LINK=/home/danny/workspace/deploy
+
+
+
+# INC_PPM_CORE = -I$(DIR_LINK)/PPM_Core/include/ppm
+# # INC_PPM_NUM  = -I$(DIR_LINK)/PPM_Numerics/include/ppm
+# INC_FFTW     = -I$(DIR_LINK)/FFTW/include
+# # INC_PPM      = -I$(DIR_BLD)/ppm
+# # INC_FFT      = -I$(DIR_BLD)/ppm/fft
+# # INC_POISSON  = -I$(DIR_BLD)/ppm/poisson
+# # INC          = $(INC_PPM_CORE) $(INC_PPM_NUM) $(INC_POISSON) $(INC_FFT) $(INC_FFTW)
+# # INC          = $(INC_PPM_CORE) $(INC_FFTW) $(INC_POISSON) $(INC_FFT)
 # INC          = $(INC_PPM_CORE) $(INC_FFTW)
-# INC          = $(INC_PPM_CORE) $(INC_PPM_NUM)
+# # INC          = $(INC_PPM_CORE) $(INC_FFTW) $(INC_PPM)
+# # INC          = $(INC_PPM_CORE) $(INC_FFTW) $(INC_PPM) $(INC_FFT) $(INC_POISSON)
+# # INC          = $(INC_PPM_CORE) $(INC_PPM_NUM) $(INC_FFTW)
+# # INC          = $(INC_PPM_CORE) $(INC_FFTW)
+# # INC          = $(INC_PPM_CORE) $(INC_PPM_NUM)
 
-LIBS_METIS    = -L$(DIR_LINK)/Metis -lmetis
-LIBS_PPM_CORE = -L$(DIR_LINK)/PPM_Core/lib64 -lppm
-LIBS_PPM_NUM  = -L$(DIR_LINK)/PPM_Numerics/lib64 -lppmnumerics
-LIBS_FFTW     = -L$(DIR_LINK)/FFTW/lib64 -lfftw3
-# LIBS          = $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_PPM_NUM) $(LIBS_FFTW)
-# LIBS          = $(LIBS_PPM_CORE) $(LIBS_FFTW)
-LIBS          = $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_FFTW)
-# LIBS          = $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_PPM_NUM)
-# LIBS          = $(LIBS_PPM_CORE) $(LIBS_PPM_NUM)
-# LIBS          = $(LIBS_PPM_CORE)
+# LIBS_METIS    = -L$(DIR_LINK)/Metis -lmetis
+# LIBS_PPM_CORE = -L$(DIR_LINK)/PPM_Core/lib64 -lppm
+# # LIBS_PPM_NUM  = -L$(DIR_LINK)/PPM_Numerics/lib64 -lppmnumerics
+# LIBS_FFTW     = -L$(DIR_LINK)/FFTW/lib64 -lfftw3
+# # LIBS          = $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_PPM_NUM) $(LIBS_FFTW)
+# # LIBS          = $(LIBS_PPM_CORE) $(LIBS_FFTW)
+# LIBS          = $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_FFTW)
+# # LIBS          = $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_PPM_NUM)
+# # LIBS          = $(LIBS_PPM_CORE) $(LIBS_PPM_NUM)
+# # LIBS          = $(LIBS_PPM_CORE)
 
 OBJ1 = Naga.o\
        naga_time.o\
@@ -218,7 +232,6 @@ endif
 naga_check_setup.o :\
   naga_globals.o\
   naga_say.o
-
 naga_allocate_patch.o :\
   naga_globals.o\
   naga_say.o

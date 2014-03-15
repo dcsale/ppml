@@ -2,7 +2,7 @@
 
 # libtool - Provide generalized library-building support services.
 # Generated automatically by config.status (fftw) 3.3.3
-# Libtool was configured on host openSUSE:
+# Libtool was configured on host openSUSE.site:
 # NOTE: Changes made to this file will be lost: look at ltmain.sh.
 #
 #   Copyright (C) 1996, 1997, 1998, 1999, 2000, 2001, 2003, 2004, 2005,
@@ -164,7 +164,7 @@ old_postuninstall_cmds=""
 lock_old_archive_extraction=no
 
 # A C compiler.
-LTCC="gcc -std=gnu99"
+LTCC="mpicc -std=gnu99"
 
 # LTCC compiler flags.
 LTCFLAGS="-O3 -fomit-frame-pointer -mtune=native -malign-double -fstrict-aliasing -fno-schedule-insns -ffast-math"
@@ -278,7 +278,7 @@ hardcode_into_libs=yes
 sys_lib_search_path_spec="/usr/lib64/gcc/x86_64-suse-linux/4.8 /usr/lib64 /lib64 /usr/x86_64-suse-linux/lib "
 
 # Run-time system search path for libraries.
-sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/local/lib64 /usr/local/lib /usr/lib64/atlas /usr/lib64/graphviz /usr/lib64/graphviz/sharp /usr/lib64/graphviz/java /usr/lib64/graphviz/perl /usr/lib64/graphviz/php /usr/lib64/graphviz/ocaml /usr/lib64/graphviz/python /usr/lib64/graphviz/lua /usr/lib64/graphviz/tcl /usr/lib64/graphviz/guile /usr/lib64/graphviz/ruby /opt/kde3/lib64 /opt/kde3/lib /usr/lib64/vtk "
+sys_lib_dlsearch_path_spec="/lib /usr/lib /usr/local/lib64 /usr/local/lib /usr/lib64/xorg/modules /usr/lib64/graphviz /usr/lib64/graphviz/sharp /usr/lib64/graphviz/java /usr/lib64/graphviz/perl /usr/lib64/graphviz/php /usr/lib64/graphviz/ocaml /usr/lib64/graphviz/python /usr/lib64/graphviz/lua /usr/lib64/graphviz/tcl /usr/lib64/graphviz/guile /usr/lib64/graphviz/ruby "
 
 # Whether dlopen is supported.
 dlopen_support=unknown
@@ -305,7 +305,7 @@ reload_cmds="\$LD\$reload_flag -o \$output\$reload_objs"
 old_archive_cmds="\$AR \$AR_FLAGS \$oldlib\$oldobjs~\$RANLIB \$tool_oldlib"
 
 # A language specific compiler.
-CC="gcc -std=gnu99"
+CC="mpicc -std=gnu99"
 
 # Is the compiler the GNU compiler?
 with_gcc=yes
@@ -10098,7 +10098,7 @@ reload_cmds="\$LD\$reload_flag -o \$output\$reload_objs"
 old_archive_cmds="\$AR \$AR_FLAGS \$oldlib\$oldobjs~\$RANLIB \$tool_oldlib"
 
 # A language specific compiler.
-CC="gfortran"
+CC="mpif90"
 
 # Is the compiler the GNU compiler?
 with_gcc=yes

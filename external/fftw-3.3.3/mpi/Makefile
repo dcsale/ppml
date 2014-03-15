@@ -53,7 +53,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-unknown-linux-gnu
 host_triplet = x86_64-unknown-linux-gnu
-#noinst_PROGRAMS = mpi-bench$(EXEEXT)
+noinst_PROGRAMS = mpi-bench$(EXEEXT)
 subdir = mpi
 DIST_COMMON = $(am__include_HEADERS_DIST) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in
@@ -128,7 +128,7 @@ libfftw3_mpi_la_LINK = $(LIBTOOL) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(AM_CFLAGS) $(CFLAGS) $(libfftw3_mpi_la_LDFLAGS) \
 	$(LDFLAGS) -o $@
-#am_libfftw3_mpi_la_rpath = -rpath $(libdir)
+am_libfftw3_mpi_la_rpath = -rpath $(libdir)
 PROGRAMS = $(noinst_PROGRAMS)
 am_mpi_bench_OBJECTS = mpi_bench-mpi-bench.$(OBJEXT) \
 	mpi_bench-fftw-bench.$(OBJEXT) mpi_bench-hook.$(OBJEXT)
@@ -167,26 +167,26 @@ HEADERS = $(include_HEADERS) $(nodist_include_HEADERS)
 ETAGS = etags
 CTAGS = ctags
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
-ACLOCAL = ${SHELL} /home/danny/Dropbox/Naga/external/fftw-3.3.3/missing --run aclocal-1.11
+ACLOCAL = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/missing --run aclocal-1.11
 ALLOCA = 
 ALTIVEC_CFLAGS = 
 AMTAR = $${TAR-tar}
 AR = ar
 AS = as
-AUTOCONF = ${SHELL} /home/danny/Dropbox/Naga/external/fftw-3.3.3/missing --run autoconf
-AUTOHEADER = ${SHELL} /home/danny/Dropbox/Naga/external/fftw-3.3.3/missing --run autoheader
-AUTOMAKE = ${SHELL} /home/danny/Dropbox/Naga/external/fftw-3.3.3/missing --run automake-1.11
+AUTOCONF = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/missing --run autoconf
+AUTOHEADER = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/missing --run autoheader
+AUTOMAKE = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/missing --run automake-1.11
 AVX_CFLAGS = 
 AWK = gawk
-CC = 
+CC = mpicc
 CCDEPMODE = depmode=gcc3
 CFLAGS = -O3 -fomit-frame-pointer -mtune=native -malign-double -fstrict-aliasing -fno-schedule-insns -ffast-math
 CHECK_PL_OPTS = 
-CPP = gcc -std=gnu99 -E
+CPP = mpicc -std=gnu99 -E
 CPPFLAGS = 
 CYGPATH_W = echo
 C_FFTW_R2R_KIND = C_INT32_T
-C_MPI_FINT = 
+C_MPI_FINT = C_INT32_T
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 DLLTOOL = dlltool
@@ -197,10 +197,10 @@ ECHO_N = -n
 ECHO_T = 
 EGREP = /usr/bin/grep -E
 EXEEXT = 
-F77 = gfortran
+F77 = mpif90
 FFLAGS = -g -O2
 FGREP = /usr/bin/grep -F
-FLIBS =  -L/usr/lib64/gcc/x86_64-suse-linux/4.8 -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../.. -lgfortran -lm -lquadmath
+FLIBS =  -L/home/danny/deploy/OpenMPI/lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.8 -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../.. -lgfortran -lm -lmpi_f90 -lmpi_f77 -lmpi -ldl -lrt -lnsl -lutil -lquadmath -lpthread
 GREP = /usr/bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
@@ -217,12 +217,12 @@ LIPO =
 LN_S = ln -s
 LTLIBOBJS = 
 MAINT = #
-MAKEINFO = ${SHELL} /home/danny/Dropbox/Naga/external/fftw-3.3.3/missing --run makeinfo
+MAKEINFO = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/missing --run makeinfo
 MANIFEST_TOOL = :
 MKDIR_P = /usr/bin/mkdir -p
-MPICC = 
-MPILIBS = 
-MPIRUN = 
+MPICC = mpicc
+MPILIBS =  
+MPIRUN = mpirun
 NEON_CFLAGS = 
 NM = /usr/bin/nm -B
 NMEDIT = 
@@ -256,12 +256,12 @@ STACK_ALIGN_CFLAGS =
 STRIP = strip
 THREADLIBS = 
 VERSION = 3.3.3
-abs_builddir = /home/danny/Dropbox/Naga/external/fftw-3.3.3/mpi
-abs_srcdir = /home/danny/Dropbox/Naga/external/fftw-3.3.3/mpi
-abs_top_builddir = /home/danny/Dropbox/Naga/external/fftw-3.3.3
-abs_top_srcdir = /home/danny/Dropbox/Naga/external/fftw-3.3.3
+abs_builddir = /home/danny/workspace/ppml/external/fftw-3.3.3/mpi
+abs_srcdir = /home/danny/workspace/ppml/external/fftw-3.3.3/mpi
+abs_top_builddir = /home/danny/workspace/ppml/external/fftw-3.3.3
+abs_top_srcdir = /home/danny/workspace/ppml/external/fftw-3.3.3
 ac_ct_AR = ar
-ac_ct_CC = gcc
+ac_ct_CC = mpicc
 ac_ct_DUMPBIN = 
 ac_ct_F77 = 
 acx_pthread_config = 
@@ -290,7 +290,7 @@ host_vendor = unknown
 htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
-install_sh = ${SHELL} /home/danny/Dropbox/Naga/external/fftw-3.3.3/install-sh
+install_sh = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/install-sh
 libdir = ${exec_prefix}/lib64
 libexecdir = ${exec_prefix}/lib
 localedir = ${datarootdir}/locale
@@ -299,7 +299,7 @@ mandir = ${datarootdir}/man
 mkdir_p = /usr/bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /home/danny/Dropbox/Naga/deploy/release/FFTW
+prefix = /home/danny/workspace/deploy/FFTW
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -314,9 +314,9 @@ AM_CPPFLAGS = -I$(top_srcdir)/kernel -I$(top_srcdir)/dft	\
 -I$(top_srcdir)/rdft -I$(top_srcdir)/api -I$(top_srcdir)/tests	\
 -I$(top_srcdir)/libbench2
 
-#lib_LTLIBRARIES = libfftw3_mpi.la
-#include_HEADERS = fftw3-mpi.h
-#nodist_include_HEADERS = fftw3-mpi.f03 fftw3l-mpi.f03
+lib_LTLIBRARIES = libfftw3_mpi.la
+include_HEADERS = fftw3-mpi.h
+nodist_include_HEADERS = fftw3-mpi.f03 fftw3l-mpi.f03
 EXTRA_DIST = testsched.c f03api.sh f03-wrap.sh genf03-wrap.pl fftw3-mpi.f03.in fftw3l-mpi.f03.in
 BUILT_SOURCES = fftw3-mpi.f03.in fftw3-mpi.f03 fftw3l-mpi.f03.in fftw3l-mpi.f03 f03-wrap.c
 CLEANFILES = fftw3-mpi.f03 fftw3l-mpi.f03
@@ -327,7 +327,7 @@ RDFT2_SRC = rdft2-serial.c rdft2-rank-geq2.c rdft2-rank-geq2-transposed.c rdft2-
 SRC = any-true.c api.c block.c choose-radix.c conf.c dtensor.c fftw3-mpi.h ifftw-mpi.h rearrange.c wisdom-api.c f03-wrap.c
 libfftw3_mpi_la_SOURCES = $(SRC) $(TRANSPOSE_SRC) $(DFT_SRC) $(RDFT_SRC) $(RDFT2_SRC)
 libfftw3_mpi_la_LDFLAGS = -version-info 6:2:3
-libfftw3_mpi_la_LIBADD = ../libfftw3.la 
+libfftw3_mpi_la_LIBADD = ../libfftw3.la  
 #mpi_bench_CFLAGS = $(OPENMP_CFLAGS)
 #mpi_bench_CFLAGS = $(PTHREAD_CFLAGS)
 #LIBFFTWTHREADS = $(top_builddir)/threads/libfftw3_threads.la
@@ -655,7 +655,7 @@ distdir: $(DISTFILES)
 	    || exit 1; \
 	  fi; \
 	done
-check-local:
+#check-local:
 check-am: all-am
 	$(MAKE) $(AM_MAKEFLAGS) check-local
 check: $(BUILT_SOURCES)
@@ -790,39 +790,39 @@ uninstall-am: uninstall-includeHEADERS uninstall-libLTLIBRARIES \
 	uninstall-libLTLIBRARIES uninstall-nodist_includeHEADERS
 
 
-#check-local: mpi-bench$(EXEEXT)
-#	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 1 `pwd`/mpi-bench"
+check-local: mpi-bench$(EXEEXT)
+	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 1 `pwd`/mpi-bench"
+	@echo "--------------------------------------------------------------"
+	@echo "     MPI FFTW transforms passed "$(NUMCHECK)" tests, 1 CPU"
+	@echo "--------------------------------------------------------------"
+	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 2 `pwd`/mpi-bench"
+	@echo "--------------------------------------------------------------"
+	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 2 CPUs"
+	@echo "--------------------------------------------------------------"
+	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 3 `pwd`/mpi-bench"
+	@echo "--------------------------------------------------------------"
+	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 3 CPUs"
+	@echo "--------------------------------------------------------------"
+	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 4 `pwd`/mpi-bench"
+	@echo "--------------------------------------------------------------"
+	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 4 CPUs"
+	@echo "--------------------------------------------------------------"
+#	perl -w $(CHECK) $(CHECKOPTS) --mpi --nthreads=2 "$(MPIRUN) -np 3 `pwd`/mpi-bench"
 #	@echo "--------------------------------------------------------------"
-#	@echo "     MPI FFTW transforms passed "$(NUMCHECK)" tests, 1 CPU"
+#	@echo "      MPI FFTW threaded transforms passed "$(NUMCHECK)" tests!"
 #	@echo "--------------------------------------------------------------"
-#	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 2 `pwd`/mpi-bench"
-#	@echo "--------------------------------------------------------------"
-#	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 2 CPUs"
-#	@echo "--------------------------------------------------------------"
-#	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 3 `pwd`/mpi-bench"
-#	@echo "--------------------------------------------------------------"
-#	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 3 CPUs"
-#	@echo "--------------------------------------------------------------"
-#	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 4 `pwd`/mpi-bench"
-#	@echo "--------------------------------------------------------------"
-#	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 4 CPUs"
-#	@echo "--------------------------------------------------------------"
-##	perl -w $(CHECK) $(CHECKOPTS) --mpi --nthreads=2 "$(MPIRUN) -np 3 `pwd`/mpi-bench"
-##	@echo "--------------------------------------------------------------"
-##	@echo "      MPI FFTW threaded transforms passed "$(NUMCHECK)" tests!"
-##	@echo "--------------------------------------------------------------"
 
-#bigcheck: mpi-bench$(EXEEXT)
-#	$(MAKE) $(AM_MAKEFLAGS) NUMCHECK=100 CHECKSIZE=60000 check-local
+bigcheck: mpi-bench$(EXEEXT)
+	$(MAKE) $(AM_MAKEFLAGS) NUMCHECK=100 CHECKSIZE=60000 check-local
 
-#smallcheck: mpi-bench$(EXEEXT)
-#	$(MAKE) $(AM_MAKEFLAGS) NUMCHECK=2 check-local
+smallcheck: mpi-bench$(EXEEXT)
+	$(MAKE) $(AM_MAKEFLAGS) NUMCHECK=2 check-local
 
 fftw3-mpi.f03: fftw3-mpi.f03.in
-	sed 's/C_MPI_FINT//' $(srcdir)/fftw3-mpi.f03.in > $@
+	sed 's/C_MPI_FINT/C_INT32_T/' $(srcdir)/fftw3-mpi.f03.in > $@
 
 fftw3l-mpi.f03: fftw3l-mpi.f03.in
-	sed 's/C_MPI_FINT//' $(srcdir)/fftw3l-mpi.f03.in > $@
+	sed 's/C_MPI_FINT/C_INT32_T/' $(srcdir)/fftw3l-mpi.f03.in > $@
 
 #fftw3-mpi.f03.in: fftw3-mpi.h f03api.sh $(top_srcdir)/api/genf03.pl
 #	sh $(srcdir)/f03api.sh d f > $@
