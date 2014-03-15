@@ -19,8 +19,8 @@ DIR_BLD=/home/danny/workspace/ppml
 # =========================================================================== #
 # PPM clients
 # INSTALL_exClient=true
-INSTALL_LJ=true
-# INSTALL_NAGA=true
+# INSTALL_LJ=true
+INSTALL_NAGA=true
 # INSTALL_GRAY=true
 
 # dependencies
@@ -69,8 +69,8 @@ SRC_METIS=$DIR_EXT/metis-4.0.3
 # SRC_METIS=$DIR_EXT/metis4/metis-4.0
 
 # PPM Core
-SRC_PPMCORE=$DIR_EXT/libppm-1.2.1
-# SRC_PPMCORE=$DIR_EXT/libppm-1.2.1-pristine
+# SRC_PPMCORE=$DIR_EXT/libppm-1.2.1
+SRC_PPMCORE=$DIR_EXT/libppm-1.2.1-naga-debug
 # SRC_PPMCORE=$DIR_EXT/ppmcore
 
 # PPM Numerics

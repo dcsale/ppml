@@ -1,0 +1,267 @@
+m4trace:m4/ax_f90_module_flag.m4:30: -1- AC_DEFUN([AX_F90_MODULE_FLAG], [
+AC_CACHE_CHECK([fortran 90 modules inclusion flag],
+ax_cv_f90_modflag,
+[AC_LANG_PUSH(Fortran)
+i=0
+while test \( -f tmpdir_$i \) -o \( -d tmpdir_$i \) ; do
+  i=`expr $i + 1`
+done
+mkdir tmpdir_$i
+cd tmpdir_$i
+AC_COMPILE_IFELSE([
+!234567
+      module conftest_module
+      contains
+      subroutine conftest_routine
+      write(*,'(a)') 'gotcha!'
+      end subroutine conftest_routine
+      end module conftest_module
+  ],[],[])
+cd ..
+ax_cv_f90_modflag="not found"
+for ax_flag in "-I" "-J" "-M" "-p"; do
+  if test "$ax_cv_f90_modflag" = "not found" ; then
+    ax_save_FCFLAGS="$FCFLAGS"
+    FCFLAGS="$ax_save_FCFLAGS ${ax_flag}tmpdir_$i"
+    AC_COMPILE_IFELSE([
+!234567
+      program conftest_program
+      use conftest_module
+      call conftest_routine
+      end program conftest_program
+      ],[ax_cv_f90_modflag="$ax_flag"],[])
+    FCFLAGS="$ax_save_FCFLAGS"
+  fi
+done
+rm -fr tmpdir_$i
+if test "$ax_cv_f90_modflag" = "not found" ; then
+  AC_MSG_ERROR([unable to find compiler flag for modules inclusion])
+fi
+AC_LANG_POP(Fortran)
+])])
+m4trace:m4/ppm_check_mpi.m4:20: -1- AC_DEFUN([PPM_CHECK_MPI], [
+if test "x$1" = xyes; then
+    AC_MSG_NOTICE([*** Check for any MPI to compile and link with ***])
+else
+    AC_MSG_NOTICE([*** First check if I can use $1 to compile and link with ***])
+fi
+# check for one of the following MPI distributions
+# OpenMPI
+# LAMMPI
+# MPICH
+# MPICH2
+# intel MPI
+# Sun ClusterTools (tmcc,tmCC,tmf77,tmf90)
+# IBM AIX POE (mpcc_r,mpCC_r,mpxlf_r)
+# Many of thsoe implementation have same wrapper names
+if test "x$1" = xopenmpi; then
+    AC_CHECK_PROG(MPICC,[mpicc],[mpicc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpicc for OpenMPI])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpic++],[mpic++],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpic++ for OpenMPI])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpif90],[mpif90],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpif90 for OpenMPI])],[FC="$MPIFC"])
+elif test "x$1" = xlammpi; then
+    AC_CHECK_PROG(MPICC,[mpicc],[mpicc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpicc for LAM/MPI])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpiCC],[mpiCC],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpiCC for LAM/MPI])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpif90],[mpif90],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpif90 for LAM/MPI])],[FC="$MPIFC"])
+elif test "x$1" = xmpich; then
+    AC_CHECK_PROG(MPICC,[mpicc],[mpicc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpicc for MPICH])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpiCC],[mpiCC],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpiCC for MPICH])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpif90],[mpif90],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpif90 for MPICH])],[FC="$MPIFC"])
+elif test "x$1" = xmpich2; then
+    AC_CHECK_PROG(MPICC,[mpicc],[mpicc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpicc for MPICH 2])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpicxx],[mpicxx],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpicxx for MPICH 2])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpif90],[mpif90],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpif90 for MPICH 2])],[FC="$MPIFC"])
+elif test "x$1" = xintelmpi_gnu; then
+    AC_CHECK_PROG(MPICC,[mpigcc],[mpigcc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpigcc for Intel MPI + GNU Compilers])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpig++],[mpig++],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpig++ for Intel MPI + GNU Compilers])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpigfortran],[mpigfortran],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpigfortran for Intel MPI + GNU Compilers])],[FC="$MPIFC"])
+elif test "x$1" = xintelmpi_intel; then
+    AC_CHECK_PROG(MPICC,[mpiicc],[mpiicc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpigcc for Intel MPI + Intel Compilers])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpiicpc],[mpicpc],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpicpc for Intel MPI + Intel Compilers])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpiifort],[mpiifort],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpiifort for Intel MPI + Intel Compilers])],[FC="$MPIFC"])
+elif test "x$1" = xsun; then
+    AC_CHECK_PROG(MPICC,[tmcc],[tmcc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find tmcc for Sun MPI])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[tmCC],[tmCC],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find tmCC for Sun MPI])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[tmf90],[tmf90],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find tmf90 for Sun MPI])],[FC="$MPIFC"])
+elif test "x$1" = xibm; then
+    AC_CHECK_PROG(MPICC,[mpcc_r],[mpcc_r],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpcc_r for IBM AIX MPI])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpCC_r],[mpCC_r],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpCC_r for IBM AIX MPI])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpxf90_r],[mpxf90_r],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpxf90_ for IBM AIX MPI])],[FC="$MPIFC"])
+elif test "x$1" = xguess; then
+    AC_CHECK_PROGS(MPICC,[mpicc mpigcc mpiicc tmcc mpcc_r],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_WARN([Could not find any mpi wrapper for a C compiler])],[CC="$MPICC"])
+    AC_CHECK_PROGS(MPICXX,[mpic++ mpiCC mpicxx mpig++ mpiicpc tmCC mpCC_r],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_WARN([Could not find any mpi wrapper for a C++ compiler])],[CXX="$MPICXX"])
+    AC_CHECK_PROGS(MPIFC,[mpif90 mpifc mpigfortran mpiifort tmf90 mpxf90_r],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_WARN([Could not find any mpi wrapper for a Fortran compiler])],[FC="$MPIFC"])
+    AC_MSG_NOTICE([found $CC $CXX $FC])
+elif test "x$1" = xyes; then
+    AC_MSG_NOTICE([You would like to use $CC $CXX $FC to compile with MPI support])
+else
+    AC_MSG_ERROR([Could not reocgnize this MPI implementation: $1])
+fi
+])
+m4trace:configure.ac:21: -1- m4_pattern_forbid([^_?A[CHUM]_])
+m4trace:configure.ac:21: -1- m4_pattern_forbid([_AC_])
+m4trace:configure.ac:21: -1- m4_pattern_forbid([^LIBOBJS$], [do not use LIBOBJS directly, use AC_LIBOBJ (see section `AC_LIBOBJ vs LIBOBJS'])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^AS_FLAGS$])
+m4trace:configure.ac:21: -1- m4_pattern_forbid([^_?m4_])
+m4trace:configure.ac:21: -1- m4_pattern_forbid([^dnl$])
+m4trace:configure.ac:21: -1- m4_pattern_forbid([^_?AS_])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^SHELL$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PATH_SEPARATOR$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_NAME$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_TARNAME$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_VERSION$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_STRING$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_BUGREPORT$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_URL$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^exec_prefix$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^prefix$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^program_transform_name$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^bindir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^sbindir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^libexecdir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^datarootdir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^datadir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^sysconfdir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^sharedstatedir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^localstatedir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^includedir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^oldincludedir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^docdir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^infodir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^htmldir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^dvidir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^pdfdir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^psdir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^libdir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^localedir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^mandir$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_NAME$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_TARNAME$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_VERSION$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_STRING$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_BUGREPORT$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^PACKAGE_URL$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^DEFS$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^ECHO_C$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^ECHO_N$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^ECHO_T$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^LIBS$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^build_alias$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^host_alias$])
+m4trace:configure.ac:21: -1- m4_pattern_allow([^target_alias$])
+m4trace:configure.ac:27: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:32: -1- PPM_CHECK_MPI([$enableval])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^CXX$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^CXXFLAGS$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^LDFLAGS$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^LIBS$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^CXX$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^ac_ct_CXX$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^EXEEXT$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^OBJEXT$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CFLAGS$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^LDFLAGS$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^LIBS$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^ac_ct_CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CPP$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CPP$])
+m4trace:configure.ac:53: -1- m4_pattern_allow([^SET_MAKE$])
+m4trace:configure.ac:54: -1- m4_pattern_allow([^RANLIB$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^FC$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^FCFLAGS$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^LDFLAGS$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^LIBS$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^FC$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^ac_ct_FC$])
+m4trace:configure.ac:57: -1- m4_pattern_allow([^FCLIBS$])
+m4trace:configure.ac:59: -1- m4_pattern_allow([^GREP$])
+m4trace:configure.ac:59: -1- m4_pattern_allow([^EGREP$])
+m4trace:configure.ac:59: -1- m4_pattern_allow([^STDC_HEADERS$])
+m4trace:configure.ac:59: -1- m4_pattern_allow([^SIZEOF_LONG_DOUBLE$])
+m4trace:configure.ac:61: -1- AX_F90_MODULE_FLAG
+m4trace:configure.ac:62: -1- m4_pattern_allow([^ax_cv_f90_modflag$])
+m4trace:configure.ac:68: -1- _m4_warn([cross], [AC_RUN_IFELSE called without default to allow cross compiling], [../../lib/autoconf/general.m4:2749: AC_RUN_IFELSE is expanded from...
+configure.ac:68: the top level])
+m4trace:configure.ac:105: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:114: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:130: -1- m4_pattern_allow([^FUNIT_FLAGS$])
+m4trace:configure.ac:172: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:177: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:184: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:191: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:197: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:203: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:209: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:215: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:221: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:232: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:234: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:236: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:244: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:247: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:249: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:251: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:255: -1- m4_pattern_allow([^FCFLAGS$])
+m4trace:configure.ac:268: -1- m4_pattern_allow([^LIB@&t@OBJS$])
+m4trace:configure.ac:268: -1- m4_pattern_allow([^LTLIBOBJS$])

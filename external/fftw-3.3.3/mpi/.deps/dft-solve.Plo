@@ -17,8 +17,8 @@ dft-solve.lo: dft-solve.c /usr/include/stdc-predef.h mpi-dft.h \
  /usr/lib64/gcc/x86_64-suse-linux/4.8/include/stdint.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h /usr/include/inttypes.h \
  /usr/include/sys/time.h /usr/include/xlocale.h ../rdft/rdft.h \
- ../rdft/codelet-rdft.h /home/danny/deploy/OpenMPI/include/mpi.h \
- /home/danny/deploy/OpenMPI/include/mpi_portable_platform.h
+ ../rdft/codelet-rdft.h /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
+ /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h
 
 /usr/include/stdc-predef.h:
 
@@ -100,6 +100,6 @@ ifftw-mpi.h:
 
 ../rdft/codelet-rdft.h:
 
-/home/danny/deploy/OpenMPI/include/mpi.h:
+/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
 
-/home/danny/deploy/OpenMPI/include/mpi_portable_platform.h:
+/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:

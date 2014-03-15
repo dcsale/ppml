@@ -21,8 +21,8 @@ api.lo: api.c /usr/include/stdc-predef.h ../api/api.h ../api/fftw3.h \
  /usr/include/stdint.h /usr/include/bits/wchar.h /usr/include/inttypes.h \
  /usr/include/sys/time.h /usr/include/xlocale.h ../rdft/rdft.h \
  ../rdft/codelet-rdft.h fftw3-mpi.h ../api/fftw3.h \
- /home/danny/deploy/OpenMPI/include/mpi.h \
- /home/danny/deploy/OpenMPI/include/mpi_portable_platform.h ifftw-mpi.h \
+ /usr/lib64/mpi/gcc/openmpi/include/mpi.h \
+ /usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h ifftw-mpi.h \
  mpi-transpose.h mpi-dft.h mpi-rdft.h mpi-rdft2.h
 
 /usr/include/stdc-predef.h:
@@ -123,9 +123,9 @@ fftw3-mpi.h:
 
 ../api/fftw3.h:
 
-/home/danny/deploy/OpenMPI/include/mpi.h:
+/usr/lib64/mpi/gcc/openmpi/include/mpi.h:
 
-/home/danny/deploy/OpenMPI/include/mpi_portable_platform.h:
+/usr/lib64/mpi/gcc/openmpi/include/mpi_portable_platform.h:
 
 ifftw-mpi.h:
 

@@ -1,0 +1,49 @@
+[0] (ppm_init) : 2014-03-15 13:20:28 --- *** This is the PPM library starting on openSUSE
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Debug level set to  0
+[0] (ppm_print_defines) : 2014-03-15 13:20:28 --- __MPI defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:28 --- __Linux defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:28 --- __METIS defined
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Space dimension set to  2
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Precision set to DOUBLE
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Floating point tolerance set to .1000000000E-14
+[0] (ppm_init) : 2014-03-15 13:20:28 --- *** This is the PPM library starting on openSUSE
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Debug level set to  0
+[0] (ppm_print_defines) : 2014-03-15 13:20:28 --- __MPI defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:28 --- __Linux defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:28 --- __METIS defined
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Space dimension set to  2
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Precision set to DOUBLE
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Floating point tolerance set to .1000000000E-14
+[0] (ppm_init) : 2014-03-15 13:20:28 --- *** This is the PPM library starting on openSUSE
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Debug level set to  0
+[0] (ppm_print_defines) : 2014-03-15 13:20:28 --- __MPI defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:28 --- __Linux defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:28 --- __METIS defined
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Space dimension set to  3
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Precision set to DOUBLE
+[0] (ppm_init) : 2014-03-15 13:20:28 --- Floating point tolerance set to .1000000000E-14
+[0] (ppm_init) : 2014-03-15 13:20:29 --- *** This is the PPM library starting on openSUSE
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Debug level set to  0
+[0] (ppm_print_defines) : 2014-03-15 13:20:29 --- __MPI defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:29 --- __Linux defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:29 --- __METIS defined
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Space dimension set to  2
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Precision set to DOUBLE
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Floating point tolerance set to .1000000000E-14
+[0] (ppm_map_part_global) : 2014-03-15 13:20:29 --- 0404 <WARNING> Incomplete mapping: Buffer was not empty. Possible loss of data!
+[0] (ppm_init) : 2014-03-15 13:20:29 --- *** This is the PPM library starting on openSUSE
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Debug level set to  0
+[0] (ppm_print_defines) : 2014-03-15 13:20:29 --- __MPI defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:29 --- __Linux defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:29 --- __METIS defined
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Space dimension set to  2
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Precision set to DOUBLE
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Floating point tolerance set to .1000000000E-04
+[0] (ppm_init) : 2014-03-15 13:20:29 --- *** This is the PPM library starting on openSUSE
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Debug level set to  0
+[0] (ppm_print_defines) : 2014-03-15 13:20:29 --- __MPI defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:29 --- __Linux defined
+[0] (ppm_print_defines) : 2014-03-15 13:20:29 --- __METIS defined
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Space dimension set to  2
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Precision set to DOUBLE
+[0] (ppm_init) : 2014-03-15 13:20:29 --- Floating point tolerance set to .1000000000E-11
