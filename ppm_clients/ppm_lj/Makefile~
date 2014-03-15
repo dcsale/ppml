@@ -1,0 +1,72 @@
+#-------------------------------------------------------------------------
+#
+#   ppm example client Makefile
+#
+#   Author: Birte Schrader and Philipp Boenhof
+#
+#-------------------------------------------------------------------------
+#  Parallel Particle Mesh Library (PPM)
+#  ETH Zurich
+#  CH-8092 Zurich, Switzerland
+#-------------------------------------------------------------------------
+PROGRAM  = lennardjones
+PROG_SRC = lj.f90
+SRCS =	lj_init.f90 \
+	lj_set_particles.f90 \
+	lj_newtopo.f90 \
+	lj_move_particles.f90 \
+	lj_remap.f90 \
+	lj_change_pos_vel.f90 \
+	lj_finalize.f90 \
+	$(PROG_SRC)
+MODSRCS =	lj_module_global.f90 \
+		lj_module_writeout.f90 
+
+# Directory where to move the program when running 'make install'
+DESTDIR=.
+
+PPMDIR = /home/user/ppmcore/libppm/
+PPMNUMDIR = /home/user/ppmnumerics/libppmnumerics/
+METISDIR = /home/user/metis/intel/
+
+# Flags and settings, when you compile on MYMAC
+FC   = mpif90
+CPP  = cpp
+LIBS =  -L$(PPMDIR)/lib -L$(PPMNUMDIR)/lib -L$(METISDIR)/lib -lppm -lppmnumerics -lmetis
+OPT  = $(COPT)
+INCL = -I$(PPMDIR)/include/ppm -I$(PPMDIR)/src/ -I$(PPMNUMDIR)/include/ppm
+
+# Flags and settings for ALL machines
+COPT= -O
+
+### Usually you should not change these variables below.
+
+# Collecting compilerflags in one variable.
+FFLAGS= $(OPT) $(REP) $(COMPATFLAGS)
+
+###### You shouldn't need to change anything below this line #############
+
+# generic variables
+OBJS   = $(SRCS:.f90=.o)
+MODULES = $(MODSRCS:.f90=.o)
+W_TIME = $(shell echo $$(($(TIME)/60)):$$(($(TIME)%60)))
+
+####### Build and Install Targets ########################################
+all: $(PROGRAM)
+
+$(PROGRAM): $(MODULES) $(OBJS)
+	$(FC) $(FFLAGS) $(MODULES) $(OBJS) -o $@ $(LIBS) $(INCL) 
+
+install: $(PROGRAM) 
+	mv $(PROGRAM) $(DESTDIR) 
+
+%.o: %.f90
+	$(CPP) -P $*.f90 __$*.f90
+	$(FC) -c $(FFLAGS) __$*.f90 -o $*.o $(LIBS) $(INCL)
+
+###### Cleaning up #######################################################
+clean:
+	$(RM) *.o *.a *.mod __*.f90 core $(OUTF) $(ERRF)
+
+cleanall: clean
+	$(RM) $(PROGRAM)

@@ -1,0 +1,66 @@
+#-------------------------------------------------------------------------------
+#  Sample control file for ppm_client
+#
+#  Edit the settings below
+#
+#-------------------------------------------------------------------------------
+
+#-------------------------------------------------------------------------------
+#  Case
+#         casename: Name of this case. "ppm_client" is the default. Must 
+#                   be between 1 and 30 characters long!
+#-------------------------------------------------------------------------------
+casename = ppm_client
+
+#-------------------------------------------------------------------------------
+#  Input
+#        inputfile: Name of data input file.
+#-------------------------------------------------------------------------------
+inputfile = ppm_client.tif
+
+#-------------------------------------------------------------------------------
+#  Output
+#       outputfile: Name stub of ouput files. <timestep>.out will be appended.
+#       freqoutput: Write output file every # iterations.
+#                   1 <= {value} 
+#-------------------------------------------------------------------------------
+outputfile = ppm_client.out
+freqoutput = 10
+
+#-------------------------------------------------------------------------------
+#  Diagnostics
+#         diagfile: Name of file to which diagnostics will be APPENDED.
+#         freqdiag: Write diag file every # iterations.
+#                   1 <= {value} 
+#          diagfmt: Diagnostics file format. One of:
+#                    * FORMATTED    (i.e. ASCII text)
+#                    * UNFORMATTED  (i.e. binary)
+#-------------------------------------------------------------------------------
+   diagnosticsfile = ppm_client.diag
+          freqdiag = 1
+diagnostics_format = FORMATTED
+
+#-------------------------------------------------------------------------------
+#  Program control parameters
+#            debug: PPM Debug Level. 0,1 or 2. Set to 0 for normal run.
+#                   -d {value} 
+#        abortfile: Name of the abort file. At every time step, the program 
+#                   will check if a file with this name is present in 
+#                   the directory where it was started. If such a file 
+#                   is found, the simulation terminates gracefully, writing 
+#                   output files.
+#          logfile: Name of the log file used by ppm_client
+#         checkmap: Check the result of the global map? This only makes 
+#                   sense in a parallel run.
+#        probeproc: Probe relative processor speeds and use this info 
+#                   for load balancing? This only makes sense in a parallel 
+#                   run.
+#    dumpparticles: Dump particle positions in ASCII files?
+#                   WARNING: large files will be written!!
+#-------------------------------------------------------------------------------
+        debug = 0
+    abortfile = ABORT
+      logfile = ppm_client.log
+     checkmap = F
+    probeproc = F
+dumpparticles = F

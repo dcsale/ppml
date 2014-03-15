@@ -1,0 +1,15 @@
+#LOCAL = true
+FC = gfortran
+FC = mpif90
+FCFLAGS = $(INC)
+FCFLAGS = -O5 -g -Wall -ffree-form -fimplicit-none -fbounds-check $(INC)
+LIBDIR = /usr/local
+INC  = -I$(LIBDIR)/ppm/include/ppm\
+       -I$(LIBDIR)/fftw-3.3.2_gcc/include
+LIBS = -L$(LIBDIR)/ppm/lib -lppmnumerics -lppm\
+       -L$(LIBDIR)/metis-4.0_gcc -lmetis\
+       -L$(LIBDIR)/fftw-3.3.2_gcc/lib -lfftw3
+
+CPP    = cpp
+
+include Makefileall
