@@ -1,6 +1,6 @@
-prefix=/home/danny/workspace/deploy/FFTW
+prefix=/home/danny/workspace/deploy_NoMPI_debug/FFTW
 exec_prefix=${prefix}
-libdir=${exec_prefix}/lib64
+libdir=${exec_prefix}/lib
 includedir=${prefix}/include
 
 Name: FFTW

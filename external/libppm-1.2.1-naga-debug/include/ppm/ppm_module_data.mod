@@ -1,15 +1,15 @@
-GFORTRAN module version '10' created from ./objects/__ppm_module_data.f
-MD5:9a51bc91268af1c1bd7ce64e242668c9 -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '9' created from ./objects/__ppm_module_data.f
+MD5:137e49b21e819258bdc0428e5968af42 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
 
 ()
 
-(('ppm_ptr_t_topo' 'ppm_module_typedef' 2) ('ppm_t_clist'
-'ppm_module_typedef' 3) ('ppm_t_equi_mesh' 'ppm_module_typedef' 4) (
-'ppm_t_mesh_maplist' 'ppm_module_typedef' 5) ('ppm_t_topo'
-'ppm_module_typedef' 6))
+(('ppm_ptr_t_topo' 'ppm_module_typedef' 2) ('ppm_t_equi_mesh'
+'ppm_module_typedef' 3) ('ppm_t_mesh_maplist' 'ppm_module_typedef' 4) (
+'ppm_t_clist' 'ppm_module_typedef' 5) ('ppm_t_topo' 'ppm_module_typedef'
+6))
 
 ()
 
@@ -23,7 +23,7 @@ UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER) UNKNOWN-ACCESS
 (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0))) PUBLIC (() () () ()) () 0 0
 69780093)
-3 'Ppm_t_clist' 'ppm_module_typedef' '' 1 ((DERIVED UNKNOWN-INTENT
+5 'Ppm_t_clist' 'ppm_module_typedef' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 ((8 'nm' (INTEGER 4 0 0 0 INTEGER ()) (1 0 DEFERRED () ())
 (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
@@ -35,7 +35,7 @@ INTEGER 4 0 0 0 INTEGER ()) (1 0 DEFERRED () ()) (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION POINTER)
 UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0))) PUBLIC (() () ()
 ()) () 0 0 49516303)
-4 'Ppm_t_equi_mesh' 'ppm_module_typedef' '' 1 ((DERIVED UNKNOWN-INTENT
+3 'Ppm_t_equi_mesh' 'ppm_module_typedef' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 ((11 'id' (INTEGER 4 0 0 0 INTEGER ()) () (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (12
@@ -81,11 +81,11 @@ UNKNOWN UNKNOWN 0 0 DIMENSION POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0
 0 0 UNKNOWN ()) 0)) (26 'ghost_recvblk' (INTEGER 4 0 0 0 INTEGER ()) (1
 0 DEFERRED () ()) (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 UNKNOWN 0 0 DIMENSION POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0
-UNKNOWN ()) 0)) (27 'mapping' (DERIVED 5 0 0 0 DERIVED ()) () (
+UNKNOWN ()) 0)) (27 'mapping' (DERIVED 4 0 0 0 DERIVED ()) () (
 UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER)
 UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0))) PUBLIC (() () ()
 ()) () 0 0 51054138)
-5 'Ppm_t_mesh_maplist' 'ppm_module_typedef' '' 1 ((DERIVED
+4 'Ppm_t_mesh_maplist' 'ppm_module_typedef' '' 1 ((DERIVED
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0
 0 0 0 UNKNOWN ()) 0 0 () () 0 ((28 'target_topoid' (INTEGER 4 0 0 0
 INTEGER ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0
@@ -199,7 +199,7 @@ DEFERRED () ()) (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
 0 0 DIMENSION POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ())
 0)) (68 'max_meshid' (INTEGER 4 0 0 0 INTEGER ()) () (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (69
-'mesh' (DERIVED 4 0 0 0 DERIVED ()) (1 0 DEFERRED () ()) (UNKNOWN-FL
+'mesh' (DERIVED 3 0 0 0 DERIVED ()) (1 0 DEFERRED () ()) (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION POINTER)
 UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0)) (70 'ghostsizes' (
 REAL 4 0 0 0 REAL ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
@@ -786,8 +786,8 @@ UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 2 0 0
 0 DERIVED ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
 )
 
-('Ppm_ptr_t_topo' 0 2 'Ppm_t_clist' 0 3 'Ppm_t_equi_mesh' 0 4
-'Ppm_t_mesh_maplist' 0 5 'Ppm_t_topo' 0 6 'kind' 0 72 'null' 0 73
+('Ppm_ptr_t_topo' 0 2 'Ppm_t_clist' 0 5 'Ppm_t_equi_mesh' 0 3
+'Ppm_t_mesh_maplist' 0 4 'Ppm_t_topo' 0 6 'kind' 0 72 'null' 0 73
 'ppm_buffer2part' 0 74 'ppm_buffer_dim' 0 75 'ppm_buffer_set' 0 76
 'ppm_buffer_type' 0 77 'ppm_char' 0 78 'ppm_comm' 0 79 'ppm_debug' 0 80
 'ppm_dim' 0 81 'ppm_error_error' 0 82 'ppm_error_fatal' 0 83

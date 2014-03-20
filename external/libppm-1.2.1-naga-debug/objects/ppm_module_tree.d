@@ -1,5 +1,4 @@
-./objects/ppm_module_tree.o objects/ppm_module_tree.d: src/ppm_module_tree.f /usr/include/stdc-predef.h \
- src/tree/ppm_tree.f\
+./objects/ppm_module_tree.o objects/ppm_module_tree.d: src/ppm_module_tree.f src/tree/ppm_tree.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_tree.o: \
 ./objects/ppm_module_data.o \

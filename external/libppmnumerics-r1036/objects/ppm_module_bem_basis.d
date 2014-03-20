@@ -1,5 +1,5 @@
-./objects/ppm_module_bem_basis.o objects/ppm_module_bem_basis.d: src/ppm_module_bem_basis.f \
- /usr/include/stdc-predef.h src/ppm_bem_basis.f src/ppm_define.h\
+./objects/ppm_module_bem_basis.o objects/ppm_module_bem_basis.d: src/ppm_module_bem_basis.f src/ppm_bem_basis.f \
+ src/ppm_define.h\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_bem_basis.o: \
 ./objects/ppm_module_data.o \

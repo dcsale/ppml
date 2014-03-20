@@ -1,10 +1,10 @@
-./objects/ppm_module_alloc.o objects/ppm_module_alloc.d: src/ppm_module_alloc.f /usr/include/stdc-predef.h \
- src/alloc/ppm_alloc_1d.f src/alloc/ppm_alloc_2d.f \
- src/alloc/ppm_alloc_3d.f src/alloc/ppm_alloc_4d.f \
- src/alloc/ppm_alloc_5d.f src/alloc/ppm_alloc_1dl.f \
- src/alloc/ppm_alloc_2dl.f src/alloc/ppm_alloc_3dl.f \
- src/alloc/ppm_alloc_4dl.f src/alloc/ppm_alloc_5dl.f \
- src/alloc/ppm_alloc_topo.f src/alloc/ppm_alloc_argcheck.f\
+./objects/ppm_module_alloc.o objects/ppm_module_alloc.d: src/ppm_module_alloc.f src/alloc/ppm_alloc_1d.f \
+ src/alloc/ppm_alloc_2d.f src/alloc/ppm_alloc_3d.f \
+ src/alloc/ppm_alloc_4d.f src/alloc/ppm_alloc_5d.f \
+ src/alloc/ppm_alloc_1dl.f src/alloc/ppm_alloc_2dl.f \
+ src/alloc/ppm_alloc_3dl.f src/alloc/ppm_alloc_4dl.f \
+ src/alloc/ppm_alloc_5dl.f src/alloc/ppm_alloc_topo.f \
+ src/alloc/ppm_alloc_argcheck.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_alloc.o: \
 ./objects/ppm_module_data.o \

@@ -1,6 +1,5 @@
 ./objects/ppm_module_check_id.o objects/ppm_module_check_id.d: src/ppm_module_check_id.f \
- /usr/include/stdc-predef.h src/topo/ppm_check_topoid.f \
- src/topo/ppm_check_meshid.f\
+ src/topo/ppm_check_topoid.f src/topo/ppm_check_meshid.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_check_id.o: \
 ./objects/ppm_module_data.o \

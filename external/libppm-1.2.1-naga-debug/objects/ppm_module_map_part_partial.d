@@ -1,5 +1,5 @@
 ./objects/ppm_module_map_part_partial.o objects/ppm_module_map_part_partial.d: src/ppm_module_map_part_partial.f \
- /usr/include/stdc-predef.h src/map/ppm_map_part_partial.f\
+ src/map/ppm_map_part_partial.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_map_part_partial.o: \
 ./objects/ppm_module_data.o \

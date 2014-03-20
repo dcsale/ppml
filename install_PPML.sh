@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Description: 
 # * A bash script to compile the Naga Parallel-Particle Mesh client and all dependencies from scratch
 # 
@@ -7,11 +9,14 @@
 # * other: Ruby, Python, (Matlab?), VisIt, Paraview
 #  
 # Danny C. Sale. (license: LGPL)
+#
+# todo - remove clients from this file (client build in thier own directory)
+
 
 # =========================================================================== #
 # User Parameters - build & install directories
 # =========================================================================== #
-DIR_DEPLOY=/home/danny/workspace/deploy
+DIR_DEPLOY=/home/danny/workspace/deploy_NoMPI_debug
 DIR_BLD=/home/danny/workspace/ppml
 
 # =========================================================================== #
@@ -20,22 +25,22 @@ DIR_BLD=/home/danny/workspace/ppml
 # PPM clients
 # INSTALL_exClient=true
 # INSTALL_LJ=true
-INSTALL_NAGA=true
+# INSTALL_NAGA=true
 # INSTALL_GRAY=true
 
 # dependencies
 # INSTALL_MPI=true
 # INSTALL_RUBY=true
-# INSTALL_FFTW=true
-# INSTALL_METIS=true
-# INSTALL_PPMCORE=true
-# INSTALL_PPMNUMERICS=true
+INSTALL_FFTW=true
+INSTALL_METIS=true
+INSTALL_PPMCORE=true
+INSTALL_PPMNUMERICS=true
 
 # =========================================================================== #
 # User Parameters - build settings (set true / false)
 # =========================================================================== #
-buildParallel=true
-buildDebug=false
+buildParallel=false
+buildDebug=true
 runTests=true
 branchDevelop=false
 

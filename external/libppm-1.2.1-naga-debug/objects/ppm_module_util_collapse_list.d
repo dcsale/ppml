@@ -1,5 +1,5 @@
 ./objects/ppm_module_util_collapse_list.o objects/ppm_module_util_collapse_list.d: src/ppm_module_util_collapse_list.f \
- /usr/include/stdc-predef.h src/util/ppm_util_collapse_list.f\
+ src/util/ppm_util_collapse_list.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_collapse_list.o: \
 ./objects/ppm_module_data.o \

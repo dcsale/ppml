@@ -39,10 +39,13 @@ INC_PPM_CORE = -I$(DIR_LINK)/PPM_Core/include/ppm -I$(DIR_LINK)/PPM_Core/src
 INC_PPM_NUM  = -I$(DIR_LINK)/PPM_Numerics/include/ppm 
 INC          = $(INC_FFTW) $(INC_PPM_CORE) $(INC_PPM_NUM)
 
-LIBS_FFTW     = -L$(DIR_LINK)/FFTW/lib64 -lfftw3
 LIBS_METIS    = -L$(DIR_LINK)/Metis -lmetis
-LIBS_PPM_CORE = -L$(DIR_LINK)/PPM_Core/lib64 -lppm
-LIBS_PPM_NUM  = -L$(DIR_LINK)/PPM_Numerics/lib64 -lppmnumerics
+# LIBS_FFTW     = -L$(DIR_LINK)/FFTW/lib64 -lfftw3
+LIBS_FFTW     = -L$(DIR_LINK)/FFTW/lib -lfftw3
+# LIBS_PPM_CORE = -L$(DIR_LINK)/PPM_Core/lib64 -lppm
+LIBS_PPM_CORE = -L$(DIR_LINK)/PPM_Core/lib -lppm
+# LIBS_PPM_NUM  = -L$(DIR_LINK)/PPM_Numerics/lib64 -lppmnumerics
+LIBS_PPM_NUM  = -L$(DIR_LINK)/PPM_Numerics/lib -lppmnumerics
 LIBS          = $(LIBS_FFTW) $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_PPM_NUM)
 
 ifdef build_Parallel

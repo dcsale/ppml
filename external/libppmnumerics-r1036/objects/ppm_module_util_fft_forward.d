@@ -1,6 +1,6 @@
 ./objects/ppm_module_util_fft_forward.o objects/ppm_module_util_fft_forward.d: src/ppm_module_util_fft_forward.f \
- /usr/include/stdc-predef.h src/ppm_util_fft_forward_2d.f \
- src/ppm_define.h src/ppm_util_fft_forward_3d.f\
+ src/ppm_util_fft_forward_2d.f src/ppm_define.h \
+ src/ppm_util_fft_forward_3d.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_fft_forward.o: \
 ./objects/ppm_module_data.o \

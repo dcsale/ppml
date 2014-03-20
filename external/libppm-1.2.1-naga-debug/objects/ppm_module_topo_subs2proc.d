@@ -1,5 +1,5 @@
 ./objects/ppm_module_topo_subs2proc.o objects/ppm_module_topo_subs2proc.d: src/ppm_module_topo_subs2proc.f \
- /usr/include/stdc-predef.h src/topo/ppm_topo_subs2proc.f\
+ src/topo/ppm_topo_subs2proc.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_topo_subs2proc.o: \
 ./objects/ppm_module_data.o \

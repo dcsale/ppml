@@ -1,4 +1,4 @@
-./objects/ppm_module_topo.o objects/ppm_module_topo.d: src/ppm_module_topo.f /usr/include/stdc-predef.h\
+./objects/ppm_module_topo.o objects/ppm_module_topo.d: src/ppm_module_topo.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_topo.o: \
 ./objects/ppm_module_mktopo.o \

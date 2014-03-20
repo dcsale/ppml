@@ -1,5 +1,4 @@
-./objects/ppm_module_substart.o objects/ppm_module_substart.d: src/ppm_module_substart.f \
- /usr/include/stdc-predef.h src/util/substart.f\
+./objects/ppm_module_substart.o objects/ppm_module_substart.d: src/ppm_module_substart.f src/util/substart.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_substart.o: \
 ./objects/ppm_module_data.o \

@@ -1,4 +1,4 @@
-GFORTRAN module version '10' created from __naga_say.f90
+GFORTRAN module version '9' created from __naga_say.f90
 MD5:edf60b210aabcc3500c42427a78efe3f -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () () ()

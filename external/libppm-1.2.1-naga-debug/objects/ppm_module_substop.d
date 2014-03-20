@@ -1,5 +1,4 @@
-./objects/ppm_module_substop.o objects/ppm_module_substop.d: src/ppm_module_substop.f /usr/include/stdc-predef.h \
- src/util/substop.f\
+./objects/ppm_module_substop.o objects/ppm_module_substop.d: src/ppm_module_substop.f src/util/substop.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_substop.o: \
 ./objects/ppm_module_data.o \

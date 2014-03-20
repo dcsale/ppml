@@ -28,14 +28,12 @@ DESTDIR=.
 PPMDIR = /home/danny/workspace/deploy/PPM_Core
 PPMNUMDIR = /home/danny/workspace/deploy/PPM_Numerics
 METISDIR = /home/danny/workspace/deploy/Metis
-# PPMDIR = /home/user/ppmcore/libppm/
-# PPMNUMDIR = /home/user/ppmnumerics/libppmnumerics/
-# METISDIR = /home/user/metis/intel/
 
 # Compiler flags and settings for my machine
 FC   = mpif90
 CPP  = cpp
-LIBS =  -L$(PPMDIR)/lib64 -L$(PPMNUMDIR)/lib64 -L$(METISDIR) -lppm -lppmnumerics -lmetis
+# LIBS =  -L$(PPMDIR)/lib64 -L$(PPMNUMDIR)/lib64 -L$(METISDIR) -lppm -lppmnumerics -lmetis
+LIBS =  -L$(PPMDIR)/lib -L$(PPMNUMDIR)/lib -L$(METISDIR) -lppm -lppmnumerics -lmetis
 OPT  = $(COPT)
 INCL = -I$(PPMDIR)/include/ppm -I$(PPMDIR)/src/ -I$(PPMNUMDIR)/include/ppm
 

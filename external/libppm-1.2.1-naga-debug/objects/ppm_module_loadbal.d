@@ -1,4 +1,4 @@
-./objects/ppm_module_loadbal.o objects/ppm_module_loadbal.d: src/ppm_module_loadbal.f /usr/include/stdc-predef.h \
+./objects/ppm_module_loadbal.o objects/ppm_module_loadbal.d: src/ppm_module_loadbal.f \
  src/loadbal/ppm_loadbal_inquire.f src/loadbal/ppm_estimate_proc_speed.f \
  src/loadbal/ppm_get_cost.f src/loadbal/ppm_set_decomp_cost.f \
  src/loadbal/ppm_set_proc_speed.f\

@@ -1,6 +1,6 @@
 ./objects/ppm_module_map_field_ghost.o objects/ppm_module_map_field_ghost.d: src/ppm_module_map_field_ghost.f \
- /usr/include/stdc-predef.h src/map/ppm_map_field_ghost_init.f \
- src/map/ppm_map_field_ghost_get.f src/map/ppm_map_field_ghost_put.f\
+ src/map/ppm_map_field_ghost_init.f src/map/ppm_map_field_ghost_get.f \
+ src/map/ppm_map_field_ghost_put.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_map_field_ghost.o: \
 ./objects/ppm_module_data.o \

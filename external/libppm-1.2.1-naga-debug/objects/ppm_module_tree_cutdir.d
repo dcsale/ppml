@@ -1,5 +1,5 @@
 ./objects/ppm_module_tree_cutdir.o objects/ppm_module_tree_cutdir.d: src/ppm_module_tree_cutdir.f \
- /usr/include/stdc-predef.h src/tree/ppm_tree_cutdir.f\
+ src/tree/ppm_tree_cutdir.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_tree_cutdir.o: \
 ./objects/ppm_module_data.o \

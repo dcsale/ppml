@@ -1,5 +1,4 @@
-./objects/ppm_module_error.o objects/ppm_module_error.d: src/ppm_module_error.f /usr/include/stdc-predef.h \
- src/util/ppm_error.f\
+./objects/ppm_module_error.o objects/ppm_module_error.d: src/ppm_module_error.f src/util/ppm_error.f\
 src/ppm_error.h \
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_error.o: \

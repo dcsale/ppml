@@ -1,6 +1,5 @@
 ./objects/ppm_module_util_sort.o objects/ppm_module_util_sort.d: src/ppm_module_util_sort.f \
- /usr/include/stdc-predef.h src/util/ppm_util_sort3d.f \
- src/util/ppm_util_sort2d.f\
+ src/util/ppm_util_sort3d.f src/util/ppm_util_sort2d.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_sort.o: \
 ./objects/ppm_module_data.o \

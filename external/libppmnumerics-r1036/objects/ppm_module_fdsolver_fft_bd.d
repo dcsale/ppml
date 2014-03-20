@@ -1,5 +1,5 @@
 ./objects/ppm_module_fdsolver_fft_bd.o objects/ppm_module_fdsolver_fft_bd.d: src/ppm_module_fdsolver_fft_bd.f \
- /usr/include/stdc-predef.h src/ppm_fdsolver_fft_bd_3d.f src/ppm_define.h \
+ src/ppm_fdsolver_fft_bd_3d.f src/ppm_define.h \
  src/ppm_fdsolver_fft_bd_2d.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_fdsolver_fft_bd.o: \

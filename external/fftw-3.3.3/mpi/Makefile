@@ -53,7 +53,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 build_triplet = x86_64-unknown-linux-gnu
 host_triplet = x86_64-unknown-linux-gnu
-noinst_PROGRAMS = mpi-bench$(EXEEXT)
+#noinst_PROGRAMS = mpi-bench$(EXEEXT)
 subdir = mpi
 DIST_COMMON = $(am__include_HEADERS_DIST) $(srcdir)/Makefile.am \
 	$(srcdir)/Makefile.in
@@ -128,7 +128,7 @@ libfftw3_mpi_la_LINK = $(LIBTOOL) --tag=CC \
 	$(AM_LIBTOOLFLAGS) $(LIBTOOLFLAGS) --mode=link $(CCLD) \
 	$(AM_CFLAGS) $(CFLAGS) $(libfftw3_mpi_la_LDFLAGS) \
 	$(LDFLAGS) -o $@
-am_libfftw3_mpi_la_rpath = -rpath $(libdir)
+#am_libfftw3_mpi_la_rpath = -rpath $(libdir)
 PROGRAMS = $(noinst_PROGRAMS)
 am_mpi_bench_OBJECTS = mpi_bench-mpi-bench.$(OBJEXT) \
 	mpi_bench-fftw-bench.$(OBJEXT) mpi_bench-hook.$(OBJEXT)
@@ -177,16 +177,16 @@ AUTOCONF = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/missing --run
 AUTOHEADER = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/missing --run autoheader
 AUTOMAKE = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/missing --run automake-1.11
 AVX_CFLAGS = 
-AWK = gawk
-CC = mpicc
+AWK = mawk
+CC = 
 CCDEPMODE = depmode=gcc3
 CFLAGS = -O3 -fomit-frame-pointer -mtune=native -malign-double -fstrict-aliasing -fno-schedule-insns -ffast-math
 CHECK_PL_OPTS = 
-CPP = mpicc -std=gnu99 -E
+CPP = gcc -std=gnu99 -E
 CPPFLAGS = 
 CYGPATH_W = echo
 C_FFTW_R2R_KIND = C_INT32_T
-C_MPI_FINT = C_INT32_T
+C_MPI_FINT = 
 DEFS = -DHAVE_CONFIG_H
 DEPDIR = .deps
 DLLTOOL = dlltool
@@ -195,19 +195,19 @@ DUMPBIN =
 ECHO_C = 
 ECHO_N = -n
 ECHO_T = 
-EGREP = /usr/bin/grep -E
+EGREP = /bin/grep -E
 EXEEXT = 
-F77 = mpif90
+F77 = gfortran
 FFLAGS = -g -O2
-FGREP = /usr/bin/grep -F
-FLIBS =  -L/usr/lib64/mpi/gcc/openmpi/lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.8 -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../.. -lgfortran -lm -lmpi_usempi -lmpi_mpifh -lmpi -lquadmath -lpthread
-GREP = /usr/bin/grep
+FGREP = /bin/grep -F
+FLIBS =  -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. -lgfortran -lm -lquadmath
+GREP = /bin/grep
 INSTALL = /usr/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
-LD = /usr/x86_64-suse-linux/bin/ld -m elf_x86_64
+LD = /usr/bin/ld -m elf_x86_64
 LDFLAGS = 
 LIBOBJS = 
 LIBQUADMATH = 
@@ -219,10 +219,10 @@ LTLIBOBJS =
 MAINT = #
 MAKEINFO = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/missing --run makeinfo
 MANIFEST_TOOL = :
-MKDIR_P = /usr/bin/mkdir -p
-MPICC = mpicc
-MPILIBS =  
-MPIRUN = mpirun
+MKDIR_P = /bin/mkdir -p
+MPICC = 
+MPILIBS = 
+MPIRUN = 
 NEON_CFLAGS = 
 NM = /usr/bin/nm -B
 NMEDIT = 
@@ -247,10 +247,10 @@ PTHREAD_CC =
 PTHREAD_CFLAGS = 
 PTHREAD_LIBS = 
 RANLIB = ranlib
-SED = /usr/bin/sed
+SED = /bin/sed
 SET_MAKE = 
 SHARED_VERSION_INFO = 6:2:3
-SHELL = /bin/sh
+SHELL = /bin/bash
 SSE2_CFLAGS = 
 STACK_ALIGN_CFLAGS = 
 STRIP = strip
@@ -261,7 +261,7 @@ abs_srcdir = /home/danny/workspace/ppml/external/fftw-3.3.3/mpi
 abs_top_builddir = /home/danny/workspace/ppml/external/fftw-3.3.3
 abs_top_srcdir = /home/danny/workspace/ppml/external/fftw-3.3.3
 ac_ct_AR = ar
-ac_ct_CC = mpicc
+ac_ct_CC = gcc
 ac_ct_DUMPBIN = 
 ac_ct_F77 = 
 acx_pthread_config = 
@@ -291,15 +291,15 @@ htmldir = ${docdir}
 includedir = ${prefix}/include
 infodir = ${datarootdir}/info
 install_sh = ${SHELL} /home/danny/workspace/ppml/external/fftw-3.3.3/install-sh
-libdir = ${exec_prefix}/lib64
-libexecdir = ${exec_prefix}/lib
+libdir = ${exec_prefix}/lib
+libexecdir = ${exec_prefix}/libexec
 localedir = ${datarootdir}/locale
 localstatedir = ${prefix}/var
 mandir = ${datarootdir}/man
-mkdir_p = /usr/bin/mkdir -p
+mkdir_p = /bin/mkdir -p
 oldincludedir = /usr/include
 pdfdir = ${docdir}
-prefix = /home/danny/workspace/deploy/FFTW
+prefix = /home/danny/workspace/deploy_NoMPI_debug/FFTW
 program_transform_name = s,x,x,
 psdir = ${docdir}
 sbindir = ${exec_prefix}/sbin
@@ -314,9 +314,9 @@ AM_CPPFLAGS = -I$(top_srcdir)/kernel -I$(top_srcdir)/dft	\
 -I$(top_srcdir)/rdft -I$(top_srcdir)/api -I$(top_srcdir)/tests	\
 -I$(top_srcdir)/libbench2
 
-lib_LTLIBRARIES = libfftw3_mpi.la
-include_HEADERS = fftw3-mpi.h
-nodist_include_HEADERS = fftw3-mpi.f03 fftw3l-mpi.f03
+#lib_LTLIBRARIES = libfftw3_mpi.la
+#include_HEADERS = fftw3-mpi.h
+#nodist_include_HEADERS = fftw3-mpi.f03 fftw3l-mpi.f03
 EXTRA_DIST = testsched.c f03api.sh f03-wrap.sh genf03-wrap.pl fftw3-mpi.f03.in fftw3l-mpi.f03.in
 BUILT_SOURCES = fftw3-mpi.f03.in fftw3-mpi.f03 fftw3l-mpi.f03.in fftw3l-mpi.f03 f03-wrap.c
 CLEANFILES = fftw3-mpi.f03 fftw3l-mpi.f03
@@ -327,7 +327,7 @@ RDFT2_SRC = rdft2-serial.c rdft2-rank-geq2.c rdft2-rank-geq2-transposed.c rdft2-
 SRC = any-true.c api.c block.c choose-radix.c conf.c dtensor.c fftw3-mpi.h ifftw-mpi.h rearrange.c wisdom-api.c f03-wrap.c
 libfftw3_mpi_la_SOURCES = $(SRC) $(TRANSPOSE_SRC) $(DFT_SRC) $(RDFT_SRC) $(RDFT2_SRC)
 libfftw3_mpi_la_LDFLAGS = -version-info 6:2:3
-libfftw3_mpi_la_LIBADD = ../libfftw3.la  
+libfftw3_mpi_la_LIBADD = ../libfftw3.la 
 #mpi_bench_CFLAGS = $(OPENMP_CFLAGS)
 #mpi_bench_CFLAGS = $(PTHREAD_CFLAGS)
 #LIBFFTWTHREADS = $(top_builddir)/threads/libfftw3_threads.la
@@ -655,7 +655,7 @@ distdir: $(DISTFILES)
 	    || exit 1; \
 	  fi; \
 	done
-#check-local:
+check-local:
 check-am: all-am
 	$(MAKE) $(AM_MAKEFLAGS) check-local
 check: $(BUILT_SOURCES)
@@ -790,39 +790,39 @@ uninstall-am: uninstall-includeHEADERS uninstall-libLTLIBRARIES \
 	uninstall-libLTLIBRARIES uninstall-nodist_includeHEADERS
 
 
-check-local: mpi-bench$(EXEEXT)
-	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 1 `pwd`/mpi-bench"
-	@echo "--------------------------------------------------------------"
-	@echo "     MPI FFTW transforms passed "$(NUMCHECK)" tests, 1 CPU"
-	@echo "--------------------------------------------------------------"
-	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 2 `pwd`/mpi-bench"
-	@echo "--------------------------------------------------------------"
-	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 2 CPUs"
-	@echo "--------------------------------------------------------------"
-	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 3 `pwd`/mpi-bench"
-	@echo "--------------------------------------------------------------"
-	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 3 CPUs"
-	@echo "--------------------------------------------------------------"
-	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 4 `pwd`/mpi-bench"
-	@echo "--------------------------------------------------------------"
-	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 4 CPUs"
-	@echo "--------------------------------------------------------------"
-#	perl -w $(CHECK) $(CHECKOPTS) --mpi --nthreads=2 "$(MPIRUN) -np 3 `pwd`/mpi-bench"
+#check-local: mpi-bench$(EXEEXT)
+#	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 1 `pwd`/mpi-bench"
 #	@echo "--------------------------------------------------------------"
-#	@echo "      MPI FFTW threaded transforms passed "$(NUMCHECK)" tests!"
+#	@echo "     MPI FFTW transforms passed "$(NUMCHECK)" tests, 1 CPU"
 #	@echo "--------------------------------------------------------------"
+#	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 2 `pwd`/mpi-bench"
+#	@echo "--------------------------------------------------------------"
+#	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 2 CPUs"
+#	@echo "--------------------------------------------------------------"
+#	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 3 `pwd`/mpi-bench"
+#	@echo "--------------------------------------------------------------"
+#	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 3 CPUs"
+#	@echo "--------------------------------------------------------------"
+#	perl -w $(CHECK) $(CHECKOPTS) --mpi "$(MPIRUN) -np 4 `pwd`/mpi-bench"
+#	@echo "--------------------------------------------------------------"
+#	@echo "      MPI FFTW transforms passed "$(NUMCHECK)" tests, 4 CPUs"
+#	@echo "--------------------------------------------------------------"
+##	perl -w $(CHECK) $(CHECKOPTS) --mpi --nthreads=2 "$(MPIRUN) -np 3 `pwd`/mpi-bench"
+##	@echo "--------------------------------------------------------------"
+##	@echo "      MPI FFTW threaded transforms passed "$(NUMCHECK)" tests!"
+##	@echo "--------------------------------------------------------------"
 
-bigcheck: mpi-bench$(EXEEXT)
-	$(MAKE) $(AM_MAKEFLAGS) NUMCHECK=100 CHECKSIZE=60000 check-local
+#bigcheck: mpi-bench$(EXEEXT)
+#	$(MAKE) $(AM_MAKEFLAGS) NUMCHECK=100 CHECKSIZE=60000 check-local
 
-smallcheck: mpi-bench$(EXEEXT)
-	$(MAKE) $(AM_MAKEFLAGS) NUMCHECK=2 check-local
+#smallcheck: mpi-bench$(EXEEXT)
+#	$(MAKE) $(AM_MAKEFLAGS) NUMCHECK=2 check-local
 
 fftw3-mpi.f03: fftw3-mpi.f03.in
-	sed 's/C_MPI_FINT/C_INT32_T/' $(srcdir)/fftw3-mpi.f03.in > $@
+	sed 's/C_MPI_FINT//' $(srcdir)/fftw3-mpi.f03.in > $@
 
 fftw3l-mpi.f03: fftw3l-mpi.f03.in
-	sed 's/C_MPI_FINT/C_INT32_T/' $(srcdir)/fftw3l-mpi.f03.in > $@
+	sed 's/C_MPI_FINT//' $(srcdir)/fftw3l-mpi.f03.in > $@
 
 #fftw3-mpi.f03.in: fftw3-mpi.h f03api.sh $(top_srcdir)/api/genf03.pl
 #	sh $(srcdir)/f03api.sh d f > $@

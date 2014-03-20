@@ -1,5 +1,4 @@
-./objects/ppm_module_time.o objects/ppm_module_time.d: src/ppm_module_time.f /usr/include/stdc-predef.h \
- src/util/ppm_time.f\
+./objects/ppm_module_time.o objects/ppm_module_time.d: src/ppm_module_time.f src/util/ppm_time.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_time.o: \
 ./objects/ppm_module_data.o \

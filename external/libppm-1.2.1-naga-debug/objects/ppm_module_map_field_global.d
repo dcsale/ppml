@@ -1,6 +1,5 @@
 ./objects/ppm_module_map_field_global.o objects/ppm_module_map_field_global.d: src/ppm_module_map_field_global.f \
- /usr/include/stdc-predef.h src/map/ppm_map_field_global.f \
- src/map/ppm_map_field_global_symm.f \
+ src/map/ppm_map_field_global.f src/map/ppm_map_field_global_symm.f \
  src/map/ppm_map_field_global_useperiod.f \
  src/map/ppm_map_field_global_useperiod_store.f \
  src/map/ppm_map_field_globalstored.f\

@@ -1,5 +1,5 @@
 ./objects/ppm_module_tree_boxcut.o objects/ppm_module_tree_boxcut.d: src/ppm_module_tree_boxcut.f \
- /usr/include/stdc-predef.h src/tree/ppm_tree_boxcut.f\
+ src/tree/ppm_tree_boxcut.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_tree_boxcut.o: \
 ./objects/ppm_module_data.o \

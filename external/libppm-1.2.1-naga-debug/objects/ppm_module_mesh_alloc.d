@@ -1,5 +1,5 @@
 ./objects/ppm_module_mesh_alloc.o objects/ppm_module_mesh_alloc.d: src/ppm_module_mesh_alloc.f \
- /usr/include/stdc-predef.h src/mesh/ppm_mesh_alloc_equi.f\
+ src/mesh/ppm_mesh_alloc_equi.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_mesh_alloc.o: \
 ./objects/ppm_module_data.o \

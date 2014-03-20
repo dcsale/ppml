@@ -1,5 +1,5 @@
 ./objects/ppm_module_neighlist.o objects/ppm_module_neighlist.d: src/ppm_module_neighlist.f \
- /usr/include/stdc-predef.h src/neighlist/ppm_clist_destroy.f \
+ src/neighlist/ppm_clist_destroy.f \
  src/neighlist/ppm_neighlist_MkNeighIdx.f \
  src/neighlist/ppm_neighlist_clist.f src/neighlist/ppm_neighlist_vlist.f\
 # end of source dependencies for .o and .d files

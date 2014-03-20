@@ -1,6 +1,5 @@
 ./objects/ppm_module_fdsolver_solve.o objects/ppm_module_fdsolver_solve.d: src/ppm_module_fdsolver_solve.f \
- /usr/include/stdc-predef.h src/ppm_define.h src/ppm_fdsolver_solve_3d.f \
- src/ppm_fdsolver_solve_2d.f\
+ src/ppm_define.h src/ppm_fdsolver_solve_3d.f src/ppm_fdsolver_solve_2d.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_fdsolver_solve.o: \
 ./objects/ppm_module_data.o \

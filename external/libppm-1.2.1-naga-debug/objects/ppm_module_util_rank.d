@@ -1,6 +1,5 @@
 ./objects/ppm_module_util_rank.o objects/ppm_module_util_rank.d: src/ppm_module_util_rank.f \
- /usr/include/stdc-predef.h src/util/ppm_util_rank3d.f \
- src/util/ppm_util_rank2d.f\
+ src/util/ppm_util_rank3d.f src/util/ppm_util_rank2d.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_rank.o: \
 ./objects/ppm_module_data.o \

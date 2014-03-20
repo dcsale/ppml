@@ -39,7 +39,7 @@
 /* #undef FC_DUMMY_MAIN_EQ_F77 */
 
 /* C compiler name and flags */
-#define FFTW_CC "mpicc -std=gnu99 -O3 -fomit-frame-pointer -mtune=native -malign-double -fstrict-aliasing -fno-schedule-insns -ffast-math"
+#define FFTW_CC "gcc -std=gnu99 -O3 -fomit-frame-pointer -mtune=native -malign-double -fstrict-aliasing -fno-schedule-insns -ffast-math"
 
 /* Define to enable extra FFTW debugging code. */
 /* #undef FFTW_DEBUG */
@@ -88,7 +88,7 @@
 /* #undef HAVE_BSDGETTIMEOFDAY */
 
 /* Define to 1 if you have the `clock_gettime' function. */
-#define HAVE_CLOCK_GETTIME 1
+/* #undef HAVE_CLOCK_GETTIME */
 
 /* Define to 1 if you have the `cosl' function. */
 #define HAVE_COSL 1
@@ -195,7 +195,7 @@
 /* #undef HAVE_MIPS_ZBUS_TIMER */
 
 /* Define if you have the MPI library. */
-#define HAVE_MPI 1
+/* #undef HAVE_MPI */
 
 /* Define to enable ARM NEON optimizations. */
 /* #undef HAVE_NEON */
@@ -332,7 +332,7 @@
 #define SIZEOF_LONG_LONG 8
 
 /* The size of `MPI_Fint', as computed by sizeof. */
-#define SIZEOF_MPI_FINT 4
+/* #undef SIZEOF_MPI_FINT */
 
 /* The size of `ptrdiff_t', as computed by sizeof. */
 #define SIZEOF_PTRDIFF_T 8

@@ -1,6 +1,5 @@
-./objects/ppm_module_mg_alloc.o objects/ppm_module_mg_alloc.d: src/ppm_module_mg_alloc.f \
- /usr/include/stdc-predef.h src/ppm_mg_alloc_field.f src/ppm_define.h \
- src/ppm_mg_alloc_bc.f\
+./objects/ppm_module_mg_alloc.o objects/ppm_module_mg_alloc.d: src/ppm_module_mg_alloc.f src/ppm_mg_alloc_field.f \
+ src/ppm_define.h src/ppm_mg_alloc_bc.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_mg_alloc.o: \
 ./objects/ppm_module_data.o \

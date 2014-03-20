@@ -1,5 +1,5 @@
 ./objects/ppm_module_fmm_expchange.o objects/ppm_module_fmm_expchange.d: src/ppm_module_fmm_expchange.f \
- /usr/include/stdc-predef.h src/ppm_fmm_expchange.f src/ppm_define.h\
+ src/ppm_fmm_expchange.f src/ppm_define.h\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_fmm_expchange.o: \
 ./objects/ppm_module_data.o \

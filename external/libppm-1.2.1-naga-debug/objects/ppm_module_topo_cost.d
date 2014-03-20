@@ -1,5 +1,5 @@
 ./objects/ppm_module_topo_cost.o objects/ppm_module_topo_cost.d: src/ppm_module_topo_cost.f \
- /usr/include/stdc-predef.h src/topo/ppm_topo_cost.f\
+ src/topo/ppm_topo_cost.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_topo_cost.o: \
 ./objects/ppm_module_data.o \

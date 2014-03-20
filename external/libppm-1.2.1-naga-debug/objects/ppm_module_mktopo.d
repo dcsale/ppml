@@ -1,6 +1,6 @@
-./objects/ppm_module_mktopo.o objects/ppm_module_mktopo.d: src/ppm_module_mktopo.f /usr/include/stdc-predef.h \
- src/topo/ppm_topo_mkpart.f src/topo/ppm_topo_mkfield.f \
- src/topo/ppm_topo_mkgeom.f src/topo/ppm_topo_mktree.f\
+./objects/ppm_module_mktopo.o objects/ppm_module_mktopo.d: src/ppm_module_mktopo.f src/topo/ppm_topo_mkpart.f \
+ src/topo/ppm_topo_mkfield.f src/topo/ppm_topo_mkgeom.f \
+ src/topo/ppm_topo_mktree.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_mktopo.o: \
 ./objects/ppm_module_data.o \

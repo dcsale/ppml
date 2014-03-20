@@ -1,12 +1,12 @@
-GFORTRAN module version '10' created from ./objects/__ppm_module_topo_alloc.f
-MD5:c73bd7f0d2b2d4bdeef1ce02dbd8e3ab -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '9' created from ./objects/__ppm_module_topo_alloc.f
+MD5:88a6cab7966082cfdf40d584b5728755 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
 
 ()
 
-(('ppm_topo_alloc' 'ppm_module_topo_alloc' 2) ('ppm_topo_dealloc'
+(('ppm_topo_dealloc' 'ppm_module_topo_alloc' 2) ('ppm_topo_alloc'
 'ppm_module_topo_alloc' 3))
 
 ()
@@ -18,10 +18,10 @@ MD5:c73bd7f0d2b2d4bdeef1ce02dbd8e3ab -- If you edit this, you'll get what you de
 (4 'ppm_module_topo_alloc' 'ppm_module_topo_alloc' '' 1 ((MODULE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0
 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-2 'ppm_topo_alloc' 'ppm_module_topo_alloc' '' 1 ((PROCEDURE
+3 'ppm_topo_alloc' 'ppm_module_topo_alloc' '' 1 ((PROCEDURE
 UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE GENERIC) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 5 0 (6 7 8 9 10 11) () 0 () () () 0 0)
-3 'ppm_topo_dealloc' 'ppm_module_topo_alloc' '' 1 ((PROCEDURE
+2 'ppm_topo_dealloc' 'ppm_module_topo_alloc' '' 1 ((PROCEDURE
 UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE GENERIC) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 12 0 (13 14) () 0 () () () 0 0)
 6 'topoid' '' '' 5 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
@@ -213,4 +213,4 @@ POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0))) PUBLIC (
 () () () ()) () 0 0 75165018)
 )
 
-('ppm_module_topo_alloc' 0 4 'ppm_topo_alloc' 0 2 'ppm_topo_dealloc' 0 3)
+('ppm_module_topo_alloc' 0 4 'ppm_topo_alloc' 0 3 'ppm_topo_dealloc' 0 2)

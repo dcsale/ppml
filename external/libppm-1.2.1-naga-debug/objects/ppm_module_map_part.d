@@ -1,6 +1,6 @@
 ./objects/ppm_module_map_part.o objects/ppm_module_map_part.d: src/ppm_module_map_part.f \
- /usr/include/stdc-predef.h src/map/ppm_map_part_pop.f \
- src/map/ppm_map_part_push.f src/map/ppm_map_part_send.f\
+ src/map/ppm_map_part_pop.f src/map/ppm_map_part_push.f \
+ src/map/ppm_map_part_send.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_map_part.o: \
 ./objects/ppm_module_map_part_util.o \

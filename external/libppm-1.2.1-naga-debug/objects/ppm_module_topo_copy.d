@@ -1,5 +1,5 @@
 ./objects/ppm_module_topo_copy.o objects/ppm_module_topo_copy.d: src/ppm_module_topo_copy.f \
- /usr/include/stdc-predef.h src/topo/ppm_topo_copy.f\
+ src/topo/ppm_topo_copy.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_topo_copy.o: \
 ./objects/ppm_module_data.o \

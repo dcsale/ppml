@@ -1,5 +1,4 @@
-./objects/ppm_module_user_numerics.o objects/ppm_module_user_numerics.d: src/ppm_module_user_numerics.f \
- /usr/include/stdc-predef.h\
+./objects/ppm_module_user_numerics.o objects/ppm_module_user_numerics.d: src/ppm_module_user_numerics.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_user_numerics.o: \
 ./objects/ppm_module_comp_part.o \

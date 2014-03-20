@@ -1,5 +1,5 @@
 ./objects/ppm_module_util_cart2sph.o objects/ppm_module_util_cart2sph.d: src/ppm_module_util_cart2sph.f \
- /usr/include/stdc-predef.h src/util/ppm_util_cart2sph.f\
+ src/util/ppm_util_cart2sph.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_cart2sph.o: \
 ./objects/ppm_module_data.o \
