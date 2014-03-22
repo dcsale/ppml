@@ -1,22 +1,27 @@
+<<<<<<< HEAD
 GFORTRAN module version '10' created from __naga_globals.f90
 MD5:f19721fd54b16e735e6a6bb77532bf3b -- If you edit this, you'll get what you deserve.
+=======
+GFORTRAN module version '9' created from __naga_globals.f90
+MD5:e119ed56273a49bb28db92b48f8a556f -- If you edit this, you'll get what you deserve.
+>>>>>>> 17cdcfd95617e420fe3c2e425710c8d9fde1c530
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
 
 ()
 
-(('patch_field_s' 'naga_mod_globals' 2) ('patch_field_sc'
+(('patch_field_sc' 'naga_mod_globals' 2) ('patch_field_vc'
 'naga_mod_globals' 3) ('patch_field_v' 'naga_mod_globals' 4) (
-'patch_field_vc' 'naga_mod_globals' 5) ('patch_part_s' 'naga_mod_globals'
-6) ('patch_part_v' 'naga_mod_globals' 7) ('patch_setup' 'naga_mod_globals'
+'patch_setup' 'naga_mod_globals' 5) ('patch_part_v' 'naga_mod_globals' 6)
+('patch_part_s' 'naga_mod_globals' 7) ('patch_field_s' 'naga_mod_globals'
 8) ('ppm_fft_plan' 'ppm_module_fft' 9) ('ppm_poisson_plan'
 'ppm_module_poisson' 10) ('ppm_ptr_t_topo' 'ppm_module_typedef' 11) (
-'ppm_t_clist' 'ppm_module_typedef' 12) ('ppm_t_equi_mesh'
-'ppm_module_typedef' 13) ('ppm_t_mesh_maplist' 'ppm_module_typedef' 14)
-('ppm_t_topo' 'ppm_module_typedef' 15) ('stl_data' 'naga_mod_globals' 16)
-('stl_data_temporary' 'naga_mod_globals' 17) ('substart'
-'ppm_module_substart' 18 19) ('substop' 'ppm_module_substop' 20 21))
+'ppm_t_clist' 'ppm_module_typedef' 12) ('ppm_t_mesh_maplist'
+'ppm_module_typedef' 13) ('ppm_t_topo' 'ppm_module_typedef' 14) (
+'ppm_t_equi_mesh' 'ppm_module_typedef' 15) ('stl_data_temporary'
+'naga_mod_globals' 16) ('stl_data' 'naga_mod_globals' 17) ('substop'
+'ppm_module_substop' 18 19) ('substart' 'ppm_module_substart' 20 21))
 
 (('mpi_fortran_argv_null' 22 0 0 '') ('mpi_fortran_argvs_null' 23 0 0 '')
 ('mpi_fortran_bottom' 24 0 0 '') ('mpi_fortran_errcodes_ignore' 25 0 0 '')
@@ -27,13 +32,13 @@ MD5:f19721fd54b16e735e6a6bb77532bf3b -- If you edit this, you'll get what you de
 
 ()
 
-(2 'Patch_field_s' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
+(8 'Patch_field_s' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 ((29 'fld' (REAL 8 0 0 0 REAL ()) (4 0 DEFERRED () () ()
 () () () () ()) (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
 0 0 DIMENSION POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ())
 0))) PUBLIC (() () () ()) () 0 0 97746457)
-3 'Patch_field_sc' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
+2 'Patch_field_sc' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 ((30 'fld' (COMPLEX 8 0 0 0 COMPLEX ()) (4 0 DEFERRED ()
 () () () () () () ()) (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
@@ -45,25 +50,25 @@ UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 () () () () () () ()) (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 UNKNOWN 0 0 DIMENSION POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0
 UNKNOWN ()) 0))) PUBLIC (() () () ()) () 0 0 97746460)
-5 'Patch_field_vc' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
+3 'Patch_field_vc' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 ((32 'fld' (COMPLEX 8 0 0 0 COMPLEX ()) (5 0 DEFERRED ()
 () () () () () () () () ()) (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN UNKNOWN 0 0 DIMENSION POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0
 0 0 UNKNOWN ()) 0))) PUBLIC (() () () ()) () 0 0 52232007)
-6 'Patch_part_s' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
+7 'Patch_part_s' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 ((33 'val' (REAL 8 0 0 0 REAL ()) (1 0 DEFERRED () ()) (
 UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
 POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0))) PUBLIC (
 () () () ()) () 0 0 60932060)
-7 'Patch_part_v' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
+6 'Patch_part_v' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 ((34 'val' (REAL 8 0 0 0 REAL ()) (2 0 DEFERRED () () ()
 ()) (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DIMENSION POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0)))
 PUBLIC (() () () ()) () 0 0 60932063)
-8 'Patch_setup' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
+5 'Patch_setup' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 ((35 'lvl' (INTEGER 4 0 0 0 INTEGER ()) () (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (36
@@ -288,7 +293,7 @@ DIMENSION POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0)))
 PUBLIC (() () () ()) () 0 0 31717992)
 11 'Ppm_ptr_t_topo' 'ppm_module_typedef' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
-()) 0 0 () () 0 ((114 't' (DERIVED 15 0 0 0 DERIVED ()) () (UNKNOWN-FL
+()) 0 0 () () 0 ((114 't' (DERIVED 14 0 0 0 DERIVED ()) () (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER) UNKNOWN-ACCESS
 (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0))) PUBLIC (() () () ()) () 0 0
 69780093)
@@ -304,7 +309,7 @@ POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0)) (117 'lhbx'
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION POINTER)
 UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0))) PUBLIC (() () ()
 ()) () 0 0 49516303)
-13 'Ppm_t_equi_mesh' 'ppm_module_typedef' '' 1 ((DERIVED UNKNOWN-INTENT
+15 'Ppm_t_equi_mesh' 'ppm_module_typedef' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 ((118 'id' (INTEGER 4 0 0 0 INTEGER ()) () (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (
@@ -351,10 +356,10 @@ DIMENSION POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0))
 (133 'ghost_recvblk' (INTEGER 4 0 0 0 INTEGER ()) (1 0 DEFERRED () ()) (
 UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
 POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0)) (134
-'mapping' (DERIVED 14 0 0 0 DERIVED ()) () (UNKNOWN-FL UNKNOWN-INTENT
+'mapping' (DERIVED 13 0 0 0 DERIVED ()) () (UNKNOWN-FL UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN
 0 0 0 0 UNKNOWN ()) 0))) PUBLIC (() () () ()) () 0 0 51054138)
-14 'Ppm_t_mesh_maplist' 'ppm_module_typedef' '' 1 ((DERIVED
+13 'Ppm_t_mesh_maplist' 'ppm_module_typedef' '' 1 ((DERIVED
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0
 0 0 0 UNKNOWN ()) 0 0 () () 0 ((135 'target_topoid' (INTEGER 4 0 0 0
 INTEGER ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0
@@ -397,7 +402,7 @@ POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0)) (148
 UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
 POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0))) PUBLIC (
 () () () ()) () 0 0 75165018)
-15 'Ppm_t_topo' 'ppm_module_typedef' '' 1 ((DERIVED UNKNOWN-INTENT
+14 'Ppm_t_topo' 'ppm_module_typedef' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 POINTER_COMP) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 ((149 'id' (INTEGER 4 0 0 0 INTEGER ()) () (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (
@@ -468,14 +473,14 @@ DEFERRED () ()) (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN
 0 0 DIMENSION POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ())
 0)) (175 'max_meshid' (INTEGER 4 0 0 0 INTEGER ()) () (UNKNOWN-FL
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (
-176 'mesh' (DERIVED 13 0 0 0 DERIVED ()) (1 0 DEFERRED () ()) (
+176 'mesh' (DERIVED 15 0 0 0 DERIVED ()) (1 0 DEFERRED () ()) (
 UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION
 POINTER) UNKNOWN-ACCESS (NULL (UNKNOWN 0 0 0 0 UNKNOWN ()) 0)) (177
 'ghostsizes' (REAL 4 0 0 0 REAL ()) () (UNKNOWN-FL UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (178 'ghostsized' (
 REAL 8 0 0 0 REAL ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 UNKNOWN 0 0) UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0 98177164)
-16 'Stl_data' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
+17 'Stl_data' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
 0 ((179 'bndminx' (REAL 8 0 0 0 REAL ()) () (UNKNOWN-FL UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (180 'bndminy' (
@@ -488,7 +493,7 @@ UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) UNKNOWN-ACCESS ()) (184 'bndmaxz' (
 REAL 8 0 0 0 REAL ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 UNKNOWN 0 0) UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0 33999964)
-17 'Stl_data_temporary' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
+16 'Stl_data_temporary' 'naga_mod_globals' '' 1 ((DERIVED UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 ALLOC_COMP) (UNKNOWN 0 0 0 0 UNKNOWN ())
 0 0 () () 0 ((185 'filename' (CHARACTER 1 0 0 0 CHARACTER ((CONSTANT (
 INTEGER 4 0 0 0 INTEGER ()) 0 '256'))) () (UNKNOWN-FL UNKNOWN-INTENT
@@ -531,10 +536,10 @@ ALLOCATABLE DIMENSION) UNKNOWN-ACCESS ()) (201 'tri_count' (INTEGER 4 0
 0 0 INTEGER ()) () (UNKNOWN-FL UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 UNKNOWN 0 0) UNKNOWN-ACCESS ())) PUBLIC (() () () ()) () 0 0 22250734)
 202 'cf' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 2 0 0 0 DERIVED ())
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 8 0 0 0 DERIVED ())
 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
 203 'chif' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 2 0 0
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 8 0 0
 0 DERIVED ()) 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
 204 'clearinteriorrhs' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (LOGICAL 4 0 0 0 LOGICAL ()) 0 0
@@ -546,7 +551,7 @@ UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
 207 'cp' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 6 0 0 0 DERIVED ())
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 7 0 0 0 DERIVED ())
 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
 208 'ctrlfile' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (CHARACTER 1 0 0 0 CHARACTER ((
@@ -565,10 +570,10 @@ UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
 UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 4 0 0 0 DERIVED ())
 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
 213 'dwp' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 7 0 0 0 DERIVED ())
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 6 0 0 0 DERIVED ())
 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
 214 'dwp0' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 7 0 0
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 6 0 0
 0 DERIVED ()) 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
 215 'endtime' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
@@ -619,80 +624,88 @@ UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 230 'ilayoutfile' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-231 'iremesh' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+231 'impi_client_color' 'naga_mod_globals' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '11') () 0 ()
+() () 0 0)
+232 'impi_client_size' 'naga_mod_globals' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '10') () 0 ()
+() () 0 0)
+233 'impi_host_color' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '13') () 0 () () () 0 0)
+234 'impi_host_size' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '12') () 0 () () () 0 0)
+235 'iremesh' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-232 'ireproject' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+236 'ireproject' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-233 'iruntag' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+237 'iruntag' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-234 'itime' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+238 'itime' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-235 'kind' '(intrinsic)' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
-UNKNOWN UNKNOWN 0 0 FUNCTION) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 235
+239 'kind' '(intrinsic)' '' 1 ((PROCEDURE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN UNKNOWN 0 0 FUNCTION) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 239
 () () () 0 0)
-236 'kinenrgold' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+240 'kinenrgold' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
 0 () () () 0 0)
-237 'layoutfile' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+241 'layoutfile' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (CHARACTER 1 0 0 0 CHARACTER ((
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '256'))) 0 0 () () 0 () () () 0
 0)
-238 'lesmodel' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+242 'lesmodel' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-239 'lmaxstrain' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+243 'lmaxstrain' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
 0 () () () 0 0)
-240 'maxchar' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+244 'maxchar' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '256') () 0 () () () 0 0)
-241 'maxitime' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+245 'maxitime' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-242 'maxpatches' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+246 'maxpatches' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-243 'mk' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
+247 'mk' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 0 0)
-244 'mpi_2complex' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+248 'mpi_2complex' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '26') () 0 () () () 0 0)
-245 'mpi_2double_complex' 'naga_mod_globals' '' 1 ((PARAMETER
+249 'mpi_2double_complex' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '27') () 0 ()
 () () 0 0)
-246 'mpi_2double_precision' 'naga_mod_globals' '' 1 ((PARAMETER
+250 'mpi_2double_precision' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '24') () 0 ()
 () () 0 0)
-247 'mpi_2int' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '52') () 0 () () () 0 0)
-248 'mpi_2integer' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+251 'mpi_2integer' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '25') () 0 () () () 0 0)
-249 'mpi_2real' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+252 'mpi_2real' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '23') () 0 () () () 0 0)
-250 'mpi_address_kind' 'naga_mod_globals' '' 1 ((PARAMETER
+253 'mpi_address_kind' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 ()
 () () 0 0)
-251 'mpi_aint' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '66') () 0 () () () 0 0)
-252 'mpi_any_source' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+254 'mpi_any_source' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-1') () 0 () () () 0 0)
-253 'mpi_any_tag' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+255 'mpi_any_tag' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-1') () 0 () () () 0 0)
-254 'mpi_appnum' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+256 'mpi_appnum' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 () () () 0 0)
 22 'mpi_argv_null' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
@@ -701,69 +714,60 @@ CHARACTER ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1'))) 0 0 () (1 0
 EXPLICIT (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (
 INTEGER 4 0 0 0 INTEGER ()) 0 '1')) 0 () () () 0 0)
 23 'mpi_argvs_null' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION IN_COMMON) (CHARACTER 1 0 0 0
-CHARACTER ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1'))) 0 0 () (1 0
-EXPLICIT (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (
-INTEGER 4 0 0 0 INTEGER ()) 0 '1')) 0 () () () 0 0)
-255 'mpi_band' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 IN_COMMON) (REAL 8 0 0 0 REAL ()) 0 0 ()
+() 0 () () () 0 0)
+257 'mpi_band' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') () 0 () () () 0 0)
-256 'mpi_bor' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+258 'mpi_bor' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 0 0)
 24 'mpi_bottom' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 IN_COMMON) (INTEGER 4 0 0 0 INTEGER ())
 0 0 () () 0 () () () 0 0)
-257 'mpi_bsend_overhead' 'naga_mod_globals' '' 1 ((PARAMETER
+259 'mpi_bsend_overhead' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '128') () 0
 () () () 0 0)
-258 'mpi_bxor' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+260 'mpi_bxor' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '10') () 0 () () () 0 0)
-259 'mpi_byte' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+261 'mpi_byte' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-260 'mpi_cart' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+262 'mpi_cart' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-261 'mpi_char' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '34') () 0 () () () 0 0)
-262 'mpi_character' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+263 'mpi_character' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 () () () 0 0)
-263 'mpi_combiner_contiguous' 'naga_mod_globals' '' 1 ((PARAMETER
+264 'mpi_combiner_contiguous' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
 () () 0 0)
-264 'mpi_combiner_darray' 'naga_mod_globals' '' 1 ((PARAMETER
+265 'mpi_combiner_darray' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '13') () 0 ()
 () () 0 0)
-265 'mpi_combiner_dup' 'naga_mod_globals' '' 1 ((PARAMETER
+266 'mpi_combiner_dup' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
 () () 0 0)
-266 'mpi_combiner_f90_complex' 'naga_mod_globals' '' 1 ((PARAMETER
+267 'mpi_combiner_f90_complex' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '15') () 0 ()
 () () 0 0)
-267 'mpi_combiner_f90_integer' 'naga_mod_globals' '' 1 ((PARAMETER
+268 'mpi_combiner_f90_integer' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '16') () 0 ()
 () () 0 0)
-268 'mpi_combiner_f90_real' 'naga_mod_globals' '' 1 ((PARAMETER
+269 'mpi_combiner_f90_real' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '14') () 0 ()
 () () 0 0)
-269 'mpi_combiner_hindexed' 'naga_mod_globals' '' 1 ((PARAMETER
+270 'mpi_combiner_hindexed' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 ()
-() () 0 0)
-270 'mpi_combiner_hindexed_block' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '18') () 0 ()
 () () 0 0)
 271 'mpi_combiner_hindexed_integer' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
@@ -824,271 +828,247 @@ UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
 286 'mpi_comm_self' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-287 'mpi_comm_type_shared' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
-() () 0 0)
-288 'mpi_comm_world' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+287 'mpi_comm_world' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 0 0)
-289 'mpi_complex' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+288 'mpi_complex' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '18') () 0 () () () 0 0)
-290 'mpi_complex16' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+289 'mpi_complex16' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '20') () 0 () () () 0 0)
-291 'mpi_complex32' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+290 'mpi_complex32' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '21') () 0 () () () 0 0)
-292 'mpi_complex8' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+291 'mpi_complex8' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '19') () 0 () () () 0 0)
-293 'mpi_congruent' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+292 'mpi_congruent' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-294 'mpi_conversion_fn_null' 'naga_mod_globals' '' 1 ((PROCEDURE
+293 'mpi_conversion_fn_null' 'naga_mod_globals' '' 1 ((PROCEDURE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL SUBROUTINE) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-295 'mpi_cxx_bool' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '54') () 0 () () () 0 0)
-296 'mpi_cxx_cplex' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '55') () 0 () () () 0 0)
-297 'mpi_cxx_dblcplex' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '56') () 0 ()
-() () 0 0)
-298 'mpi_cxx_ldblcplex' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '57') () 0 ()
-() () 0 0)
-299 'mpi_datatype_null' 'naga_mod_globals' '' 1 ((PARAMETER
+294 'mpi_datatype_null' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
 () () 0 0)
-300 'mpi_displacement_current' 'naga_mod_globals' '' 1 ((PARAMETER
+295 'mpi_displacement_current' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-54278278')
 () 0 () () () 0 0)
-301 'mpi_distribute_block' 'naga_mod_globals' '' 1 ((PARAMETER
+296 'mpi_distribute_block' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
 () () 0 0)
-302 'mpi_distribute_cyclic' 'naga_mod_globals' '' 1 ((PARAMETER
+297 'mpi_distribute_cyclic' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
 () () 0 0)
-303 'mpi_distribute_dflt_darg' 'naga_mod_globals' '' 1 ((PARAMETER
+298 'mpi_distribute_dflt_darg' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-1') () 0 ()
 () () 0 0)
-304 'mpi_distribute_none' 'naga_mod_globals' '' 1 ((PARAMETER
+299 'mpi_distribute_none' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
 () () 0 0)
-305 'mpi_double' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '46') () 0 () () () 0 0)
-306 'mpi_double_complex' 'naga_mod_globals' '' 1 ((PARAMETER
+300 'mpi_double_complex' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '22') () 0 ()
 () () 0 0)
-307 'mpi_double_int' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '49') () 0 () () () 0 0)
-308 'mpi_double_precision' 'naga_mod_globals' '' 1 ((PARAMETER
+301 'mpi_double_precision' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '17') () 0 ()
 () () 0 0)
-309 'mpi_dup_fn' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+302 'mpi_dup_fn' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL SUBROUTINE) (UNKNOWN 0 0 0 0
 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-310 'mpi_err_access' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+303 'mpi_err_access' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '20') () 0 () () () 0 0)
-311 'mpi_err_amode' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+304 'mpi_err_amode' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '21') () 0 () () () 0 0)
-312 'mpi_err_arg' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+305 'mpi_err_arg' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '13') () 0 () () () 0 0)
-313 'mpi_err_assert' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+306 'mpi_err_assert' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '22') () 0 () () () 0 0)
-314 'mpi_err_bad_file' 'naga_mod_globals' '' 1 ((PARAMETER
+307 'mpi_err_bad_file' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '23') () 0 ()
 () () 0 0)
-315 'mpi_err_base' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+308 'mpi_err_base' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '24') () 0 () () () 0 0)
-316 'mpi_err_buffer' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+309 'mpi_err_buffer' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-317 'mpi_err_comm' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+310 'mpi_err_comm' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 () () () 0 0)
-318 'mpi_err_conversion' 'naga_mod_globals' '' 1 ((PARAMETER
+311 'mpi_err_conversion' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '25') () 0 ()
 () () 0 0)
-319 'mpi_err_count' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+312 'mpi_err_count' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 0 0)
-320 'mpi_err_dims' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+313 'mpi_err_dims' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '12') () 0 () () () 0 0)
-321 'mpi_err_disp' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+314 'mpi_err_disp' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '26') () 0 () () () 0 0)
-322 'mpi_err_dup_datarep' 'naga_mod_globals' '' 1 ((PARAMETER
+315 'mpi_err_dup_datarep' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '27') () 0 ()
 () () 0 0)
-323 'mpi_err_file' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+316 'mpi_err_file' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '30') () 0 () () () 0 0)
-324 'mpi_err_file_exists' 'naga_mod_globals' '' 1 ((PARAMETER
+317 'mpi_err_file_exists' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '28') () 0 ()
 () () 0 0)
-325 'mpi_err_file_in_use' 'naga_mod_globals' '' 1 ((PARAMETER
+318 'mpi_err_file_in_use' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '29') () 0 ()
 () () 0 0)
-326 'mpi_err_group' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+319 'mpi_err_group' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '9') () 0 () () () 0 0)
-327 'mpi_err_in_status' 'naga_mod_globals' '' 1 ((PARAMETER
+320 'mpi_err_in_status' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '18') () 0 ()
 () () 0 0)
-328 'mpi_err_info' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+321 'mpi_err_info' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '34') () 0 () () () 0 0)
-329 'mpi_err_info_key' 'naga_mod_globals' '' 1 ((PARAMETER
+322 'mpi_err_info_key' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '31') () 0 ()
 () () 0 0)
-330 'mpi_err_info_nokey' 'naga_mod_globals' '' 1 ((PARAMETER
+323 'mpi_err_info_nokey' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '32') () 0 ()
 () () 0 0)
-331 'mpi_err_info_value' 'naga_mod_globals' '' 1 ((PARAMETER
+324 'mpi_err_info_value' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '33') () 0 ()
 () () 0 0)
-332 'mpi_err_intern' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+325 'mpi_err_intern' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '17') () 0 () () () 0 0)
-333 'mpi_err_io' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+326 'mpi_err_io' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '35') () 0 () () () 0 0)
-334 'mpi_err_keyval' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+327 'mpi_err_keyval' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '36') () 0 () () () 0 0)
-335 'mpi_err_lastcode' 'naga_mod_globals' '' 1 ((PARAMETER
+328 'mpi_err_lastcode' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '54') () 0 ()
 () () 0 0)
-336 'mpi_err_locktype' 'naga_mod_globals' '' 1 ((PARAMETER
+329 'mpi_err_locktype' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '37') () 0 ()
 () () 0 0)
-337 'mpi_err_name' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+330 'mpi_err_name' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '38') () 0 () () () 0 0)
-338 'mpi_err_no_mem' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+331 'mpi_err_no_mem' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '39') () 0 () () () 0 0)
-339 'mpi_err_no_space' 'naga_mod_globals' '' 1 ((PARAMETER
+332 'mpi_err_no_space' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '41') () 0 ()
 () () 0 0)
-340 'mpi_err_no_such_file' 'naga_mod_globals' '' 1 ((PARAMETER
+333 'mpi_err_no_such_file' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '42') () 0 ()
 () () 0 0)
-341 'mpi_err_not_same' 'naga_mod_globals' '' 1 ((PARAMETER
+334 'mpi_err_not_same' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '40') () 0 ()
 () () 0 0)
-342 'mpi_err_op' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+335 'mpi_err_op' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '10') () 0 () () () 0 0)
-343 'mpi_err_other' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+336 'mpi_err_other' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '16') () 0 () () () 0 0)
-344 'mpi_err_pending' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+337 'mpi_err_pending' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '19') () 0 () () () 0 0)
-345 'mpi_err_port' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+338 'mpi_err_port' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '43') () 0 () () () 0 0)
-346 'mpi_err_quota' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+339 'mpi_err_quota' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '44') () 0 () () () 0 0)
-347 'mpi_err_rank' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+340 'mpi_err_rank' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') () 0 () () () 0 0)
-348 'mpi_err_read_only' 'naga_mod_globals' '' 1 ((PARAMETER
+341 'mpi_err_read_only' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '45') () 0 ()
 () () 0 0)
-349 'mpi_err_request' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+342 'mpi_err_request' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '7') () 0 () () () 0 0)
-350 'mpi_err_rma_conflict' 'naga_mod_globals' '' 1 ((PARAMETER
+343 'mpi_err_rma_conflict' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '46') () 0 ()
 () () 0 0)
-351 'mpi_err_rma_sync' 'naga_mod_globals' '' 1 ((PARAMETER
+344 'mpi_err_rma_sync' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '47') () 0 ()
 () () 0 0)
-352 'mpi_err_root' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+345 'mpi_err_root' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 0 0)
-353 'mpi_err_service' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+346 'mpi_err_service' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '48') () 0 () () () 0 0)
-354 'mpi_err_size' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+347 'mpi_err_size' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '49') () 0 () () () 0 0)
-355 'mpi_err_spawn' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+348 'mpi_err_spawn' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '50') () 0 () () () 0 0)
-356 'mpi_err_sysresource' 'naga_mod_globals' '' 1 ((PARAMETER
+349 'mpi_err_sysresource' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-2') () 0 ()
 () () 0 0)
-357 'mpi_err_tag' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+350 'mpi_err_tag' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 () () () 0 0)
-358 'mpi_err_topology' 'naga_mod_globals' '' 1 ((PARAMETER
+351 'mpi_err_topology' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '11') () 0 ()
 () () 0 0)
-359 'mpi_err_truncate' 'naga_mod_globals' '' 1 ((PARAMETER
+352 'mpi_err_truncate' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '15') () 0 ()
 () () 0 0)
-360 'mpi_err_type' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+353 'mpi_err_type' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 () () () 0 0)
-361 'mpi_err_unknown' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+354 'mpi_err_unknown' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '14') () 0 () () () 0 0)
-362 'mpi_err_unsupported_datarep' 'naga_mod_globals' '' 1 ((PARAMETER
+355 'mpi_err_unsupported_datarep' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '51') () 0 ()
 () () 0 0)
-363 'mpi_err_unsupported_operation' 'naga_mod_globals' '' 1 ((PARAMETER
+356 'mpi_err_unsupported_operation' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '52') () 0 ()
 () () 0 0)
-364 'mpi_err_win' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+357 'mpi_err_win' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '53') () 0 () () () 0 0)
 25 'mpi_errcodes_ignore' 'naga_mod_globals' '' 1 ((VARIABLE
@@ -1096,607 +1076,517 @@ UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION IN_COMMON) (
 INTEGER 4 0 0 0 INTEGER ()) 0 0 () (1 0 EXPLICIT (CONSTANT (INTEGER 4 0
 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1')) 0
 () () () 0 0)
-365 'mpi_errhandler_null' 'naga_mod_globals' '' 1 ((PARAMETER
+358 'mpi_errhandler_null' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
 () () 0 0)
-366 'mpi_error' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+359 'mpi_error' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 () () () 0 0)
-367 'mpi_errors_are_fatal' 'naga_mod_globals' '' 1 ((PARAMETER
+360 'mpi_errors_are_fatal' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
 () () 0 0)
-368 'mpi_errors_return' 'naga_mod_globals' '' 1 ((PARAMETER
+361 'mpi_errors_return' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
 () () 0 0)
-369 'mpi_file_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+362 'mpi_file_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 0 0)
-370 'mpi_float' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '45') () 0 () () () 0 0)
-371 'mpi_float_int' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '48') () 0 () () () 0 0)
-372 'mpi_graph' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+363 'mpi_graph' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 0 0)
-373 'mpi_group_empty' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+364 'mpi_group_empty' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-374 'mpi_group_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+365 'mpi_group_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 0 0)
-375 'mpi_host' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+366 'mpi_host' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-376 'mpi_ident' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+367 'mpi_ident' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 0 0)
 26 'mpi_in_place' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 IN_COMMON) (INTEGER 4 0 0 0 INTEGER ())
 0 0 () () 0 () () () 0 0)
-377 'mpi_info_env' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-378 'mpi_info_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+368 'mpi_info_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 0 0)
-379 'mpi_int' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '39') () 0 () () () 0 0)
-380 'mpi_int16_t' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '60') () 0 () () () 0 0)
-381 'mpi_int32_t' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '62') () 0 () () () 0 0)
-382 'mpi_int64_t' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '64') () 0 () () () 0 0)
-383 'mpi_int8_t' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '58') () 0 () () () 0 0)
-384 'mpi_integer' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+369 'mpi_integer' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '7') () 0 () () () 0 0)
-385 'mpi_integer1' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+370 'mpi_integer1' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 0 0)
-386 'mpi_integer16' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+371 'mpi_integer16' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '12') () 0 () () () 0 0)
-387 'mpi_integer2' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+372 'mpi_integer2' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '9') () 0 () () () 0 0)
-388 'mpi_integer4' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+373 'mpi_integer4' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '10') () 0 () () () 0 0)
-389 'mpi_integer8' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+374 'mpi_integer8' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '11') () 0 () () () 0 0)
-390 'mpi_integer_kind' 'naga_mod_globals' '' 1 ((PARAMETER
+375 'mpi_integer_kind' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
 () () 0 0)
-391 'mpi_io' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+376 'mpi_io' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 0 0)
-392 'mpi_keyval_invalid' 'naga_mod_globals' '' 1 ((PARAMETER
+377 'mpi_keyval_invalid' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-1') () 0 ()
 () () 0 0)
-393 'mpi_land' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+378 'mpi_land' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 () () () 0 0)
-394 'mpi_lastusedcode' 'naga_mod_globals' '' 1 ((PARAMETER
+379 'mpi_lastusedcode' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 ()
 () () 0 0)
-395 'mpi_lb' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+380 'mpi_lb' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 () () () 0 0)
-396 'mpi_lock_exclusive' 'naga_mod_globals' '' 1 ((PARAMETER
+381 'mpi_lock_exclusive' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
 () () 0 0)
-397 'mpi_lock_shared' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+382 'mpi_lock_shared' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 0 0)
-398 'mpi_logical' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+383 'mpi_logical' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') () 0 () () () 0 0)
-399 'mpi_logical1' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+384 'mpi_logical1' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '29') () 0 () () () 0 0)
-400 'mpi_logical2' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+385 'mpi_logical2' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '30') () 0 () () () 0 0)
-401 'mpi_logical4' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+386 'mpi_logical4' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '31') () 0 () () () 0 0)
-402 'mpi_logical8' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+387 'mpi_logical8' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '32') () 0 () () () 0 0)
-403 'mpi_long' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '41') () 0 () () () 0 0)
-404 'mpi_long_double' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '47') () 0 () () () 0 0)
-405 'mpi_long_int' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '51') () 0 () () () 0 0)
-406 'mpi_long_long_int' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '43') () 0 ()
-() () 0 0)
-407 'mpi_longdbl_int' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '50') () 0 () () () 0 0)
-408 'mpi_lor' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+388 'mpi_lor' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '7') () 0 () () () 0 0)
-409 'mpi_lxor' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+389 'mpi_lxor' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '9') () 0 () () () 0 0)
-410 'mpi_max' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+390 'mpi_max' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-411 'mpi_max_datarep_string' 'naga_mod_globals' '' 1 ((PARAMETER
+391 'mpi_max_datarep_string' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '127') () 0
 () () () 0 0)
-412 'mpi_max_error_string' 'naga_mod_globals' '' 1 ((PARAMETER
+392 'mpi_max_error_string' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '255') () 0
 () () () 0 0)
-413 'mpi_max_info_key' 'naga_mod_globals' '' 1 ((PARAMETER
+393 'mpi_max_info_key' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '35') () 0 ()
 () () 0 0)
-414 'mpi_max_info_val' 'naga_mod_globals' '' 1 ((PARAMETER
+394 'mpi_max_info_val' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '255') () 0
 () () () 0 0)
-415 'mpi_max_library_version_string' 'naga_mod_globals' '' 1 ((
-PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
-INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
-0 '255') () 0 () () () 0 0)
-416 'mpi_max_object_name' 'naga_mod_globals' '' 1 ((PARAMETER
+395 'mpi_max_object_name' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '63') () 0 ()
 () () 0 0)
-417 'mpi_max_port_name' 'naga_mod_globals' '' 1 ((PARAMETER
+396 'mpi_max_port_name' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1023') () 0
 () () () 0 0)
-418 'mpi_max_processor_name' 'naga_mod_globals' '' 1 ((PARAMETER
+397 'mpi_max_processor_name' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '255') () 0
 () () () 0 0)
-419 'mpi_maxloc' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+398 'mpi_maxloc' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '11') () 0 () () () 0 0)
-420 'mpi_message_no_proc' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
-() () 0 0)
-421 'mpi_message_null' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
-() () 0 0)
-422 'mpi_min' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+399 'mpi_min' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 0 0)
-423 'mpi_minloc' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+400 'mpi_minloc' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '12') () 0 () () () 0 0)
-424 'mpi_mode_append' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+401 'mpi_mode_append' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '128') () 0 () () () 0 0)
-425 'mpi_mode_create' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+402 'mpi_mode_create' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-426 'mpi_mode_delete_on_close' 'naga_mod_globals' '' 1 ((PARAMETER
+403 'mpi_mode_delete_on_close' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '16') () 0 ()
 () () 0 0)
-427 'mpi_mode_excl' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+404 'mpi_mode_excl' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '64') () 0 () () () 0 0)
-428 'mpi_mode_nocheck' 'naga_mod_globals' '' 1 ((PARAMETER
+405 'mpi_mode_nocheck' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
 () () 0 0)
-429 'mpi_mode_noprecede' 'naga_mod_globals' '' 1 ((PARAMETER
+406 'mpi_mode_noprecede' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
 () () 0 0)
-430 'mpi_mode_noput' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+407 'mpi_mode_noput' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 () () () 0 0)
-431 'mpi_mode_nostore' 'naga_mod_globals' '' 1 ((PARAMETER
+408 'mpi_mode_nostore' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 ()
 () () 0 0)
-432 'mpi_mode_nosucceed' 'naga_mod_globals' '' 1 ((PARAMETER
+409 'mpi_mode_nosucceed' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '16') () 0 ()
 () () 0 0)
-433 'mpi_mode_rdonly' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+410 'mpi_mode_rdonly' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 0 0)
-434 'mpi_mode_rdwr' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+411 'mpi_mode_rdwr' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 0 0)
-435 'mpi_mode_sequential' 'naga_mod_globals' '' 1 ((PARAMETER
+412 'mpi_mode_sequential' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '256') () 0
 () () () 0 0)
-436 'mpi_mode_unique_open' 'naga_mod_globals' '' 1 ((PARAMETER
+413 'mpi_mode_unique_open' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '32') () 0 ()
 () () 0 0)
-437 'mpi_mode_wronly' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+414 'mpi_mode_wronly' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 () () () 0 0)
-438 'mpi_null_copy_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
+415 'mpi_null_copy_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL SUBROUTINE) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-439 'mpi_null_delete_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
+416 'mpi_null_delete_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL SUBROUTINE) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-440 'mpi_offset' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '67') () 0 () () () 0 0)
-441 'mpi_offset_kind' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+417 'mpi_offset_kind' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 0 0)
-442 'mpi_op_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+418 'mpi_op_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 0 0)
-443 'mpi_order_c' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+419 'mpi_order_c' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 0 0)
-444 'mpi_order_fortran' 'naga_mod_globals' '' 1 ((PARAMETER
+420 'mpi_order_fortran' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
 () () 0 0)
-445 'mpi_packed' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+421 'mpi_packed' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 0 0)
-446 'mpi_prec' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+422 'mpi_prec' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '17') () 0 () () () 0 0)
-447 'mpi_proc_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+423 'mpi_proc_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-2') () 0 () () () 0 0)
-448 'mpi_prod' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+424 'mpi_prod' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 () () () 0 0)
-449 'mpi_real' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+425 'mpi_real' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '13') () 0 () () () 0 0)
-450 'mpi_real16' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+426 'mpi_real16' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '16') () 0 () () () 0 0)
-451 'mpi_real2' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+427 'mpi_real2' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '28') () 0 () () () 0 0)
-452 'mpi_real4' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+428 'mpi_real4' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '14') () 0 () () () 0 0)
-453 'mpi_real8' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+429 'mpi_real8' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '15') () 0 () () () 0 0)
-454 'mpi_replace' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+430 'mpi_replace' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '13') () 0 () () () 0 0)
-455 'mpi_request_null' 'naga_mod_globals' '' 1 ((PARAMETER
+431 'mpi_request_null' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
 () () 0 0)
-456 'mpi_root' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+432 'mpi_root' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-4') () 0 () () () 0 0)
-457 'mpi_seek_cur' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+433 'mpi_seek_cur' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '602') () 0 () () () 0 0)
-458 'mpi_seek_end' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+434 'mpi_seek_end' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '604') () 0 () () () 0 0)
-459 'mpi_seek_set' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+435 'mpi_seek_set' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '600') () 0 () () () 0 0)
-460 'mpi_short' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '37') () 0 () () () 0 0)
-461 'mpi_short_int' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '53') () 0 () () () 0 0)
-462 'mpi_signed_char' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '36') () 0 () () () 0 0)
-463 'mpi_similar' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+436 'mpi_similar' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 0 0)
-464 'mpi_source' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+437 'mpi_source' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
 27 'mpi_status_ignore' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION IN_COMMON) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (1 0 EXPLICIT (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
-0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6')) 0 () () () 0 0)
-465 'mpi_status_size' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5')) 0 () () () 0 0)
+438 'mpi_status_size' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') () 0 () () () 0 0)
+() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 () () () 0 0)
 28 'mpi_statuses_ignore' 'naga_mod_globals' '' 1 ((VARIABLE
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DIMENSION IN_COMMON) (
-INTEGER 4 0 0 0 INTEGER ()) 0 0 () (2 0 EXPLICIT (CONSTANT (INTEGER 4 0
-0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') (
-CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0
-INTEGER ()) 0 '1')) 0 () () () 0 0)
-466 'mpi_subversion' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 IN_COMMON) (REAL 8 0 0 0
+REAL ()) 0 0 () () 0 () () () 0 0)
+439 'mpi_subversion' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 () () () 0 0)
-467 'mpi_success' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+440 'mpi_success' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 0 0)
-468 'mpi_sum' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+441 'mpi_sum' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 () () () 0 0)
-469 'mpi_tag' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+442 'mpi_tag' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 0 0)
-470 'mpi_tag_ub' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+443 'mpi_tag_ub' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 0 0)
-471 'mpi_thread_funneled' 'naga_mod_globals' '' 1 ((PARAMETER
+444 'mpi_thread_funneled' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
 () () 0 0)
-472 'mpi_thread_multiple' 'naga_mod_globals' '' 1 ((PARAMETER
+445 'mpi_thread_multiple' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
 () () 0 0)
-473 'mpi_thread_serialized' 'naga_mod_globals' '' 1 ((PARAMETER
+446 'mpi_thread_serialized' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
 () () 0 0)
-474 'mpi_thread_single' 'naga_mod_globals' '' 1 ((PARAMETER
+447 'mpi_thread_single' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
 () () 0 0)
-475 'mpi_type_dup_fn' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+448 'mpi_type_dup_fn' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL SUBROUTINE) (UNKNOWN 0 0 0 0
 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-476 'mpi_type_null_copy_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
+449 'mpi_type_null_copy_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL SUBROUTINE) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-477 'mpi_type_null_delete_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
+450 'mpi_type_null_delete_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL SUBROUTINE) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-478 'mpi_typeclass_complex' 'naga_mod_globals' '' 1 ((PARAMETER
+451 'mpi_typeclass_complex' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
 () () 0 0)
-479 'mpi_typeclass_integer' 'naga_mod_globals' '' 1 ((PARAMETER
+452 'mpi_typeclass_integer' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
 () () 0 0)
-480 'mpi_typeclass_real' 'naga_mod_globals' '' 1 ((PARAMETER
+453 'mpi_typeclass_real' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
 () () 0 0)
-481 'mpi_ub' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+454 'mpi_ub' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 () () () 0 0)
-482 'mpi_uint16_t' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '61') () 0 () () () 0 0)
-483 'mpi_uint32_t' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '63') () 0 () () () 0 0)
-484 'mpi_uint64_t' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '65') () 0 () () () 0 0)
-485 'mpi_uint8_t' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '59') () 0 () () () 0 0)
-486 'mpi_undefined' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+455 'mpi_undefined' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-32766') () 0 () () () 0 0)
-487 'mpi_unequal' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+456 'mpi_unequal' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 () () () 0 0)
-488 'mpi_universe_size' 'naga_mod_globals' '' 1 ((PARAMETER
+457 'mpi_universe_size' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') () 0 ()
 () () 0 0)
-489 'mpi_unsigned' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '40') () 0 () () () 0 0)
-490 'mpi_unsigned_char' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '35') () 0 ()
-() () 0 0)
-491 'mpi_unsigned_long' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '42') () 0 ()
-() () 0 0)
-492 'mpi_unsigned_long_long' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '44') () 0 ()
-() () 0 0)
-493 'mpi_unsigned_short' 'naga_mod_globals' '' 1 ((PARAMETER
-UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '38') () 0 ()
-() () 0 0)
-494 'mpi_version' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+458 'mpi_version' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 () () () 0 0)
-495 'mpi_wchar' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
-UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
-() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '33') () 0 () () () 0 0)
-496 'mpi_win_base' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+459 'mpi_win_base' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '7') () 0 () () () 0 0)
-497 'mpi_win_disp_unit' 'naga_mod_globals' '' 1 ((PARAMETER
+460 'mpi_win_disp_unit' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '9') () 0 ()
 () () 0 0)
-498 'mpi_win_dup_fn' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+461 'mpi_win_dup_fn' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL SUBROUTINE) (UNKNOWN 0 0 0 0
 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-499 'mpi_win_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+462 'mpi_win_null' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 () () () 0 0)
-500 'mpi_win_null_copy_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
+463 'mpi_win_null_copy_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL SUBROUTINE) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-501 'mpi_win_null_delete_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
+464 'mpi_win_null_delete_fn' 'naga_mod_globals' '' 1 ((PROCEDURE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL SUBROUTINE) (
 UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-502 'mpi_win_size' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+465 'mpi_win_size' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 () () () 0 0)
-503 'mpi_wtick' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+466 'mpi_wtick' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL FUNCTION) (REAL 8 0 0 0 REAL ())
 0 0 () () 0 () () () 0 0)
-504 'mpi_wtime' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+467 'mpi_wtime' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL FUNCTION) (REAL 8 0 0 0 REAL ())
 0 0 () () 0 () () () 0 0)
-505 'mpi_wtime_is_global' 'naga_mod_globals' '' 1 ((PARAMETER
+468 'mpi_wtime_is_global' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
 () () 0 0)
-506 'naga_log_unit' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+469 'naga_log_unit' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-507 'naga_mod_globals' 'naga_mod_globals' '' 1 ((MODULE UNKNOWN-INTENT
+470 'naga_mod_globals' 'naga_mod_globals' '' 1 ((MODULE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
 0 () () () 0 0)
-508 'ncom' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+471 'ncom' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 () () () 0 0)
-509 'ndim' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
+472 'ndim' 'naga_mod_globals' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 () () () 0 0)
-510 'nlevels' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+473 'nlevels' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-511 'npatches' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+474 'npatches' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (INTEGER 4 0 0
 0 INTEGER ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
-512 'nproc' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+475 'nproc' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-513 'nu' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+476 'nu' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
 UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0
 0)
-514 'null' '(intrinsic)' '' 1 ((PROCEDURE UNKNOWN-INTENT INTRINSIC-PROC
+477 'null' '(intrinsic)' '' 1 ((PROCEDURE UNKNOWN-INTENT INTRINSIC-PROC
 UNKNOWN UNKNOWN 0 0 FUNCTION) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 ()
 () () 0 0)
-515 'ompi_major_version' 'naga_mod_globals' '' 1 ((PARAMETER
+478 'ompi_greek_version' 'naga_mod_globals' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (CHARACTER 1 0 0
+0 CHARACTER ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '32'))) 0 0 () (
+CONSTANT (CHARACTER 1 0 0 0 CHARACTER (())) 0 32
+'                                ') () 0 () () () 0 0)
+479 'ompi_major_version' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
 () () 0 0)
-516 'ompi_minor_version' 'naga_mod_globals' '' 1 ((PARAMETER
+480 'ompi_minor_version' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '7') () 0 ()
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
 () () 0 0)
-517 'ompi_release_version' 'naga_mod_globals' '' 1 ((PARAMETER
+481 'ompi_release_version' 'naga_mod_globals' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
-INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 ()
 () () 0 0)
-518 'patch_field_s' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+482 'ompi_svn_version' 'naga_mod_globals' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (CHARACTER 1 0 0
+0 CHARACTER ((CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '32'))) 0 0 () (
+CONSTANT (CHARACTER 1 0 0 0 CHARACTER (())) 0 32
+'r25905                          ') () 0 () () () 0 0)
+483 'patch_field_s' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 () () () 0 0)
-519 'patch_field_sc' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+484 'patch_field_sc' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 () () () 0 0)
-520 'patch_field_v' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+485 'patch_field_v' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 () () () 0 0)
-521 'patch_field_vc' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+486 'patch_field_vc' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 () () () 0 0)
-522 'patch_part_s' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+487 'patch_part_s' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 () () () 0 0)
-523 'patch_part_v' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+488 'patch_part_v' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 () () () 0 0)
-524 'patch_setup' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+489 'patch_setup' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 () () () 0 0)
-525 'penalization' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+490 'penalization' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-526 'penalizationadapt' 'naga_mod_globals' '' 1 ((VARIABLE
+491 'penalizationadapt' 'naga_mod_globals' '' 1 ((VARIABLE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (LOGICAL 4 0 0 0
 LOGICAL ()) 0 0 () () 0 () () () 0 0)
-527 'penalizationparam' 'naga_mod_globals' '' 1 ((VARIABLE
+492 'penalizationparam' 'naga_mod_globals' '' 1 ((VARIABLE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0
 REAL ()) 0 0 () () 0 () () () 0 0)
-528 'penalizationscheme' 'naga_mod_globals' '' 1 ((VARIABLE
+493 'penalizationscheme' 'naga_mod_globals' '' 1 ((VARIABLE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () () 0 () () () 0 0)
-529 'penalizationstrength' 'naga_mod_globals' '' 1 ((VARIABLE
+494 'penalizationstrength' 'naga_mod_globals' '' 1 ((VARIABLE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0
 REAL ()) 0 0 () () 0 () () () 0 0)
-530 'pmpi_wtick' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+495 'pmpi_wtick' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL FUNCTION) (REAL 8 0 0 0 REAL ())
 0 0 () () 0 () () () 0 0)
-531 'pmpi_wtime' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+496 'pmpi_wtime' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 EXTERNAL FUNCTION) (REAL 8 0 0 0 REAL ())
 0 0 () () 0 () () () 0 0)
-532 'ppm_buffer2part' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+497 'ppm_buffer2part' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (INTEGER 4 0 0
 0 INTEGER ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
-533 'ppm_buffer_dim' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+498 'ppm_buffer_dim' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (INTEGER 4 0 0
 0 INTEGER ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
-534 'ppm_buffer_set' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+499 'ppm_buffer_set' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-535 'ppm_buffer_type' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+500 'ppm_buffer_type' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (INTEGER 4 0 0
 0 INTEGER ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
-536 'ppm_char' 'ppm_module_typedef' '' 1 ((PARAMETER UNKNOWN-INTENT
+501 'ppm_char' 'ppm_module_typedef' '' 1 ((PARAMETER UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '256') () 0 () () () 0 0)
-537 'ppm_comm' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+502 'ppm_comm' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-538 'ppm_debug' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+503 'ppm_debug' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-539 'ppm_dim' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+504 'ppm_dim' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
 () () 0 () () () 0 0)
-540 'ppm_error_error' 'ppm_module_typedef' '' 1 ((PARAMETER
+505 'ppm_error_error' 'ppm_module_typedef' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-3') () 0 ()
 () () 0 0)
-541 'ppm_error_fatal' 'ppm_module_typedef' '' 1 ((PARAMETER
+506 'ppm_error_fatal' 'ppm_module_typedef' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-4') () 0 ()
 () () 0 0)
-542 'ppm_error_notice' 'ppm_module_typedef' '' 1 ((PARAMETER
+507 'ppm_error_notice' 'ppm_module_typedef' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-1') () 0 ()
 () () 0 0)
-543 'ppm_error_warning' 'ppm_module_typedef' '' 1 ((PARAMETER
+508 'ppm_error_warning' 'ppm_module_typedef' '' 1 ((PARAMETER
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-2') () 0 ()
 () () 0 0)
-544 'ppm_fft_plan' 'ppm_module_fft' '' 1 ((PROCEDURE UNKNOWN-INTENT
+509 'ppm_fft_plan' 'ppm_module_fft' '' 1 ((PROCEDURE UNKNOWN-INTENT
 UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
 ()) 0 0 () () 0 () () () 0 0)
+<<<<<<< HEAD
 545 'ppm_ghost_offset_facd' 'ppm_module_data' '' 1 ((VARIABLE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER)
 (REAL 8 0 0 0 REAL ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
@@ -2323,9 +2213,632 @@ UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION) (REAL 8 0 0 0 REAL ())
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3')) 0 () () () 0 0)
 718 'stlt' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
 UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 17 0
+=======
+510 'ppm_ghost_offsetd' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (REAL 8 0 0 0
+REAL ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+511 'ppm_ghost_offsets' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (REAL 4 0 0 0
+REAL ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+512 'ppm_ghosthack' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (INTEGER 4 0 0
+0 INTEGER ()) 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+513 'ppm_initialized' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (LOGICAL 4 0 0 0 LOGICAL ()) 0 0
+() () 0 () () () 0 0)
+514 'ppm_integer' 'ppm_module_typedef' '' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '13') () 0 () () () 0 0)
+515 'ppm_irecvlist' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (INTEGER 4 0 0
+0 INTEGER ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+516 'ppm_isendlist' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (INTEGER 4 0 0
+0 INTEGER ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+517 'ppm_kind' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+518 'ppm_kind_double' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 ()
+() () 0 0)
+519 'ppm_kind_int32' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
+() () 0 0)
+520 'ppm_kind_int64' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 ()
+() () 0 0)
+521 'ppm_kind_single' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
+() () 0 0)
+522 'ppm_log_unit' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+523 'ppm_logfile' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+524 'ppm_logical' 'ppm_module_typedef' '' 1 ((PARAMETER UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '17') () 0 () () () 0 0)
+525 'ppm_map_type' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+526 'ppm_module_data' 'ppm_module_data' '' 1 ((MODULE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 () () () 0 0)
+527 'ppm_module_fft' 'ppm_module_fft' '' 1 ((MODULE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0 UNKNOWN ()) 0 0 () ()
+0 () () () 0 0)
+528 'ppm_module_poisson' 'ppm_module_poisson' '' 1 ((MODULE
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0
+UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+529 'ppm_module_substart' 'ppm_module_substart' '' 1 ((MODULE
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0
+UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+530 'ppm_module_substop' 'ppm_module_substop' '' 1 ((MODULE
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0
+UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+531 'ppm_module_typedef' 'ppm_module_typedef' '' 1 ((MODULE
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0
+UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+532 'ppm_mpi_kind' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+533 'ppm_myepsd' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+534 'ppm_myepss' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 4 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+535 'ppm_next_avail_topo' 'ppm_module_data' '' 1 ((VARIABLE
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () () 0 () () () 0 0)
+536 'ppm_nproc' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+537 'ppm_nrecvbuffer' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+538 'ppm_nrecvlist' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+539 'ppm_nsendbuffer' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+540 'ppm_nsendlist' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+541 'ppm_param_alloc_fit' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+542 'ppm_param_alloc_fit_preserve' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '2') () 0 () () () 0 0)
+543 'ppm_param_alloc_grow' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+544 'ppm_param_alloc_grow_preserve' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '4') () 0 () () () 0 0)
+545 'ppm_param_assign_cic' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+546 'ppm_param_assign_dual_comm' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 ()
+() () 0 0)
+547 'ppm_param_assign_dual_cut' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
+() () 0 0)
+548 'ppm_param_assign_internal' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+549 'ppm_param_assign_m3p6' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
+() () 0 0)
+550 'ppm_param_assign_mp4' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+551 'ppm_param_assign_ngp' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
+() () 0 0)
+552 'ppm_param_assign_nodal_comm' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+553 'ppm_param_assign_nodal_cut' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+554 'ppm_param_assign_tcs' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+555 'ppm_param_assign_user_defined' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '6') () 0 () () () 0 0)
+556 'ppm_param_bcdef_antisymmetry' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '3') () 0 () () () 0 0)
+557 'ppm_param_bcdef_dirichlet' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 ()
+() () 0 0)
+558 'ppm_param_bcdef_freespace' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
+() () 0 0)
+559 'ppm_param_bcdef_neumann' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
+() () 0 0)
+560 'ppm_param_bcdef_periodic' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+561 'ppm_param_bcdef_robin' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') () 0 ()
+() () 0 0)
+562 'ppm_param_bcdef_symmetry' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+563 'ppm_param_connect_distribute' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '1') () 0 () () () 0 0)
+564 'ppm_param_connect_prune' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+565 'ppm_param_connect_send' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+566 'ppm_param_dealloc' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 ()
+() () 0 0)
+567 'ppm_param_decomp_bisection' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+568 'ppm_param_decomp_cartesian' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '13') () 0 ()
+() () 0 0)
+569 'ppm_param_decomp_cuboid' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '7') () 0 ()
+() () 0 0)
+570 'ppm_param_decomp_pruned_cell' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '2') () 0 () () () 0 0)
+571 'ppm_param_decomp_tree' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+572 'ppm_param_decomp_user_defined' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '8') () 0 () () () 0 0)
+573 'ppm_param_decomp_xpencil' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
+() () 0 0)
+574 'ppm_param_decomp_xy_slab' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '10') () 0 ()
+() () 0 0)
+575 'ppm_param_decomp_xz_slab' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '11') () 0 ()
+() () 0 0)
+576 'ppm_param_decomp_ypencil' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 ()
+() () 0 0)
+577 'ppm_param_decomp_yz_slab' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '12') () 0 ()
+() () 0 0)
+578 'ppm_param_decomp_zpencil' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') () 0 ()
+() () 0 0)
+579 'ppm_param_id_internal' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+580 'ppm_param_id_user' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
+() () 0 0)
+581 'ppm_param_io_append' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 ()
+() () 0 0)
+582 'ppm_param_io_ascii' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') () 0 ()
+() () 0 0)
+583 'ppm_param_io_binary' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '7') () 0 ()
+() () 0 0)
+584 'ppm_param_io_centralized' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '9') () 0 ()
+() () 0 0)
+585 'ppm_param_io_concat' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '14') () 0 ()
+() () 0 0)
+586 'ppm_param_io_distributed' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 ()
+() () 0 0)
+587 'ppm_param_io_double' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '16') () 0 ()
+() () 0 0)
+588 'ppm_param_io_read' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+589 'ppm_param_io_read_write' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+590 'ppm_param_io_replace' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
+() () 0 0)
+591 'ppm_param_io_root' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '11') () 0 ()
+() () 0 0)
+592 'ppm_param_io_same' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '10') () 0 ()
+() () 0 0)
+593 'ppm_param_io_single' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '15') () 0 ()
+() () 0 0)
+594 'ppm_param_io_split' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '13') () 0 ()
+() () 0 0)
+595 'ppm_param_io_sum' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '12') () 0 ()
+() () 0 0)
+596 'ppm_param_io_write' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+597 'ppm_param_kernel_ddx_sph2d_p2' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '6') () 0 () () () 0 0)
+598 'ppm_param_kernel_ddy_sph2d_p2' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '7') () 0 () () () 0 0)
+599 'ppm_param_kernel_dx_sph2d_p2' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '4') () 0 () () () 0 0)
+600 'ppm_param_kernel_dxdy_sph2d_p2' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '8') () 0 () () () 0 0)
+601 'ppm_param_kernel_dy_sph2d_p2' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '5') () 0 () () () 0 0)
+602 'ppm_param_kernel_fast3d' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '9') () 0 ()
+() () 0 0)
+603 'ppm_param_kernel_fast3d_dx' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '10') () 0 ()
+() () 0 0)
+604 'ppm_param_kernel_fast3d_dy' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '11') () 0 ()
+() () 0 0)
+605 'ppm_param_kernel_fast3d_dz' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '12') () 0 ()
+() () 0 0)
+606 'ppm_param_kernel_fast3d_lap' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '13') () 0 ()
+() () 0 0)
+607 'ppm_param_kernel_laplace2d_p2' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '1') () 0 () () () 0 0)
+608 'ppm_param_kernel_laplace3d_p2' 'ppm_module_typedef' '' 1 ((
+PARAMETER UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (
+INTEGER 4 0 0 0 INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ())
+0 '2') () 0 () () () 0 0)
+609 'ppm_param_kernel_sph2d_p2' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+610 'ppm_param_loadbal_sar' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+611 'ppm_param_map_cancel' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '9') () 0 ()
+() () 0 0)
+612 'ppm_param_map_ghost_get' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '5') () 0 ()
+() () 0 0)
+613 'ppm_param_map_ghost_put' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') () 0 ()
+() () 0 0)
+614 'ppm_param_map_global' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+615 'ppm_param_map_init' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '10') () 0 ()
+() () 0 0)
+616 'ppm_param_map_partial' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '7') () 0 ()
+() () 0 0)
+617 'ppm_param_map_pop' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+618 'ppm_param_map_push' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+619 'ppm_param_map_remap' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '8') () 0 ()
+() () 0 0)
+620 'ppm_param_map_send' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '4') () 0 ()
+() () 0 0)
+621 'ppm_param_mesh_coarsen' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+622 'ppm_param_mesh_refine' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
+() () 0 0)
+623 'ppm_param_pop_add' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+624 'ppm_param_pop_replace' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+625 'ppm_param_rmsh_kernel_bsp2' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+626 'ppm_param_rmsh_kernel_m3p6' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+627 'ppm_param_rmsh_kernel_mp4' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+628 'ppm_param_success' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '0') () 0 ()
+() () 0 0)
+629 'ppm_param_topo_field' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+630 'ppm_param_topo_part' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+631 'ppm_param_topo_undefined' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-1') () 0 ()
+() () 0 0)
+632 'ppm_param_tree_bin' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+633 'ppm_param_tree_oct' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+634 'ppm_param_tree_quad' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+635 'ppm_param_undefined' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '-1') () 0 ()
+() () 0 0)
+636 'ppm_param_update_average' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '2') () 0 ()
+() () 0 0)
+637 'ppm_param_update_expfavg' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3') () 0 ()
+() () 0 0)
+638 'ppm_param_update_replace' 'ppm_module_typedef' '' 1 ((PARAMETER
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') () 0 ()
+() () 0 0)
+639 'ppm_pi_d' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+640 'ppm_pi_s' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 4 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+641 'ppm_poisson_plan' 'ppm_module_poisson' '' 1 ((PROCEDURE
+UNKNOWN-INTENT UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN
+0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+642 'ppm_precvbuffer' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (INTEGER 4 0 0
+0 INTEGER ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+643 'ppm_proc_speed' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (REAL 8 0 0 0
+REAL ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+644 'ppm_psendbuffer' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (INTEGER 4 0 0
+0 INTEGER ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+645 'ppm_ptr_t_topo' 'ppm_module_typedef' '' 1 ((PROCEDURE
+UNKNOWN-INTENT UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (REAL 4 0
+0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+646 'ppm_rank' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+647 'ppm_recvbufferd' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (REAL 8 0 0 0
+REAL ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+648 'ppm_recvbuffers' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (REAL 4 0 0 0
+REAL ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+649 'ppm_recvbufsize' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+650 'ppm_sendbufferd' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (REAL 8 0 0 0
+REAL ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+651 'ppm_sendbuffers' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (REAL 4 0 0 0
+REAL ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+652 'ppm_sendbufsize' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+653 'ppm_stderr' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+654 'ppm_stdout' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+655 'ppm_t_clist' 'ppm_module_typedef' '' 1 ((PROCEDURE UNKNOWN-INTENT
+UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (REAL 4 0 0 0 REAL ()) 0
+0 () () 0 () () () 0 0)
+656 'ppm_t_equi_mesh' 'ppm_module_typedef' '' 1 ((PROCEDURE
+UNKNOWN-INTENT UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (REAL 4 0
+0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+657 'ppm_t_mesh_maplist' 'ppm_module_typedef' '' 1 ((PROCEDURE
+UNKNOWN-INTENT UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (REAL 4 0
+0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+658 'ppm_t_topo' 'ppm_module_typedef' '' 1 ((PROCEDURE UNKNOWN-INTENT
+UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (REAL 4 0 0 0 REAL ()) 0
+0 () () 0 () () () 0 0)
+659 'ppm_topo' 'ppm_module_data' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 11 0
 0 0 DERIVED ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
-18 'substart_d' 'ppm_module_substart' '' 1 ((PROCEDURE UNKNOWN-INTENT
+660 'ppmpoisson' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 10 0
+0 0 DERIVED ()) 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+661 'psif' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 4 0 0
+0 DERIVED ()) 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+662 'ptcset' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 5 0 0
+0 DERIVED ()) 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+663 'rank' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+664 'restarted' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (LOGICAL 4 0 0 0 LOGICAL ()) 0 0
+() () 0 () () () 0 0)
+665 'rhsscheme' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+666 'runtag' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (CHARACTER 1 0 0 0 CHARACTER ((
+CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '256'))) 0 0 () () 0 () () () 0
+0)
+667 'sf' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 8 0 0 0 DERIVED ())
+0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+668 'sphere_radius' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+669 'step1_interval' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+670 'step1_linearfraction' 'naga_mod_globals' '' 1 ((VARIABLE
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0
+REAL ()) 0 0 () () 0 () () () 0 0)
+671 'step1_offset' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+672 'stl' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 17 0 0 0 DERIVED ())
+0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+673 'stl_data' 'naga_mod_globals' '' 1 ((PROCEDURE UNKNOWN-INTENT
+UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN 0 0 0 0 UNKNOWN
+()) 0 0 () () 0 () () () 0 0)
+674 'stl_data_temporary' 'naga_mod_globals' '' 1 ((PROCEDURE
+UNKNOWN-INTENT UNKNOWN-PROC DECL UNKNOWN 0 0 FUNCTION GENERIC) (UNKNOWN
+0 0 0 0 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
+675 'stlopt_check_bounding' 'naga_mod_globals' '' 1 ((VARIABLE
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (LOGICAL 4 0 0 0
+LOGICAL ()) 0 0 () () 0 () () () 0 0)
+676 'stlopt_check_intersections' 'naga_mod_globals' '' 1 ((VARIABLE
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (LOGICAL 4 0 0 0
+LOGICAL ()) 0 0 () () 0 () () () 0 0)
+677 'stlopt_filename' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (CHARACTER 1 0 0 0 CHARACTER ((
+CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '256'))) 0 0 () () 0 () () () 0
+0)
+678 'stlopt_inout_direction' 'naga_mod_globals' '' 1 ((VARIABLE
+UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0
+INTEGER ()) 0 0 () () 0 () () () 0 0)
+679 'stlopt_scale' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+680 'stlopt_translate' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION) (REAL 8 0 0 0 REAL ())
+0 0 () (1 0 EXPLICIT (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (
+CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3')) 0 () () () 0 0)
+681 'stlt' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 16 0
+>>>>>>> 17cdcfd95617e420fe3c2e425710c8d9fde1c530
+0 0 DERIVED ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+20 'substart_d' 'ppm_module_substart' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ())
+<<<<<<< HEAD
 719 0 (720 721 722) () 0 () () () 0 0)
 19 'substart_s' 'ppm_module_substart' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ())
@@ -2415,13 +2928,104 @@ DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
 (REAL 4 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
 734 'info' '' '' 731 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+=======
+682 0 (683 684 685) () 0 () () () 0 0)
+21 'substart_s' 'ppm_module_substart' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ())
+686 0 (687 688 689) () 0 () () () 0 0)
+18 'substop_d' 'ppm_module_substop' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ())
+690 0 (691 692 693) () 0 () () () 0 0)
+19 'substop_s' 'ppm_module_substop' '' 1 ((PROCEDURE UNKNOWN-INTENT
+MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ())
+694 0 (695 696 697) () 0 () () () 0 0)
+698 'time' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+699 'timeintscheme' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+700 'topos' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 14 0
+0 0 DERIVED ()) 0 0 () (1 0 DEFERRED () ()) 0 () () () 0 0)
+701 'torus_radius1' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+702 'torus_radius2' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (REAL 8 0 0 0 REAL ()) 0 0 () ()
+0 () () () 0 0)
+703 'ubarf' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 4 0 0
+0 DERIVED ()) 0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+704 'uf' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 4 0 0 0 DERIVED ())
+0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+705 'uinfinity' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION) (REAL 8 0 0 0 REAL ())
+0 0 () (1 0 EXPLICIT (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (
+CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '3')) 0 () () () 0 0)
+706 'up' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 6 0 0 0 DERIVED ())
+0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+707 'up0' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 6 0 0 0 DERIVED ())
+0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+708 'validation' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (LOGICAL 4 0 0 0 LOGICAL ()) 0 0
+() () 0 () () () 0 0)
+709 'validationfield' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+710 'velocityscheme' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
+UNKNOWN-PROC UNKNOWN IMPLICIT-SAVE 0 0) (INTEGER 4 0 0 0 INTEGER ()) 0 0
+() () 0 () () () 0 0)
+711 'wf' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 4 0 0 0 DERIVED ())
+0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+712 'wp' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 6 0 0 0 DERIVED ())
+0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+713 'wp0' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 6 0 0 0 DERIVED ())
+0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+714 'xp' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 6 0 0 0 DERIVED ())
+0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+715 'xp0' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC
+UNKNOWN IMPLICIT-SAVE 0 0 DIMENSION POINTER) (DERIVED 6 0 0 0 DERIVED ())
+0 0 () (2 0 DEFERRED () () () ()) 0 () () () 0 0)
+684 't0' '' '' 682 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+688 't0' '' '' 686 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 4 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+687 'caller' '' '' 686 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+689 'info' '' '' 686 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+685 'info' '' '' 682 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+696 't0' '' '' 694 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 4 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+697 'info' '' '' 694 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+695 'caller' '' '' 694 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+693 'info' '' '' 690 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+691 'caller' '' '' 690 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+692 't0' '' '' 690 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+683 'caller' '' '' 682 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
+>>>>>>> 17cdcfd95617e420fe3c2e425710c8d9fde1c530
 )
 
-('Patch_field_s' 0 2 'Patch_field_sc' 0 3 'Patch_field_v' 0 4
-'Patch_field_vc' 0 5 'Patch_part_s' 0 6 'Patch_part_v' 0 7 'Patch_setup'
-0 8 'Ppm_fft_plan' 0 9 'Ppm_poisson_plan' 0 10 'Ppm_ptr_t_topo' 0 11
-'Ppm_t_clist' 0 12 'Ppm_t_equi_mesh' 0 13 'Ppm_t_mesh_maplist' 0 14
-'Ppm_t_topo' 0 15 'Stl_data' 0 16 'Stl_data_temporary' 0 17 'cf' 0 202
+('Patch_field_s' 0 8 'Patch_field_sc' 0 2 'Patch_field_v' 0 4
+'Patch_field_vc' 0 3 'Patch_part_s' 0 7 'Patch_part_v' 0 6 'Patch_setup'
+0 5 'Ppm_fft_plan' 0 9 'Ppm_poisson_plan' 0 10 'Ppm_ptr_t_topo' 0 11
+'Ppm_t_clist' 0 12 'Ppm_t_equi_mesh' 0 15 'Ppm_t_mesh_maplist' 0 13
+'Ppm_t_topo' 0 14 'Stl_data' 0 17 'Stl_data_temporary' 0 16 'cf' 0 202
 'chif' 0 203 'clearinteriorrhs' 0 204 'comm' 0 205 'concentration' 0 206
 'cp' 0 207 'ctrlfile' 0 208 'debug' 0 209 'domainbc' 0 210 'dtime' 0 211
 'dwf' 0 212 'dwp' 0 213 'dwp0' 0 214 'endtime' 0 215 'flowcase' 0 216
@@ -2429,26 +3033,27 @@ DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 'forcedumpdwp' 0 220 'forcedumpvel' 0 221 'forcedumpvrt' 0 222
 'freespacekernel' 0 223 'gstw' 0 224 'idumpchi' 0 225 'idumpconc' 0 226
 'idumpdvrt' 0 227 'idumpvel' 0 228 'idumpvrt' 0 229 'ilayoutfile' 0 230
-'iremesh' 0 231 'ireproject' 0 232 'iruntag' 0 233 'itime' 0 234 'kind'
-0 235 'kinenrgold' 0 236 'layoutfile' 0 237 'lesmodel' 0 238 'lmaxstrain'
-0 239 'maxchar' 0 240 'maxitime' 0 241 'maxpatches' 0 242 'mk' 0 243
-'mpi_2complex' 0 244 'mpi_2double_complex' 0 245 'mpi_2double_precision'
-0 246 'mpi_2int' 0 247 'mpi_2integer' 0 248 'mpi_2real' 0 249
-'mpi_address_kind' 0 250 'mpi_aint' 0 251 'mpi_any_source' 0 252
-'mpi_any_tag' 0 253 'mpi_appnum' 0 254 'mpi_argv_null' 0 22
-'mpi_argvs_null' 0 23 'mpi_band' 0 255 'mpi_bor' 0 256 'mpi_bottom' 0 24
-'mpi_bsend_overhead' 0 257 'mpi_bxor' 0 258 'mpi_byte' 0 259 'mpi_cart'
-0 260 'mpi_char' 0 261 'mpi_character' 0 262 'mpi_combiner_contiguous' 0
-263 'mpi_combiner_darray' 0 264 'mpi_combiner_dup' 0 265
-'mpi_combiner_f90_complex' 0 266 'mpi_combiner_f90_integer' 0 267
-'mpi_combiner_f90_real' 0 268 'mpi_combiner_hindexed' 0 269
-'mpi_combiner_hindexed_block' 0 270 'mpi_combiner_hindexed_integer' 0
-271 'mpi_combiner_hvector' 0 272 'mpi_combiner_hvector_integer' 0 273
+'impi_client_color' 0 231 'impi_client_size' 0 232 'impi_host_color' 0
+233 'impi_host_size' 0 234 'iremesh' 0 235 'ireproject' 0 236 'iruntag'
+0 237 'itime' 0 238 'kind' 0 239 'kinenrgold' 0 240 'layoutfile' 0 241
+'lesmodel' 0 242 'lmaxstrain' 0 243 'maxchar' 0 244 'maxitime' 0 245
+'maxpatches' 0 246 'mk' 0 247 'mpi_2complex' 0 248 'mpi_2double_complex'
+0 249 'mpi_2double_precision' 0 250 'mpi_2integer' 0 251 'mpi_2real' 0
+252 'mpi_address_kind' 0 253 'mpi_any_source' 0 254 'mpi_any_tag' 0 255
+'mpi_appnum' 0 256 'mpi_argv_null' 0 22 'mpi_argvs_null' 0 23 'mpi_band'
+0 257 'mpi_bor' 0 258 'mpi_bottom' 0 24 'mpi_bsend_overhead' 0 259
+'mpi_bxor' 0 260 'mpi_byte' 0 261 'mpi_cart' 0 262 'mpi_character' 0 263
+'mpi_combiner_contiguous' 0 264 'mpi_combiner_darray' 0 265
+'mpi_combiner_dup' 0 266 'mpi_combiner_f90_complex' 0 267
+'mpi_combiner_f90_integer' 0 268 'mpi_combiner_f90_real' 0 269
+'mpi_combiner_hindexed' 0 270 'mpi_combiner_hindexed_integer' 0 271
+'mpi_combiner_hvector' 0 272 'mpi_combiner_hvector_integer' 0 273
 'mpi_combiner_indexed' 0 274 'mpi_combiner_indexed_block' 0 275
 'mpi_combiner_named' 0 276 'mpi_combiner_resized' 0 277
 'mpi_combiner_struct' 0 278 'mpi_combiner_struct_integer' 0 279
 'mpi_combiner_subarray' 0 280 'mpi_combiner_vector' 0 281
 'mpi_comm_dup_fn' 0 282 'mpi_comm_null' 0 283 'mpi_comm_null_copy_fn' 0
+<<<<<<< HEAD
 284 'mpi_comm_null_delete_fn' 0 285 'mpi_comm_self' 0 286
 'mpi_comm_type_shared' 0 287 'mpi_comm_world' 0 288 'mpi_complex' 0 289
 'mpi_complex16' 0 290 'mpi_complex32' 0 291 'mpi_complex8' 0 292
@@ -2615,3 +3220,159 @@ DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 740 'uf' 0 741 'uinfinity' 0 742 'up' 0 743 'up0' 0 744 'validation' 0
 745 'validationfield' 0 746 'velocityscheme' 0 747 'wf' 0 748 'wp' 0 749
 'wp0' 0 750 'xp' 0 751 'xp0' 0 752)
+=======
+284 'mpi_comm_null_delete_fn' 0 285 'mpi_comm_self' 0 286 'mpi_comm_world'
+0 287 'mpi_complex' 0 288 'mpi_complex16' 0 289 'mpi_complex32' 0 290
+'mpi_complex8' 0 291 'mpi_congruent' 0 292 'mpi_conversion_fn_null' 0
+293 'mpi_datatype_null' 0 294 'mpi_displacement_current' 0 295
+'mpi_distribute_block' 0 296 'mpi_distribute_cyclic' 0 297
+'mpi_distribute_dflt_darg' 0 298 'mpi_distribute_none' 0 299
+'mpi_double_complex' 0 300 'mpi_double_precision' 0 301 'mpi_dup_fn' 0
+302 'mpi_err_access' 0 303 'mpi_err_amode' 0 304 'mpi_err_arg' 0 305
+'mpi_err_assert' 0 306 'mpi_err_bad_file' 0 307 'mpi_err_base' 0 308
+'mpi_err_buffer' 0 309 'mpi_err_comm' 0 310 'mpi_err_conversion' 0 311
+'mpi_err_count' 0 312 'mpi_err_dims' 0 313 'mpi_err_disp' 0 314
+'mpi_err_dup_datarep' 0 315 'mpi_err_file' 0 316 'mpi_err_file_exists' 0
+317 'mpi_err_file_in_use' 0 318 'mpi_err_group' 0 319 'mpi_err_in_status'
+0 320 'mpi_err_info' 0 321 'mpi_err_info_key' 0 322 'mpi_err_info_nokey'
+0 323 'mpi_err_info_value' 0 324 'mpi_err_intern' 0 325 'mpi_err_io' 0
+326 'mpi_err_keyval' 0 327 'mpi_err_lastcode' 0 328 'mpi_err_locktype' 0
+329 'mpi_err_name' 0 330 'mpi_err_no_mem' 0 331 'mpi_err_no_space' 0 332
+'mpi_err_no_such_file' 0 333 'mpi_err_not_same' 0 334 'mpi_err_op' 0 335
+'mpi_err_other' 0 336 'mpi_err_pending' 0 337 'mpi_err_port' 0 338
+'mpi_err_quota' 0 339 'mpi_err_rank' 0 340 'mpi_err_read_only' 0 341
+'mpi_err_request' 0 342 'mpi_err_rma_conflict' 0 343 'mpi_err_rma_sync'
+0 344 'mpi_err_root' 0 345 'mpi_err_service' 0 346 'mpi_err_size' 0 347
+'mpi_err_spawn' 0 348 'mpi_err_sysresource' 0 349 'mpi_err_tag' 0 350
+'mpi_err_topology' 0 351 'mpi_err_truncate' 0 352 'mpi_err_type' 0 353
+'mpi_err_unknown' 0 354 'mpi_err_unsupported_datarep' 0 355
+'mpi_err_unsupported_operation' 0 356 'mpi_err_win' 0 357
+'mpi_errcodes_ignore' 0 25 'mpi_errhandler_null' 0 358 'mpi_error' 0 359
+'mpi_errors_are_fatal' 0 360 'mpi_errors_return' 0 361 'mpi_file_null' 0
+362 'mpi_graph' 0 363 'mpi_group_empty' 0 364 'mpi_group_null' 0 365
+'mpi_host' 0 366 'mpi_ident' 0 367 'mpi_in_place' 0 26 'mpi_info_null' 0
+368 'mpi_integer' 0 369 'mpi_integer1' 0 370 'mpi_integer16' 0 371
+'mpi_integer2' 0 372 'mpi_integer4' 0 373 'mpi_integer8' 0 374
+'mpi_integer_kind' 0 375 'mpi_io' 0 376 'mpi_keyval_invalid' 0 377
+'mpi_land' 0 378 'mpi_lastusedcode' 0 379 'mpi_lb' 0 380
+'mpi_lock_exclusive' 0 381 'mpi_lock_shared' 0 382 'mpi_logical' 0 383
+'mpi_logical1' 0 384 'mpi_logical2' 0 385 'mpi_logical4' 0 386
+'mpi_logical8' 0 387 'mpi_lor' 0 388 'mpi_lxor' 0 389 'mpi_max' 0 390
+'mpi_max_datarep_string' 0 391 'mpi_max_error_string' 0 392
+'mpi_max_info_key' 0 393 'mpi_max_info_val' 0 394 'mpi_max_object_name'
+0 395 'mpi_max_port_name' 0 396 'mpi_max_processor_name' 0 397
+'mpi_maxloc' 0 398 'mpi_min' 0 399 'mpi_minloc' 0 400 'mpi_mode_append'
+0 401 'mpi_mode_create' 0 402 'mpi_mode_delete_on_close' 0 403
+'mpi_mode_excl' 0 404 'mpi_mode_nocheck' 0 405 'mpi_mode_noprecede' 0
+406 'mpi_mode_noput' 0 407 'mpi_mode_nostore' 0 408 'mpi_mode_nosucceed'
+0 409 'mpi_mode_rdonly' 0 410 'mpi_mode_rdwr' 0 411 'mpi_mode_sequential'
+0 412 'mpi_mode_unique_open' 0 413 'mpi_mode_wronly' 0 414
+'mpi_null_copy_fn' 0 415 'mpi_null_delete_fn' 0 416 'mpi_offset_kind' 0
+417 'mpi_op_null' 0 418 'mpi_order_c' 0 419 'mpi_order_fortran' 0 420
+'mpi_packed' 0 421 'mpi_prec' 0 422 'mpi_proc_null' 0 423 'mpi_prod' 0
+424 'mpi_real' 0 425 'mpi_real16' 0 426 'mpi_real2' 0 427 'mpi_real4' 0
+428 'mpi_real8' 0 429 'mpi_replace' 0 430 'mpi_request_null' 0 431
+'mpi_root' 0 432 'mpi_seek_cur' 0 433 'mpi_seek_end' 0 434 'mpi_seek_set'
+0 435 'mpi_similar' 0 436 'mpi_source' 0 437 'mpi_status_ignore' 0 27
+'mpi_status_size' 0 438 'mpi_statuses_ignore' 0 28 'mpi_subversion' 0
+439 'mpi_success' 0 440 'mpi_sum' 0 441 'mpi_tag' 0 442 'mpi_tag_ub' 0
+443 'mpi_thread_funneled' 0 444 'mpi_thread_multiple' 0 445
+'mpi_thread_serialized' 0 446 'mpi_thread_single' 0 447 'mpi_type_dup_fn'
+0 448 'mpi_type_null_copy_fn' 0 449 'mpi_type_null_delete_fn' 0 450
+'mpi_typeclass_complex' 0 451 'mpi_typeclass_integer' 0 452
+'mpi_typeclass_real' 0 453 'mpi_ub' 0 454 'mpi_undefined' 0 455
+'mpi_unequal' 0 456 'mpi_universe_size' 0 457 'mpi_version' 0 458
+'mpi_win_base' 0 459 'mpi_win_disp_unit' 0 460 'mpi_win_dup_fn' 0 461
+'mpi_win_null' 0 462 'mpi_win_null_copy_fn' 0 463 'mpi_win_null_delete_fn'
+0 464 'mpi_win_size' 0 465 'mpi_wtick' 0 466 'mpi_wtime' 0 467
+'mpi_wtime_is_global' 0 468 'naga_log_unit' 0 469 'naga_mod_globals' 0
+470 'ncom' 0 471 'ndim' 0 472 'nlevels' 0 473 'npatches' 0 474 'nproc' 0
+475 'nu' 0 476 'null' 0 477 'ompi_greek_version' 0 478
+'ompi_major_version' 0 479 'ompi_minor_version' 0 480
+'ompi_release_version' 0 481 'ompi_svn_version' 0 482 'patch_field_s' 0
+483 'patch_field_sc' 0 484 'patch_field_v' 0 485 'patch_field_vc' 0 486
+'patch_part_s' 0 487 'patch_part_v' 0 488 'patch_setup' 0 489
+'penalization' 0 490 'penalizationadapt' 0 491 'penalizationparam' 0 492
+'penalizationscheme' 0 493 'penalizationstrength' 0 494 'pmpi_wtick' 0
+495 'pmpi_wtime' 0 496 'ppm_buffer2part' 0 497 'ppm_buffer_dim' 0 498
+'ppm_buffer_set' 0 499 'ppm_buffer_type' 0 500 'ppm_char' 0 501 'ppm_comm'
+0 502 'ppm_debug' 0 503 'ppm_dim' 0 504 'ppm_error_error' 0 505
+'ppm_error_fatal' 0 506 'ppm_error_notice' 0 507 'ppm_error_warning' 0
+508 'ppm_fft_plan' 0 509 'ppm_ghost_offsetd' 0 510 'ppm_ghost_offsets' 0
+511 'ppm_ghosthack' 0 512 'ppm_initialized' 0 513 'ppm_integer' 0 514
+'ppm_irecvlist' 0 515 'ppm_isendlist' 0 516 'ppm_kind' 0 517
+'ppm_kind_double' 0 518 'ppm_kind_int32' 0 519 'ppm_kind_int64' 0 520
+'ppm_kind_single' 0 521 'ppm_log_unit' 0 522 'ppm_logfile' 0 523
+'ppm_logical' 0 524 'ppm_map_type' 0 525 'ppm_module_data' 0 526
+'ppm_module_fft' 0 527 'ppm_module_poisson' 0 528 'ppm_module_substart'
+0 529 'ppm_module_substop' 0 530 'ppm_module_typedef' 0 531 'ppm_mpi_kind'
+0 532 'ppm_myepsd' 0 533 'ppm_myepss' 0 534 'ppm_next_avail_topo' 0 535
+'ppm_nproc' 0 536 'ppm_nrecvbuffer' 0 537 'ppm_nrecvlist' 0 538
+'ppm_nsendbuffer' 0 539 'ppm_nsendlist' 0 540 'ppm_param_alloc_fit' 0
+541 'ppm_param_alloc_fit_preserve' 0 542 'ppm_param_alloc_grow' 0 543
+'ppm_param_alloc_grow_preserve' 0 544 'ppm_param_assign_cic' 0 545
+'ppm_param_assign_dual_comm' 0 546 'ppm_param_assign_dual_cut' 0 547
+'ppm_param_assign_internal' 0 548 'ppm_param_assign_m3p6' 0 549
+'ppm_param_assign_mp4' 0 550 'ppm_param_assign_ngp' 0 551
+'ppm_param_assign_nodal_comm' 0 552 'ppm_param_assign_nodal_cut' 0 553
+'ppm_param_assign_tcs' 0 554 'ppm_param_assign_user_defined' 0 555
+'ppm_param_bcdef_antisymmetry' 0 556 'ppm_param_bcdef_dirichlet' 0 557
+'ppm_param_bcdef_freespace' 0 558 'ppm_param_bcdef_neumann' 0 559
+'ppm_param_bcdef_periodic' 0 560 'ppm_param_bcdef_robin' 0 561
+'ppm_param_bcdef_symmetry' 0 562 'ppm_param_connect_distribute' 0 563
+'ppm_param_connect_prune' 0 564 'ppm_param_connect_send' 0 565
+'ppm_param_dealloc' 0 566 'ppm_param_decomp_bisection' 0 567
+'ppm_param_decomp_cartesian' 0 568 'ppm_param_decomp_cuboid' 0 569
+'ppm_param_decomp_pruned_cell' 0 570 'ppm_param_decomp_tree' 0 571
+'ppm_param_decomp_user_defined' 0 572 'ppm_param_decomp_xpencil' 0 573
+'ppm_param_decomp_xy_slab' 0 574 'ppm_param_decomp_xz_slab' 0 575
+'ppm_param_decomp_ypencil' 0 576 'ppm_param_decomp_yz_slab' 0 577
+'ppm_param_decomp_zpencil' 0 578 'ppm_param_id_internal' 0 579
+'ppm_param_id_user' 0 580 'ppm_param_io_append' 0 581 'ppm_param_io_ascii'
+0 582 'ppm_param_io_binary' 0 583 'ppm_param_io_centralized' 0 584
+'ppm_param_io_concat' 0 585 'ppm_param_io_distributed' 0 586
+'ppm_param_io_double' 0 587 'ppm_param_io_read' 0 588
+'ppm_param_io_read_write' 0 589 'ppm_param_io_replace' 0 590
+'ppm_param_io_root' 0 591 'ppm_param_io_same' 0 592 'ppm_param_io_single'
+0 593 'ppm_param_io_split' 0 594 'ppm_param_io_sum' 0 595
+'ppm_param_io_write' 0 596 'ppm_param_kernel_ddx_sph2d_p2' 0 597
+'ppm_param_kernel_ddy_sph2d_p2' 0 598 'ppm_param_kernel_dx_sph2d_p2' 0
+599 'ppm_param_kernel_dxdy_sph2d_p2' 0 600 'ppm_param_kernel_dy_sph2d_p2'
+0 601 'ppm_param_kernel_fast3d' 0 602 'ppm_param_kernel_fast3d_dx' 0 603
+'ppm_param_kernel_fast3d_dy' 0 604 'ppm_param_kernel_fast3d_dz' 0 605
+'ppm_param_kernel_fast3d_lap' 0 606 'ppm_param_kernel_laplace2d_p2' 0
+607 'ppm_param_kernel_laplace3d_p2' 0 608 'ppm_param_kernel_sph2d_p2' 0
+609 'ppm_param_loadbal_sar' 0 610 'ppm_param_map_cancel' 0 611
+'ppm_param_map_ghost_get' 0 612 'ppm_param_map_ghost_put' 0 613
+'ppm_param_map_global' 0 614 'ppm_param_map_init' 0 615
+'ppm_param_map_partial' 0 616 'ppm_param_map_pop' 0 617
+'ppm_param_map_push' 0 618 'ppm_param_map_remap' 0 619
+'ppm_param_map_send' 0 620 'ppm_param_mesh_coarsen' 0 621
+'ppm_param_mesh_refine' 0 622 'ppm_param_pop_add' 0 623
+'ppm_param_pop_replace' 0 624 'ppm_param_rmsh_kernel_bsp2' 0 625
+'ppm_param_rmsh_kernel_m3p6' 0 626 'ppm_param_rmsh_kernel_mp4' 0 627
+'ppm_param_success' 0 628 'ppm_param_topo_field' 0 629
+'ppm_param_topo_part' 0 630 'ppm_param_topo_undefined' 0 631
+'ppm_param_tree_bin' 0 632 'ppm_param_tree_oct' 0 633
+'ppm_param_tree_quad' 0 634 'ppm_param_undefined' 0 635
+'ppm_param_update_average' 0 636 'ppm_param_update_expfavg' 0 637
+'ppm_param_update_replace' 0 638 'ppm_pi_d' 0 639 'ppm_pi_s' 0 640
+'ppm_poisson_plan' 0 641 'ppm_precvbuffer' 0 642 'ppm_proc_speed' 0 643
+'ppm_psendbuffer' 0 644 'ppm_ptr_t_topo' 0 645 'ppm_rank' 0 646
+'ppm_recvbufferd' 0 647 'ppm_recvbuffers' 0 648 'ppm_recvbufsize' 0 649
+'ppm_sendbufferd' 0 650 'ppm_sendbuffers' 0 651 'ppm_sendbufsize' 0 652
+'ppm_stderr' 0 653 'ppm_stdout' 0 654 'ppm_t_clist' 0 655
+'ppm_t_equi_mesh' 0 656 'ppm_t_mesh_maplist' 0 657 'ppm_t_topo' 0 658
+'ppm_topo' 0 659 'ppmpoisson' 0 660 'psif' 0 661 'ptcset' 0 662 'rank' 0
+663 'restarted' 0 664 'rhsscheme' 0 665 'runtag' 0 666 'sf' 0 667
+'sphere_radius' 0 668 'step1_interval' 0 669 'step1_linearfraction' 0
+670 'step1_offset' 0 671 'stl' 0 672 'stl_data' 0 673 'stl_data_temporary'
+0 674 'stlopt_check_bounding' 0 675 'stlopt_check_intersections' 0 676
+'stlopt_filename' 0 677 'stlopt_inout_direction' 0 678 'stlopt_scale' 0
+679 'stlopt_translate' 0 680 'stlt' 0 681 'substart_d' 0 20 'substart_s'
+0 21 'substop_d' 0 18 'substop_s' 0 19 'time' 0 698 'timeintscheme' 0
+699 'topos' 0 700 'torus_radius1' 0 701 'torus_radius2' 0 702 'ubarf' 0
+703 'uf' 0 704 'uinfinity' 0 705 'up' 0 706 'up0' 0 707 'validation' 0
+708 'validationfield' 0 709 'velocityscheme' 0 710 'wf' 0 711 'wp' 0 712
+'wp0' 0 713 'xp' 0 714 'xp0' 0 715)
+>>>>>>> 17cdcfd95617e420fe3c2e425710c8d9fde1c530

@@ -1,6 +1,6 @@
 ./objects/ppm_module_interp_m2p.o objects/ppm_module_interp_m2p.d: src/ppm_module_interp_m2p.f \
- /usr/include/stdc-predef.h src/interpolate/ppm_interp_m2p.f \
- src/interpolate/m2p_interp_bsp2.f src/interpolate/m2p_interp_mp4.f\
+ src/interpolate/ppm_interp_m2p.f src/interpolate/m2p_interp_bsp2.f \
+ src/interpolate/m2p_interp_mp4.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_interp_m2p.o: \
 ./objects/ppm_module_error.o \

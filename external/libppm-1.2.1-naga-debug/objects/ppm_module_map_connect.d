@@ -1,6 +1,6 @@
 ./objects/ppm_module_map_connect.o objects/ppm_module_map_connect.d: src/ppm_module_map_connect.f \
- /usr/include/stdc-predef.h src/map/ppm_map_connect_distrib.f \
- src/map/ppm_map_connect_prune.f src/map/ppm_map_connect_send.f\
+ src/map/ppm_map_connect_distrib.f src/map/ppm_map_connect_prune.f \
+ src/map/ppm_map_connect_send.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_map_connect.o: \
 ./objects/ppm_module_data.o \

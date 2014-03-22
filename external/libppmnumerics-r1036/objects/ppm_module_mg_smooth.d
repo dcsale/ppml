@@ -1,6 +1,5 @@
 ./objects/ppm_module_mg_smooth.o objects/ppm_module_mg_smooth.d: src/ppm_module_mg_smooth.f \
- /usr/include/stdc-predef.h src/ppm_mg_smooth_coarse.f src/ppm_define.h \
- src/ppm_mg_smooth_fine.f\
+ src/ppm_mg_smooth_coarse.f src/ppm_define.h src/ppm_mg_smooth_fine.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_mg_smooth.o: \
 ./objects/ppm_module_data.o \

@@ -25,7 +25,7 @@
       integer(C_INTPTR_T), value :: howmany
       integer(C_INTPTR_T), value :: block0
       integer(C_INTPTR_T), value :: block1
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INTPTR_T), intent(out) :: local_n0
       integer(C_INTPTR_T), intent(out) :: local_0_start
       integer(C_INTPTR_T), intent(out) :: local_n1
@@ -39,7 +39,7 @@
       integer(C_INTPTR_T), dimension(*), intent(in) :: n
       integer(C_INTPTR_T), value :: howmany
       integer(C_INTPTR_T), value :: block0
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INTPTR_T), intent(out) :: local_n0
       integer(C_INTPTR_T), intent(out) :: local_0_start
     end function fftwl_mpi_local_size_many
@@ -49,7 +49,7 @@
       import
       integer(C_INT), value :: rnk
       integer(C_INTPTR_T), dimension(*), intent(in) :: n
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INTPTR_T), intent(out) :: local_n0
       integer(C_INTPTR_T), intent(out) :: local_0_start
       integer(C_INTPTR_T), intent(out) :: local_n1
@@ -60,7 +60,7 @@
       import
       integer(C_INT), value :: rnk
       integer(C_INTPTR_T), dimension(*), intent(in) :: n
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INTPTR_T), intent(out) :: local_n0
       integer(C_INTPTR_T), intent(out) :: local_0_start
     end function fftwl_mpi_local_size
@@ -70,7 +70,7 @@
       import
       integer(C_INTPTR_T), value :: n0
       integer(C_INTPTR_T), value :: howmany
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: sign
       integer(C_INT), value :: flags
       integer(C_INTPTR_T), intent(out) :: local_ni
@@ -83,7 +83,7 @@
                                  bind(C, name='fftwl_mpi_local_size_1d_f03')
       import
       integer(C_INTPTR_T), value :: n0
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: sign
       integer(C_INT), value :: flags
       integer(C_INTPTR_T), intent(out) :: local_ni
@@ -97,7 +97,7 @@
       import
       integer(C_INTPTR_T), value :: n0
       integer(C_INTPTR_T), value :: n1
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INTPTR_T), intent(out) :: local_n0
       integer(C_INTPTR_T), intent(out) :: local_0_start
     end function fftwl_mpi_local_size_2d
@@ -107,7 +107,7 @@
       import
       integer(C_INTPTR_T), value :: n0
       integer(C_INTPTR_T), value :: n1
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INTPTR_T), intent(out) :: local_n0
       integer(C_INTPTR_T), intent(out) :: local_0_start
       integer(C_INTPTR_T), intent(out) :: local_n1
@@ -120,7 +120,7 @@
       integer(C_INTPTR_T), value :: n0
       integer(C_INTPTR_T), value :: n1
       integer(C_INTPTR_T), value :: n2
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INTPTR_T), intent(out) :: local_n0
       integer(C_INTPTR_T), intent(out) :: local_0_start
     end function fftwl_mpi_local_size_3d
@@ -131,7 +131,7 @@
       integer(C_INTPTR_T), value :: n0
       integer(C_INTPTR_T), value :: n1
       integer(C_INTPTR_T), value :: n2
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INTPTR_T), intent(out) :: local_n0
       integer(C_INTPTR_T), intent(out) :: local_0_start
       integer(C_INTPTR_T), intent(out) :: local_n1
@@ -148,7 +148,7 @@
       integer(C_INTPTR_T), value :: block1
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: in
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_many_transpose
     
@@ -158,7 +158,7 @@
       integer(C_INTPTR_T), value :: n1
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: in
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_transpose
     
@@ -172,7 +172,7 @@
       integer(C_INTPTR_T), value :: tblock
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: in
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: sign
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_many_dft
@@ -183,7 +183,7 @@
       integer(C_INTPTR_T), dimension(*), intent(in) :: n
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: in
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: sign
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_dft
@@ -193,7 +193,7 @@
       integer(C_INTPTR_T), value :: n0
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: in
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: sign
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_dft_1d
@@ -204,7 +204,7 @@
       integer(C_INTPTR_T), value :: n1
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: in
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: sign
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_dft_2d
@@ -216,7 +216,7 @@
       integer(C_INTPTR_T), value :: n2
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: in
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: sign
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_dft_3d
@@ -231,7 +231,7 @@
       integer(C_INTPTR_T), value :: oblock
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: in
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_FFTW_R2R_KIND), dimension(*), intent(in) :: kind
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_many_r2r
@@ -242,7 +242,7 @@
       integer(C_INTPTR_T), dimension(*), intent(in) :: n
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: in
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_FFTW_R2R_KIND), dimension(*), intent(in) :: kind
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_r2r
@@ -253,7 +253,7 @@
       integer(C_INTPTR_T), value :: n1
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: in
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_FFTW_R2R_KIND), value :: kind0
       integer(C_FFTW_R2R_KIND), value :: kind1
       integer(C_INT), value :: flags
@@ -267,7 +267,7 @@
       integer(C_INTPTR_T), value :: n2
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: in
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_FFTW_R2R_KIND), value :: kind0
       integer(C_FFTW_R2R_KIND), value :: kind1
       integer(C_FFTW_R2R_KIND), value :: kind2
@@ -284,7 +284,7 @@
       integer(C_INTPTR_T), value :: oblock
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: in
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_many_dft_r2c
     
@@ -294,7 +294,7 @@
       integer(C_INTPTR_T), dimension(*), intent(in) :: n
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: in
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_dft_r2c
     
@@ -304,7 +304,7 @@
       integer(C_INTPTR_T), value :: n1
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: in
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_dft_r2c_2d
     
@@ -315,7 +315,7 @@
       integer(C_INTPTR_T), value :: n2
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: in
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_dft_r2c_3d
     
@@ -329,7 +329,7 @@
       integer(C_INTPTR_T), value :: oblock
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: in
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_many_dft_c2r
     
@@ -339,7 +339,7 @@
       integer(C_INTPTR_T), dimension(*), intent(in) :: n
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: in
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_dft_c2r
     
@@ -349,7 +349,7 @@
       integer(C_INTPTR_T), value :: n1
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: in
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_dft_c2r_2d
     
@@ -360,18 +360,18 @@
       integer(C_INTPTR_T), value :: n2
       complex(C_LONG_DOUBLE_COMPLEX), dimension(*), intent(out) :: in
       real(C_LONG_DOUBLE), dimension(*), intent(out) :: out
-      integer(C_INT32_T), value :: comm
+      integer(), value :: comm
       integer(C_INT), value :: flags
     end function fftwl_mpi_plan_dft_c2r_3d
     
     subroutine fftwl_mpi_gather_wisdom(comm_) bind(C, name='fftwl_mpi_gather_wisdom_f03')
       import
-      integer(C_INT32_T), value :: comm_
+      integer(), value :: comm_
     end subroutine fftwl_mpi_gather_wisdom
     
     subroutine fftwl_mpi_broadcast_wisdom(comm_) bind(C, name='fftwl_mpi_broadcast_wisdom_f03')
       import
-      integer(C_INT32_T), value :: comm_
+      integer(), value :: comm_
     end subroutine fftwl_mpi_broadcast_wisdom
     
     subroutine fftwl_mpi_execute_dft(p,in,out) bind(C, name='fftwl_mpi_execute_dft')

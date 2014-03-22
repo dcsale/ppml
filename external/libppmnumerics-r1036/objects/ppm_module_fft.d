@@ -1,4 +1,4 @@
-./objects/ppm_module_fft.o objects/ppm_module_fft.d: src/ppm_module_fft.f /usr/include/stdc-predef.h \
+./objects/ppm_module_fft.o objects/ppm_module_fft.d: src/ppm_module_fft.f \
  src/fft/ppm_fft_plan_3d_vec_fc2c_z.f \
  src/fft/ppm_fft_plan_3d_vec_fr2c_xy.f \
  src/fft/ppm_fft_plan_3d_vec_bc2c_z.f \

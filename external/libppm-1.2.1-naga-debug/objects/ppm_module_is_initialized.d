@@ -1,5 +1,5 @@
 ./objects/ppm_module_is_initialized.o objects/ppm_module_is_initialized.d: src/ppm_module_is_initialized.f \
- /usr/include/stdc-predef.h src/util/ppm_is_initialized.f\
+ src/util/ppm_is_initialized.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_is_initialized.o: \
 ./objects/ppm_module_data.o \

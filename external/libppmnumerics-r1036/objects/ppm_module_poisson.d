@@ -1,4 +1,4 @@
-./objects/ppm_module_poisson.o objects/ppm_module_poisson.d: src/ppm_module_poisson.f /usr/include/stdc-predef.h \
+./objects/ppm_module_poisson.o objects/ppm_module_poisson.d: src/ppm_module_poisson.f \
  src/poisson/ppm_poisson_init.f src/poisson/ppm_poisson_solve.f \
  src/poisson/ppm_poisson_fd.f src/poisson/ppm_poisson_extrapolateghost.f\
 # end of source dependencies for .o and .d files

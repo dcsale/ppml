@@ -1,6 +1,5 @@
 ./objects/ppm_module_hamjac_ext.o objects/ppm_module_hamjac_ext.d: src/ppm_module_hamjac_ext.f \
- /usr/include/stdc-predef.h src/ppm_hamjac_ext_step_3d.f \
- src/ppm_hamjac_ext_3d.f\
+ src/ppm_hamjac_ext_step_3d.f src/ppm_hamjac_ext_3d.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_hamjac_ext.o: \
 ./objects/ppm_module_data.o \

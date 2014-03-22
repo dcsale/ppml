@@ -1,28 +1,51 @@
 #!/bin/bash
+<<<<<<< HEAD
+=======
+
+>>>>>>> 17cdcfd95617e420fe3c2e425710c8d9fde1c530
 # Description: 
 # * A bash script to compile the Parallel-Particle Mesh (PPM) library and dependencies from scratch
 # 
 # REQUIREMENTS: (these things are usually best installed through your OS package manager)
 # * compilers: C, C++, Fortran
+<<<<<<< HEAD
 # * packages: make, BLAS, LAPACK, curl, OpenMPI
 # * other: Ruby, Python
+=======
+# * packages: make, BLAS, LAPACK, curl, (OpenMPI?), (FFTW?)
+# * other: Ruby, Python, (Matlab?), VisIt, Paraview
+#  
+# Danny C. Sale. (license: LGPL)
+#
+# todo - remove clients from this file (client build in thier own directory)
+
+>>>>>>> 17cdcfd95617e420fe3c2e425710c8d9fde1c530
 
 # =========================================================================== #
 # User Parameters - build & install directories
 # =========================================================================== #
-DIR_DEPLOY=/home/danny/workspace/deploy
+DIR_DEPLOY=/home/danny/workspace/deploy_NoMPI_debug
 DIR_BLD=/home/danny/workspace/ppml
 
 # =========================================================================== #
 # User Parameters - Specify which software to install (set comment/uncomment)
 # =========================================================================== #
+<<<<<<< HEAD
+=======
+# PPM clients
+# INSTALL_exClient=true
+# INSTALL_LJ=true
+# INSTALL_NAGA=true
+# INSTALL_GRAY=true
+
+>>>>>>> 17cdcfd95617e420fe3c2e425710c8d9fde1c530
 # dependencies
 # INSTALL_MPI=true
 # INSTALL_RUBY=true
-# INSTALL_FFTW=true
-# INSTALL_METIS=true
-# INSTALL_PPMCORE=true
-# INSTALL_PPMNUMERICS=true
+INSTALL_FFTW=true
+INSTALL_METIS=true
+INSTALL_PPMCORE=true
+INSTALL_PPMNUMERICS=true
 
 # PPM clients
 # INSTALL_exClient=true
@@ -33,8 +56,8 @@ INSTALL_NAGA=true
 # =========================================================================== #
 # User Parameters - build settings (set true / false)
 # =========================================================================== #
-buildParallel=true
-buildDebug=false
+buildParallel=false
+buildDebug=true
 runTests=true
 branchDevelop=false
 

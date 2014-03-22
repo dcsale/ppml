@@ -1,4 +1,4 @@
-./objects/ppm_module_mesh.o objects/ppm_module_mesh.d: src/ppm_module_mesh.f /usr/include/stdc-predef.h\
+./objects/ppm_module_mesh.o objects/ppm_module_mesh.d: src/ppm_module_mesh.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_mesh.o: \
 ./objects/ppm_module_mesh_alloc.o \

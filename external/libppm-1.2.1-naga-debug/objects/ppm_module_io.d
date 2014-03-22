@@ -1,9 +1,9 @@
-./objects/ppm_module_io.o objects/ppm_module_io.d: src/ppm_module_io.f /usr/include/stdc-predef.h \
- src/io/ppm_io.f src/io/ppm_doio.f src/io/ppm_io_open.f \
- src/io/ppm_io_close.f src/io/ppm_io_inquire.f src/io/ppm_io_read_ascii.f \
- src/io/ppm_io_read_binary.f src/io/ppm_io_write_ascii.f \
- src/io/ppm_io_write_binary.f src/io/ppm_io_delete.f \
- src/io/ppm_io_set_unit.f src/io/ppm_io_unused_unit.f\
+./objects/ppm_module_io.o objects/ppm_module_io.d: src/ppm_module_io.f src/io/ppm_io.f src/io/ppm_doio.f \
+ src/io/ppm_io_open.f src/io/ppm_io_close.f src/io/ppm_io_inquire.f \
+ src/io/ppm_io_read_ascii.f src/io/ppm_io_read_binary.f \
+ src/io/ppm_io_write_ascii.f src/io/ppm_io_write_binary.f \
+ src/io/ppm_io_delete.f src/io/ppm_io_set_unit.f \
+ src/io/ppm_io_unused_unit.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_io.o: \
 ./objects/ppm_module_data.o \

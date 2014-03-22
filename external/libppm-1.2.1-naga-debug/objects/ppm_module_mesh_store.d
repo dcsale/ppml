@@ -1,5 +1,5 @@
 ./objects/ppm_module_mesh_store.o objects/ppm_module_mesh_store.d: src/ppm_module_mesh_store.f \
- /usr/include/stdc-predef.h src/mesh/ppm_mesh_store.f\
+ src/mesh/ppm_mesh_store.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_mesh_store.o: \
 ./objects/ppm_module_data.o \

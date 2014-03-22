@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from ./objects/__ppm_module_util_qsort.f
-MD5:21a5c52f6c0de1a19e83cb432b63a334 -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '9' created from ./objects/__ppm_module_util_qsort.f
+MD5:b1b0d26c45ebbfbbcb60c1568c07c6b5 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -26,6 +26,14 @@ UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE ALWAYS_EXPLICIT)
 4 'ppm_util_qsort_s' 'ppm_module_util_qsort' '' 1 ((PROCEDURE
 UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE ALWAYS_EXPLICIT)
 (UNKNOWN 0 0 0 0 UNKNOWN ()) 14 0 (15 16 17) () 0 () () () 0 0)
+15 'inlist' '' '' 14 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DIMENSION POINTER DUMMY) (REAL 4 0 0 0 REAL ()) 0 0 () (1 0
+DEFERRED () ()) 0 () () () 0 0)
+16 'outlist' '' '' 14 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
+UNKNOWN 0 0 DIMENSION POINTER DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 ()
+(1 0 DEFERRED () ()) 0 () () () 0 0)
+17 'info' '' '' 14 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 7 'inlist' '' '' 6 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
 UNKNOWN 0 0 DIMENSION POINTER DUMMY) (REAL 8 0 0 0 REAL ()) 0 0 () (1 0
 DEFERRED () ()) 0 () () () 0 0)
@@ -41,14 +49,6 @@ UNKNOWN 0 0 DIMENSION POINTER DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 ()
 UNKNOWN 0 0 DIMENSION POINTER DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 ()
 (1 0 DEFERRED () ()) 0 () () () 0 0)
 13 'info' '' '' 10 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
-15 'inlist' '' '' 14 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
-UNKNOWN 0 0 DIMENSION POINTER DUMMY) (REAL 4 0 0 0 REAL ()) 0 0 () (1 0
-DEFERRED () ()) 0 () () () 0 0)
-16 'outlist' '' '' 14 ((VARIABLE UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN
-UNKNOWN 0 0 DIMENSION POINTER DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 ()
-(1 0 DEFERRED () ()) 0 () () () 0 0)
-17 'info' '' '' 14 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 )
 

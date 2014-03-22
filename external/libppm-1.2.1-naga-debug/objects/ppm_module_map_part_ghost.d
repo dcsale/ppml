@@ -1,6 +1,6 @@
 ./objects/ppm_module_map_part_ghost.o objects/ppm_module_map_part_ghost.d: src/ppm_module_map_part_ghost.f \
- /usr/include/stdc-predef.h src/map/ppm_map_part_ghost_get.f \
- src/map/ghost_map_periodic_bc_x.inc src/map/ghost_map_symmetry_bc_lx.inc \
+ src/map/ppm_map_part_ghost_get.f src/map/ghost_map_periodic_bc_x.inc \
+ src/map/ghost_map_symmetry_bc_lx.inc \
  src/map/ghost_map_symmetry_bc_ux.inc src/map/ghost_map_periodic_bc_y.inc \
  src/map/ghost_map_symmetry_bc_ly.inc \
  src/map/ghost_map_symmetry_bc_uy.inc src/map/ghost_map_periodic_bc_z.inc \

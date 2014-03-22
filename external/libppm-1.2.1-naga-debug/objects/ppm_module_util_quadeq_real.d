@@ -1,5 +1,5 @@
 ./objects/ppm_module_util_quadeq_real.o objects/ppm_module_util_quadeq_real.d: src/ppm_module_util_quadeq_real.f \
- /usr/include/stdc-predef.h src/util/ppm_util_quadeq_real.f\
+ src/util/ppm_util_quadeq_real.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_quadeq_real.o: \
 ./objects/ppm_module_data.o \

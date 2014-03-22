@@ -1,6 +1,6 @@
 ./objects/ppm_module_find_neigh.o objects/ppm_module_find_neigh.d: src/ppm_module_find_neigh.f \
- /usr/include/stdc-predef.h src/topo/ppm_find_neigh.f \
- src/topo/ppm_find_neigh_subs_2d.inc src/topo/ppm_find_neigh_subs_3d.inc\
+ src/topo/ppm_find_neigh.f src/topo/ppm_find_neigh_subs_2d.inc \
+ src/topo/ppm_find_neigh_subs_3d.inc\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_find_neigh.o: \
 ./objects/ppm_module_data.o \

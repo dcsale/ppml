@@ -1,10 +1,10 @@
 ./objects/ppm_module_hamjac_reinit.o objects/ppm_module_hamjac_reinit.d: src/ppm_module_hamjac_reinit.f \
- /usr/include/stdc-predef.h src/ppm_hamjac_reinit_step_3d.f \
- src/ppm_hamjac_reinit_loc_step_3d.f src/ppm_hamjac_reinit_step_ref_3d.f \
- src/ppm_gmm_jacobian.inc src/ppm_hamjac_reinit_russo_step_3d.f \
- src/ppm_hamjac_reinit_step_2d.f src/ppm_hamjac_reinit_3d.f \
- src/ppm_hamjac_reinit_loc_3d.f src/ppm_hamjac_reinit_ref_3d.f \
- src/ppm_hamjac_reinit_russo_3d.f src/ppm_hamjac_reinit_2d.f\
+ src/ppm_hamjac_reinit_step_3d.f src/ppm_hamjac_reinit_loc_step_3d.f \
+ src/ppm_hamjac_reinit_step_ref_3d.f src/ppm_gmm_jacobian.inc \
+ src/ppm_hamjac_reinit_russo_step_3d.f src/ppm_hamjac_reinit_step_2d.f \
+ src/ppm_hamjac_reinit_3d.f src/ppm_hamjac_reinit_loc_3d.f \
+ src/ppm_hamjac_reinit_ref_3d.f src/ppm_hamjac_reinit_russo_3d.f \
+ src/ppm_hamjac_reinit_2d.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_hamjac_reinit.o: \
 ./objects/ppm_module_data.o \

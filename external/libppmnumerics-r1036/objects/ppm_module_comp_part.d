@@ -1,5 +1,4 @@
-./objects/ppm_module_comp_part.o objects/ppm_module_comp_part.d: src/ppm_module_comp_part.f \
- /usr/include/stdc-predef.h\
+./objects/ppm_module_comp_part.o objects/ppm_module_comp_part.d: src/ppm_module_comp_part.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_comp_part.o: \
 ./objects/ppm_module_comp_pp_verlet.o \

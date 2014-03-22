@@ -1,5 +1,5 @@
 ./objects/ppm_module_scale_domain.o objects/ppm_module_scale_domain.d: src/ppm_module_scale_domain.f \
- /usr/include/stdc-predef.h src/util/ppm_scale_domain.f\
+ src/util/ppm_scale_domain.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_scale_domain.o: \
 ./objects/ppm_module_data.o \

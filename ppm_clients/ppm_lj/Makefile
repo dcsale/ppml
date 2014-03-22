@@ -39,8 +39,19 @@ LIBS =  -L$(PPMDIR)/lib64 -L$(PPMNUMDIR)/lib64 -L$(METISDIR) -lppm -lppmnumerics
 OPT  = $(COPT)
 INCL = -I$(PPMDIR)/include/ppm -I$(PPMDIR)/src/ -I$(PPMNUMDIR)/include/ppm
 
+<<<<<<< HEAD
 # Flags and settings for ALL machines
 COPT= -O
+=======
+LIBS_METIS    = -L$(DIR_LINK)/Metis -lmetis
+# LIBS_FFTW     = -L$(DIR_LINK)/FFTW/lib64 -lfftw3
+LIBS_FFTW     = -L$(DIR_LINK)/FFTW/lib -lfftw3
+# LIBS_PPM_CORE = -L$(DIR_LINK)/PPM_Core/lib64 -lppm
+LIBS_PPM_CORE = -L$(DIR_LINK)/PPM_Core/lib -lppm
+# LIBS_PPM_NUM  = -L$(DIR_LINK)/PPM_Numerics/lib64 -lppmnumerics
+LIBS_PPM_NUM  = -L$(DIR_LINK)/PPM_Numerics/lib -lppmnumerics
+LIBS          = $(LIBS_FFTW) $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_PPM_NUM)
+>>>>>>> 17cdcfd95617e420fe3c2e425710c8d9fde1c530
 
 ### Usually you should not change these variables below.
 

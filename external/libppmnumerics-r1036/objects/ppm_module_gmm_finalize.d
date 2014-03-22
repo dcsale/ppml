@@ -1,5 +1,5 @@
 ./objects/ppm_module_gmm_finalize.o objects/ppm_module_gmm_finalize.d: src/ppm_module_gmm_finalize.f \
- /usr/include/stdc-predef.h src/ppm_gmm_finalize.f src/ppm_define.h\
+ src/ppm_gmm_finalize.f src/ppm_define.h\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_gmm_finalize.o: \
 ./objects/ppm_module_data.o \

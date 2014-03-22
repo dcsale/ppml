@@ -1,5 +1,5 @@
 ./objects/ppm_module_tree_alloc.o objects/ppm_module_tree_alloc.d: src/ppm_module_tree_alloc.f \
- /usr/include/stdc-predef.h src/tree/ppm_tree_alloc.f\
+ src/tree/ppm_tree_alloc.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_tree_alloc.o: \
 ./objects/ppm_module_data.o \

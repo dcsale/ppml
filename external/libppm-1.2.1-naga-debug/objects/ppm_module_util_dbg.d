@@ -1,5 +1,4 @@
-./objects/ppm_module_util_dbg.o objects/ppm_module_util_dbg.d: src/ppm_module_util_dbg.f \
- /usr/include/stdc-predef.h src/util/ppm_dbg_print.f\
+./objects/ppm_module_util_dbg.o objects/ppm_module_util_dbg.d: src/ppm_module_util_dbg.f src/util/ppm_dbg_print.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_dbg.o: \
 ./objects/ppm_module_data.o \

@@ -1,4 +1,4 @@
-./objects/ppm_module_gmm.o objects/ppm_module_gmm.d: src/ppm_module_gmm.f /usr/include/stdc-predef.h\
+./objects/ppm_module_gmm.o objects/ppm_module_gmm.d: src/ppm_module_gmm.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_gmm.o: \
 ./objects/ppm_module_gmm_init.o \

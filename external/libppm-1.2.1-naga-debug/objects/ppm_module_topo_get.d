@@ -1,5 +1,4 @@
-./objects/ppm_module_topo_get.o objects/ppm_module_topo_get.d: src/ppm_module_topo_get.f \
- /usr/include/stdc-predef.h src/topo/ppm_topo_get.f \
+./objects/ppm_module_topo_get.o objects/ppm_module_topo_get.d: src/ppm_module_topo_get.f src/topo/ppm_topo_get.f \
  src/topo/ppm_topo_get_decomp.f src/topo/ppm_topo_get_meshinfo.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_topo_get.o: \

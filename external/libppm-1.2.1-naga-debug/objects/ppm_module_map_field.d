@@ -1,9 +1,7 @@
 ./objects/ppm_module_map_field.o objects/ppm_module_map_field.d: src/ppm_module_map_field.f \
- /usr/include/stdc-predef.h src/map/ppm_map_field_init.f \
- src/map/ppm_map_field_pop_2d.f src/map/ppm_map_field_pop_3d.f \
- src/map/ppm_map_field_push_2d.f src/map/ppm_map_field_push_3d.f \
- src/map/ppm_map_field_send.f src/map/ppm_map_field_send_noblock.f \
- src/map/ppm_map_field_send_alltoall.f\
+ src/map/ppm_map_field_init.f src/map/ppm_map_field_pop_2d.f \
+ src/map/ppm_map_field_pop_3d.f src/map/ppm_map_field_push_2d.f \
+ src/map/ppm_map_field_push_3d.f src/map/ppm_map_field_send.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_map_field.o: \
 ./objects/ppm_module_map_field_ghost.o \
@@ -500,20 +498,6 @@
 ./objects/ppm_module_write.o \
 ./objects/ppm_module_check_id.o \
 ./objects/ppm_module_util_invert_list.o \
-./objects/ppm_module_data.o \
-./objects/ppm_module_data_mesh.o \
-./objects/ppm_module_substart.o \
-./objects/ppm_module_substop.o \
-./objects/ppm_module_error.o \
-./objects/ppm_module_alloc.o \
-./objects/ppm_module_write.o \
-./objects/ppm_module_data.o \
-./objects/ppm_module_data_mesh.o \
-./objects/ppm_module_substart.o \
-./objects/ppm_module_substop.o \
-./objects/ppm_module_error.o \
-./objects/ppm_module_alloc.o \
-./objects/ppm_module_write.o \
 ./objects/ppm_module_data.o \
 ./objects/ppm_module_data_mesh.o \
 ./objects/ppm_module_substart.o \

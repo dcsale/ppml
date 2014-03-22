@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from ./objects/__ppm_module_map_connect.f
-MD5:98ffafc73dc90efac0a50ddc91b79cc6 -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '9' created from ./objects/__ppm_module_map_connect.f
+MD5:91b1be35a77adea96367ab2ec6abe565 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -7,8 +7,8 @@ MD5:98ffafc73dc90efac0a50ddc91b79cc6 -- If you edit this, you'll get what you de
 ()
 
 (('ppm_map_connect_distrib' 'ppm_module_map_connect' 2) (
-'ppm_map_connect_prune' 'ppm_module_map_connect' 3) (
-'ppm_map_connect_send' 'ppm_module_map_connect' 4))
+'ppm_map_connect_send' 'ppm_module_map_connect' 3) (
+'ppm_map_connect_prune' 'ppm_module_map_connect' 4))
 
 ()
 
@@ -23,11 +23,11 @@ UNKNOWN UNKNOWN 0 0 FUNCTION) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 ()
 UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE GENERIC
 ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ()) 6 0 (7 8 9 10 11 12) () 0
 () () () 0 0)
-3 'ppm_map_connect_prune' 'ppm_module_map_connect' '' 1 ((PROCEDURE
+4 'ppm_map_connect_prune' 'ppm_module_map_connect' '' 1 ((PROCEDURE
 UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE GENERIC
 ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ()) 13 0 (14 15 16 17 18 19 20
 21) () 0 () () () 0 0)
-4 'ppm_map_connect_send' 'ppm_module_map_connect' '' 1 ((PROCEDURE
+3 'ppm_map_connect_send' 'ppm_module_map_connect' '' 1 ((PROCEDURE
 UNKNOWN-INTENT MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE GENERIC
 ALWAYS_EXPLICIT) (UNKNOWN 0 0 0 0 UNKNOWN ()) 22 0 (23 24 25 26 27 28) ()
 0 () () () 0 0)
@@ -82,5 +82,5 @@ DIMENSION DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () (1 0 ASSUMED_SHAPE
 (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 )
 
-('null' 0 5 'ppm_map_connect_distrib' 0 2 'ppm_map_connect_prune' 0 3
-'ppm_map_connect_send' 0 4 'ppm_module_map_connect' 0 29)
+('null' 0 5 'ppm_map_connect_distrib' 0 2 'ppm_map_connect_prune' 0 4
+'ppm_map_connect_send' 0 3 'ppm_module_map_connect' 0 29)

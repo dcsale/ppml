@@ -1,4 +1,4 @@
-./objects/ppm_module_decomp.o objects/ppm_module_decomp.d: src/ppm_module_decomp.f /usr/include/stdc-predef.h \
+./objects/ppm_module_decomp.o objects/ppm_module_decomp.d: src/ppm_module_decomp.f \
  src/decomp/ppm_decomp_boxsplit.f src/decomp/ppm_decomp_cartesian.f \
  src/decomp/ppm_decomp_pruned_cell.f src/decomp/ppm_decomp_tree.f\
 # end of source dependencies for .o and .d files

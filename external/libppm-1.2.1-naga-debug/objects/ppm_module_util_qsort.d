@@ -1,5 +1,5 @@
 ./objects/ppm_module_util_qsort.o objects/ppm_module_util_qsort.d: src/ppm_module_util_qsort.f \
- /usr/include/stdc-predef.h src/util/ppm_util_qsort.f\
+ src/util/ppm_util_qsort.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_qsort.o: \
 ./objects/ppm_module_data.o \

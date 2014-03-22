@@ -1,5 +1,5 @@
 ./objects/ppm_module_topo_metis_s2p.o objects/ppm_module_topo_metis_s2p.d: src/ppm_module_topo_metis_s2p.f \
- /usr/include/stdc-predef.h src/topo/ppm_topo_metis_s2p.f\
+ src/topo/ppm_topo_metis_s2p.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_topo_metis_s2p.o: \
 ./objects/ppm_module_data.o \

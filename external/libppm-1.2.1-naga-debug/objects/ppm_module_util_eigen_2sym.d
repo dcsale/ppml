@@ -1,5 +1,5 @@
 ./objects/ppm_module_util_eigen_2sym.o objects/ppm_module_util_eigen_2sym.d: src/ppm_module_util_eigen_2sym.f \
- /usr/include/stdc-predef.h src/util/ppm_util_eigen_2sym.f\
+ src/util/ppm_util_eigen_2sym.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_eigen_2sym.o: \
 ./objects/ppm_module_data.o \

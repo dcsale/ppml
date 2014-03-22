@@ -17,20 +17,20 @@
 
 # These variables are set when configure is ran
 srcdir = src
-prefix = /home/danny/workspace/deploy/PPM_Numerics
+prefix = /home/danny/workspace/deploy_NoMPI_debug/PPM_Numerics
 exec_prefix = ${prefix}
-libdir = ${exec_prefix}/lib64
+libdir = ${exec_prefix}/lib
 includedir = ${prefix}/include
 builddir = .
 LIBS = -lfftw3 -lppm -lppm 
-LDFLAGS = -L/home/danny/workspace/deploy/FFTW/lib64 -L/home/danny/workspace/deploy/PPM_Core/lib64 -L/home/danny/workspace/deploy/PPM_Core/lib64
+LDFLAGS = -L/home/danny/workspace/deploy_NoMPI_debug/FFTW/lib64 -L/home/danny/workspace/deploy_NoMPI_debug/PPM_Core/lib -L/home/danny/workspace/deploy_NoMPI_debug/PPM_Core/lib
 CFLAGS = -O3
-FCLIBS =  -L/home/danny/workspace/deploy/FFTW/lib64 -L/usr/lib64/mpi/gcc/openmpi/lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.8 -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../.. -lmpi_usempi -lmpi_mpifh -lmpi -lgfortran -lm -lquadmath -lpthread
-FCFLAGS = -I/home/danny/workspace/deploy/FFTW/include -ffree-form -I/home/danny/workspace/deploy/PPM_Core/include/ppm
-FC = mpif90
-CC = mpicc
-CXX = mpic++
-DEBUG = 
+FCLIBS =  -L/home/danny/workspace/deploy_NoMPI_debug/FFTW/lib64 -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. -lgfortran -lm -lquadmath
+FCFLAGS = -I/home/danny/workspace/deploy_NoMPI_debug/FFTW/include -ffree-form -I/home/danny/workspace/deploy_NoMPI_debug/PPM_Core/include/ppm
+FC = gfortran
+CC = gcc
+CXX = g++
+DEBUG = -O0 -g -fbounds-check -fbacktrace -ftrapv -fno-automatic
 MODFLAG = -I
 
 # These variables are standard

@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from ./objects/__ppm_module_mg_finalize.f
-MD5:8da4c7d0925cacfd6d5869f046839b27 -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '9' created from ./objects/__ppm_module_mg_finalize.f
+MD5:0490749c045df92f0cc8152f62df9db7 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -41,21 +41,21 @@ UNKNOWN ()) 24 0 (25) () 0 () () () 0 0)
 26 'ppm_module_mg_finalize' 'ppm_module_mg_finalize' '' 1 ((MODULE
 UNKNOWN-INTENT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0) (UNKNOWN 0 0 0 0
 UNKNOWN ()) 0 0 () () 0 () () () 0 0)
-4 'info' '' '' 3 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 7 'info' '' '' 6 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
-10 'info' '' '' 9 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
-DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
-13 'info' '' '' 12 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+4 'info' '' '' 3 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+19 'info' '' '' 18 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 16 'info' '' '' 15 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
-19 'info' '' '' 18 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+13 'info' '' '' 12 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
-22 'info' '' '' 21 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+10 'info' '' '' 9 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 25 'info' '' '' 24 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
+DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+22 'info' '' '' 21 ((VARIABLE INOUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 )
 

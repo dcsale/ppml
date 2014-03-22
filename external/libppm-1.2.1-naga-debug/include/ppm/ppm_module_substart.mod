@@ -1,5 +1,5 @@
-GFORTRAN module version '10' created from ./objects/__ppm_module_substart.f
-MD5:610318d8b48ab2cf0115e6f4fe47ce48 -- If you edit this, you'll get what you deserve.
+GFORTRAN module version '9' created from ./objects/__ppm_module_substart.f
+MD5:5cf324cdbab0c14d04fa8367ad640440 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -23,18 +23,18 @@ MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 5
 3 'substart_s' 'ppm_module_substart' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 9
 0 (10 11 12) () 0 () () () 0 0)
-6 'caller' '' '' 5 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
-7 't0' '' '' 5 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
-REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-8 'info' '' '' 5 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 10 'caller' '' '' 9 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
 11 't0' '' '' 9 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
 REAL 4 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
 12 'info' '' '' 9 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+7 't0' '' '' 5 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+8 'info' '' '' 5 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
+6 'caller' '' '' 5 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
 )
 
 ('ppm_module_substart' 0 4 'substart_d' 0 2 'substart_s' 0 3)

@@ -1,7 +1,7 @@
 ./objects/ppm_module_gmm_march_fwd.o objects/ppm_module_gmm_march_fwd.d: src/ppm_module_gmm_march_fwd.f \
- /usr/include/stdc-predef.h src/ppm_gmm_march_fwd.f src/ppm_define.h \
- src/ppm_gmm_slvupwnd.inc src/ppm_gmm_switches.inc \
- src/ppm_gmm_getfdta.inc src/ppm_gmm_jacobian.inc src/ppm_gmm_quadeq.inc \
+ src/ppm_gmm_march_fwd.f src/ppm_define.h src/ppm_gmm_slvupwnd.inc \
+ src/ppm_gmm_switches.inc src/ppm_gmm_getfdta.inc \
+ src/ppm_gmm_jacobian.inc src/ppm_gmm_quadeq.inc \
  src/ppm_gmm_add_to_list.inc\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_gmm_march_fwd.o: \

@@ -1,4 +1,4 @@
-GFORTRAN module version '10' created from __naga_structure_sphere.f90
+GFORTRAN module version '9' created from __naga_structure_sphere.f90
 MD5:816dd3e453730c5c47bba6d116f6bc40 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()

@@ -17,22 +17,22 @@
 
 # These variables are set when configure is ran
 srcdir = src
-prefix = /home/danny/workspace/deploy/PPM_Core
+prefix = /home/danny/workspace/deploy_NoMPI_debug/PPM_Core
 exec_prefix = ${prefix}
-libdir = ${exec_prefix}/lib64
+libdir = ${exec_prefix}/lib
 includedir = ${prefix}/include
 builddir = .
-CPPFLAGS =  -D__F2003 -D__MPI -D__METIS -D__Linux
+CPPFLAGS =  -D__F2003 -D__METIS -D__Linux -D__DEBUG
 LIBS = -lmetis 
-LDFLAGS = -L/home/danny/workspace/deploy/Metis
+LDFLAGS = -L/home/danny/workspace/deploy_NoMPI_debug/Metis
 CFLAGS = -O3
-FCLIBS =  -L/home/danny/workspace/deploy/Metis -L/usr/lib64/mpi/gcc/openmpi/lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.8 -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../lib64 -L/lib/../lib64 -L/usr/lib/../lib64 -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../../../x86_64-suse-linux/lib -L/usr/lib64/gcc/x86_64-suse-linux/4.8/../../.. -lmpi_usempi -lmpi_mpifh -lmpi -lgfortran -lm -lquadmath -lpthread
+FCLIBS =  -L/home/danny/workspace/deploy_NoMPI_debug/Metis -L/usr/lib/gcc/x86_64-linux-gnu/4.7 -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../x86_64-linux-gnu -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../../../lib -L/lib/x86_64-linux-gnu -L/lib/../lib -L/usr/lib/x86_64-linux-gnu -L/usr/lib/../lib -L/usr/lib/gcc/x86_64-linux-gnu/4.7/../../.. -lgfortran -lm -lquadmath
 FCFLAGS = -O3 -ffree-form
-FC = mpif90
-CC = mpicc
-CXX = mpic++
-DEBUG = 
-FUNIT_FLAGS = --with-mpi
+FC = gfortran
+CC = gcc
+CXX = g++
+DEBUG = -O0 -g -fbounds-check -fbacktrace -ftrapv -fno-automatic
+FUNIT_FLAGS = 
 MODFLAG = -I
 
 # These variables are standard

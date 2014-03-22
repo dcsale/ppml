@@ -1,4 +1,4 @@
-GFORTRAN module version '10' created from __naga_add_uinfinity.f90
+GFORTRAN module version '9' created from __naga_add_uinfinity.f90
 MD5:a019aab70198b403fb3f6505502cc2b3 -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()

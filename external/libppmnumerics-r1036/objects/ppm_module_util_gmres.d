@@ -1,6 +1,5 @@
 ./objects/ppm_module_util_gmres.o objects/ppm_module_util_gmres.d: src/ppm_module_util_gmres.f \
- /usr/include/stdc-predef.h src/ppm_util_gmres_solveupper.f \
- src/ppm_define.h src/ppm_util_gmres.f\
+ src/ppm_util_gmres_solveupper.f src/ppm_define.h src/ppm_util_gmres.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_gmres.o: \
 ./objects/ppm_module_data.o \

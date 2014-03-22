@@ -1,6 +1,5 @@
 ./objects/ppm_module_util_commopt.o objects/ppm_module_util_commopt.d: src/ppm_module_util_commopt.f \
- /usr/include/stdc-predef.h src/util/ppm_util_commopt.f \
- src/util/ppm_util_commopt_cart.f\
+ src/util/ppm_util_commopt.f src/util/ppm_util_commopt_cart.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_util_commopt.o: \
 ./objects/ppm_module_data.o \

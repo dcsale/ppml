@@ -1,5 +1,4 @@
-./objects/ppm_module_map.o objects/ppm_module_map.d: src/ppm_module_map.f /usr/include/stdc-predef.h \
- src/map/ppm_map_type_isactive.f\
+./objects/ppm_module_map.o objects/ppm_module_map.d: src/ppm_module_map.f src/map/ppm_map_type_isactive.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_map.o: \
 ./objects/ppm_module_map_connect.o \

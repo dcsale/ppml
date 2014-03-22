@@ -1,6 +1,5 @@
-./objects/ppm_module_rmsh.o objects/ppm_module_rmsh.d: src/ppm_module_rmsh.f /usr/include/stdc-predef.h \
- src/rmsh/ppm_rmsh_comp_weights.f src/rmsh/ppm_rmsh_create_part.f \
- src/rmsh/ppm_rmsh_remesh.f\
+./objects/ppm_module_rmsh.o objects/ppm_module_rmsh.d: src/ppm_module_rmsh.f src/rmsh/ppm_rmsh_comp_weights.f \
+ src/rmsh/ppm_rmsh_create_part.f src/rmsh/ppm_rmsh_remesh.f\
 # end of source dependencies for .o and .d files
 ./objects/ppm_module_rmsh.o: \
 ./objects/ppm_module_interp_m2p.o \
