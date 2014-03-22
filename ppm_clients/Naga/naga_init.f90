@@ -123,11 +123,13 @@ ENDIF
 !-------------------------------------------------------------------------
 ! Get total number of processors
 !-------------------------------------------------------------------------
+write(*,*) "[naga_init] Danny 1 - Nproc = ", Nproc
 CALL MPI_Comm_Size(comm,Nproc,info)
 IF (info .NE. 0) THEN
   CALL naga_say(rank, 'naga_init','Failed to get number of nodes, aborting.')
   GOTO 9999
 ENDIF
+write(*,*) "[naga_init] Danny 2 - Nproc = ", Nproc
 !-------------------------------------------------------------------------
 ! Here we could get the name of the node. !But we wont
 !-------------------------------------------------------------------------
@@ -145,6 +147,9 @@ WRITE(*,*) 'rank: ',rank, ' starting on "',nodename(1:name_len),'"'
 !  - io unit for ppm log file
 ! Open log file
 !-------------------------------------------------------------------------
+!write(*,*) "[naga_init] Danny - ndim = ", ndim
+!write(*,*) "[naga_init] Danny - debug = ", debug
+!debug = 9999
 CALL ppm_init(ndim,MK,-10,comm,debug,info,ppm_log_unit)
 IF (info .NE. 0) THEN
   CALL naga_say(rank, 'naga_init','Failed to initialise PPM, aborting.')

@@ -154,29 +154,29 @@
       !-------------------------------------------------------------------------
       !  Copy data
       !-------------------------------------------------------------------------
-    
-      write(*,*) 'Johannes  1'
+      
+      write(*,*) '[ppm_topo_get_meshinfo.f] Johannes 1 topo%nsublist = ' , topo%nsublist
       nsublist = topo%nsublist
-      write(*,*) 'Johannes  2'
+      write(*,*) '[ppm_topo_get_meshinfo.f] Johannes 2 nsublist = ' , nsublist
       FORALL (i=1:nsublist) isublist(i) = topo%isublist(i)
-      write(*,*) 'Johannes  3' , mesh%Nm
+      write(*,*) '[ppm_topo_get_meshinfo.f] Johannes 3 - mesh%Nm = ' , mesh%Nm
       nm = mesh%Nm
-      write(*,*) 'Johannes  4'
+      write(*,*) '[ppm_topo_get_meshinfo.f] Johannes 4 - nm = ', nm
       FORALL(i=1:topo%nsubs, d=1:ppm_dim) 
           ndata(d,i) = mesh%nnodes(d,i)
           istart(d,i) = mesh%istart(d,i)
       END FORALL
-      write(*,*) 'Johannes  5'
+      write(*,*) '[ppm_topo_get_meshinfo.f] Johannes 5'
       maxndata = 0
-      write(*,*) 'Johannes  6'
+      write(*,*) '[ppm_topo_get_meshinfo.f] Johannes 6'
       DO i=1,nsublist
           isub = isublist(i)
           DO d=1,ppm_dim
               IF (ndata(d,isub).GT.maxndata(d)) maxndata(d) = ndata(d,isub)
           ENDDO
       ENDDO
+      write(*,*) '[ppm_topo_get_meshinfo.f] Johannes 7'
 
-      write(*,*) 'Johannes  7'
       !-------------------------------------------------------------------------
       !  Return
       !-------------------------------------------------------------------------

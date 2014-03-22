@@ -22,62 +22,50 @@ SRCS =	lj_init.f90 \
 MODSRCS =	lj_module_global.f90 \
 		lj_module_writeout.f90 
 
+# Directory where to move the program when running 'make install'
+DESTDIR=.
 
-#----------------------------------------------------------------------
-#  User parameters (set directories or true/false)
-#----------------------------------------------------------------------
-DIR_LINK = /home/danny/workspace/deploy
-build_Parallel = true
-# build_Debug    = true
+PPMDIR = /home/danny/workspace/deploy/PPM_Core
+PPMNUMDIR = /home/danny/workspace/deploy/PPM_Numerics
+METISDIR = /home/danny/workspace/deploy/Metis
+# PPMDIR = /home/user/ppmcore/libppm/
+# PPMNUMDIR = /home/user/ppmnumerics/libppmnumerics/
+# METISDIR = /home/user/metis/intel/
 
-#----------------------------------------------------------------------
-#  Compiler settings
-#----------------------------------------------------------------------
-INC_FFTW     = -I$(DIR_LINK)/FFTW/include
-# INC_PPM_CORE = -I$(DIR_LINK)/PPM_Core/include/ppm
-INC_PPM_CORE = -I$(DIR_LINK)/PPM_Core/include/ppm -I$(DIR_LINK)/PPM_Core/src
-INC_PPM_NUM  = -I$(DIR_LINK)/PPM_Numerics/include/ppm 
-INC          = $(INC_FFTW) $(INC_PPM_CORE) $(INC_PPM_NUM)
+# Compiler flags and settings for my machine
+FC   = mpif90
+CPP  = cpp
+LIBS =  -L$(PPMDIR)/lib64 -L$(PPMNUMDIR)/lib64 -L$(METISDIR) -lppm -lppmnumerics -lmetis
+OPT  = $(COPT)
+INCL = -I$(PPMDIR)/include/ppm -I$(PPMDIR)/src/ -I$(PPMNUMDIR)/include/ppm
 
-LIBS_FFTW     = -L$(DIR_LINK)/FFTW/lib64 -lfftw3
-LIBS_METIS    = -L$(DIR_LINK)/Metis -lmetis
-LIBS_PPM_CORE = -L$(DIR_LINK)/PPM_Core/lib64 -lppm
-LIBS_PPM_NUM  = -L$(DIR_LINK)/PPM_Numerics/lib64 -lppmnumerics
-LIBS          = $(LIBS_FFTW) $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_PPM_NUM)
+# Flags and settings for ALL machines
+COPT= -O
 
-ifdef build_Parallel
-	DEFINE = -D__MPI
-	FC = mpif90
-else
-	FC = gfortran
-endif
-CPP = cpp
+### Usually you should not change these variables below.
 
-ifdef build_Debug
-	FFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g -Wall -fbounds-check -fbacktrace	
-else
-	FFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -O3
-endif
+# Collecting compilerflags in one variable.
+FFLAGS= $(OPT) $(REP) $(COMPATFLAGS)
 
 ###### You shouldn't need to change anything below this line #############
 
 # generic variables
-OBJS    = $(SRCS:.f90=.o)
+OBJS   = $(SRCS:.f90=.o)
 MODULES = $(MODSRCS:.f90=.o)
-W_TIME  = $(shell echo $$(($(TIME)/60)):$$(($(TIME)%60)))
+W_TIME = $(shell echo $$(($(TIME)/60)):$$(($(TIME)%60)))
 
 ####### Build and Install Targets ########################################
 all: $(PROGRAM)
 
 $(PROGRAM): $(MODULES) $(OBJS)
-	$(FC) $(FFLAGS) $(MODULES) $(OBJS) -o $@ $(LIBS) $(INC) 
+	$(FC) $(FFLAGS) $(MODULES) $(OBJS) -o $@ $(LIBS) $(INCL) 
 
 install: $(PROGRAM) 
 	mv $(PROGRAM) $(DESTDIR) 
 
 %.o: %.f90
 	$(CPP) -P $*.f90 __$*.f90
-	$(FC) -c $(FFLAGS) __$*.f90 -o $*.o $(LIBS) $(INC)
+	$(FC) -c $(FFLAGS) __$*.f90 -o $*.o $(LIBS) $(INCL)
 
 ###### Cleaning up #######################################################
 clean:

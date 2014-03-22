@@ -1,5 +1,5 @@
 GFORTRAN module version '10' created from __naga_time.f90
-MD5:3b2b8fbeae8b7b415ee42d8f4ef92689 -- If you edit this, you'll get what you deserve.
+MD5:5f6d99d9e09ec4ef7eb371d64fcd904f -- If you edit this, you'll get what you deserve.
 
 (() () () () () () () () () () () () () () () () () () () () () () ()
 () () () ())
@@ -18,10 +18,10 @@ MD5:3b2b8fbeae8b7b415ee42d8f4ef92689 -- If you edit this, you'll get what you de
 
 ()
 
-(4 'substart_s' 'ppm_module_substart' '' 1 ((PROCEDURE UNKNOWN-INTENT
+(3 'substart_d' 'ppm_module_substart' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 14
 0 (15 16 17) () 0 () () () 0 0)
-5 'substop_d' 'ppm_module_substop' '' 1 ((PROCEDURE UNKNOWN-INTENT
+4 'substart_s' 'ppm_module_substart' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 18
 0 (19 20 21) () 0 () () () 0 0)
 13 'mpi_statuses_ignore' 'naga_mod_globals' '' 1 ((VARIABLE
@@ -30,10 +30,10 @@ INTEGER 4 0 0 0 INTEGER ()) 0 0 () (2 0 EXPLICIT (CONSTANT (INTEGER 4 0
 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '6') (
 CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '1') (CONSTANT (INTEGER 4 0 0 0
 INTEGER ()) 0 '1')) 0 () () () 0 0)
-3 'substart_d' 'ppm_module_substart' '' 1 ((PROCEDURE UNKNOWN-INTENT
+6 'substop_s' 'ppm_module_substop' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 22
 0 (23 24 25) () 0 () () () 0 0)
-6 'substop_s' 'ppm_module_substop' '' 1 ((PROCEDURE UNKNOWN-INTENT
+5 'substop_d' 'ppm_module_substop' '' 1 ((PROCEDURE UNKNOWN-INTENT
 MODULE-PROC DECL UNKNOWN 0 0 SUBROUTINE) (UNKNOWN 0 0 0 0 UNKNOWN ()) 26
 0 (27 28 29) () 0 () () () 0 0)
 9 'mpi_bottom' 'naga_mod_globals' '' 1 ((VARIABLE UNKNOWN-INTENT
@@ -115,25 +115,25 @@ CONSTANT (INTEGER 4 0 0 0 INTEGER ()) 0 '100')) 0 () () () 0 0)
 15 'caller' '' '' 14 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
 16 't0' '' '' 14 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(REAL 4 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
 17 'info' '' '' 14 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 19 'caller' '' '' 18 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
-20 't0' '' '' 18 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
-REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-21 'info' '' '' 18 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+20 't0' '' '' 18 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+(REAL 4 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+21 'info' '' '' 18 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 23 'caller' '' '' 22 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
-24 't0' '' '' 22 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
-(REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
-25 'info' '' '' 22 ((VARIABLE OUT UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
+24 't0' '' '' 22 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
+REAL 4 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+25 'info' '' '' 22 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 27 'caller' '' '' 26 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0
 DUMMY) (CHARACTER 1 0 0 0 CHARACTER (())) 0 0 () () 0 () () () 0 0)
 28 't0' '' '' 26 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY) (
-REAL 4 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
+REAL 8 0 0 0 REAL ()) 0 0 () () 0 () () () 0 0)
 29 'info' '' '' 26 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)
 (INTEGER 4 0 0 0 INTEGER ()) 0 0 () () 0 () () () 0 0)
 37 'rank' '' '' 36 ((VARIABLE IN UNKNOWN-PROC UNKNOWN UNKNOWN 0 0 DUMMY)

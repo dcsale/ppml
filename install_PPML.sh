@@ -1,12 +1,11 @@
+#!/bin/bash
 # Description: 
-# * A bash script to compile the Naga Parallel-Particle Mesh client and all dependencies from scratch
+# * A bash script to compile the Parallel-Particle Mesh (PPM) library and dependencies from scratch
 # 
 # REQUIREMENTS: (these things are usually best installed through your OS package manager)
 # * compilers: C, C++, Fortran
-# * packages: make, BLAS, LAPACK, curl, (OpenMPI?), (FFTW?)
-# * other: Ruby, Python, (Matlab?), VisIt, Paraview
-#  
-# Danny C. Sale. (license: LGPL)
+# * packages: make, BLAS, LAPACK, curl, OpenMPI
+# * other: Ruby, Python
 
 # =========================================================================== #
 # User Parameters - build & install directories
@@ -15,14 +14,8 @@ DIR_DEPLOY=/home/danny/workspace/deploy
 DIR_BLD=/home/danny/workspace/ppml
 
 # =========================================================================== #
-# User Parameters - Specify which software to install (comment/uncomment)
+# User Parameters - Specify which software to install (set comment/uncomment)
 # =========================================================================== #
-# PPM clients
-# INSTALL_exClient=true
-# INSTALL_LJ=true
-INSTALL_NAGA=true
-# INSTALL_GRAY=true
-
 # dependencies
 # INSTALL_MPI=true
 # INSTALL_RUBY=true
@@ -30,6 +23,12 @@ INSTALL_NAGA=true
 # INSTALL_METIS=true
 # INSTALL_PPMCORE=true
 # INSTALL_PPMNUMERICS=true
+
+# PPM clients
+# INSTALL_exClient=true
+# INSTALL_LJ=true
+INSTALL_NAGA=true
+# INSTALL_GRAY=true
 
 # =========================================================================== #
 # User Parameters - build settings (set true / false)
@@ -42,18 +41,17 @@ branchDevelop=false
 # =========================================================================== #
 # User Parameters - source directories for PPM clients
 # =========================================================================== #
-# easy to include client source here:
+# easy to include client sources here:
 DIR_CLIENT=$DIR_BLD/ppm_clients
 
 SRC_exClient=$DIR_CLIENT/ppm_client_template
-# SRC_LJ=$DIR_CLIENT/ppm_lj
-SRC_LJ=$DIR_CLIENT/ppm_lj_mod
+SRC_LJ=$DIR_CLIENT/ppm_lj
 SRC_NAGA=$DIR_CLIENT/Naga
 
 # =========================================================================== #
-# User Parameters - build & source directories (comment / uncomment)
+# User Parameters - source directories (comment / uncomment)
 # =========================================================================== #
-# easy to include all libraries and source here:
+# easy to include all external libraries and source here:
 DIR_EXT=$DIR_BLD/external
 
 # MPI
@@ -70,23 +68,17 @@ SRC_METIS=$DIR_EXT/metis-4.0.3
 
 # PPM Core
 # SRC_PPMCORE=$DIR_EXT/libppm-1.2.1
-SRC_PPMCORE=$DIR_EXT/libppm-1.2.1-naga-debug
-# SRC_PPMCORE=$DIR_EXT/ppmcore
+# SRC_PPMCORE=$DIR_EXT/libppm-1.2.1-naga-debug
+SRC_PPMCORE=$DIR_EXT/ppmcore
 
 # PPM Numerics
-SRC_PPMNUMERICS=$DIR_EXT/libppmnumerics-r1036
+# SRC_PPMNUMERICS=$DIR_EXT/libppmnumerics-r1036
 # SRC_PPMNUMERICS=$DIR_EXT/libppmnumerics-r1036+
-# SRC_PPMNUMERICS=$DIR_EXT/ppmnumerics
+SRC_PPMNUMERICS=$DIR_EXT/ppmnumerics
 
 # =========================================================================== #
 # Specify the deployment directories
 # =========================================================================== #
-# clients
-DIR_DEPLOY_exClient=$DIR_DEPLOY/ppm_client_template
-DIR_DEPLOY_LJ=$DIR_DEPLOY/ppm_lj
-DIR_DEPLOY_NAGA=$DIR_DEPLOY/Naga
-
-# dependencies
 DIR_DEPLOY_MPI=$DIR_DEPLOY/OpenMPI
 DIR_DEPLOY_FFTW=$DIR_DEPLOY/FFTW
 DIR_DEPLOY_METIS=$DIR_DEPLOY/Metis
@@ -116,7 +108,7 @@ fi
 # echo '           |   |                                             |    |            '
 # echo '           |   | $ setup complete...                         |    |            '
 # echo '           |   |                                             |    |            '
-# echo '           |   | $ let us compile this beast...              |    |            '
+# echo '           |   | $ let's compile this beast...               |    |            '
 # echo '           |   |                                             |    |            '
 # echo '           |   |                                             |    |            '
 # echo '           |   |                                             |    |            '
@@ -142,6 +134,7 @@ fi
 # =========================================================================== #
 
 # =========================================================================== #
+# Ruby is only needed for the new PPML Fortran 2003+ versions
 if [[ -v INSTALL_RUBY ]]; then
 	echo '*********************************************'
 	echo '* ______      _           '
@@ -166,8 +159,8 @@ fi
 # =========================================================================== #
 
 # =========================================================================== #
+# NOTE: I think most clusters will already have MPI installed and configured optimally, probably better to use system MPI instead of building?
 if [[ -v INSTALL_MPI ]]; then
-	# NOTE: I'm still not sure if it's better to build MPI from scratch, or from package manager  
 	echo '*********************************************'
 	echo '*  _____                 ___  _________ _____ '
 	echo '* |  _  |                |  \/  || ___ \_   _|'
@@ -210,6 +203,7 @@ fi
 # =========================================================================== #
 
 # =========================================================================== #
+# most clusters will probably have FFTW installed, but we sometimes need to compile and include sources
 if [[ -v INSTALL_FFTW ]]; then
 	echo '*********************************************'
 	echo '*____________ _____ _    _ '
@@ -234,6 +228,7 @@ if [[ -v INSTALL_FFTW ]]; then
 	fi
 	make clean
 	make
+	# FFTW tests can take a very long time to run
 	# if $runTests; then
 	# 	make check
 	# fi
@@ -242,6 +237,7 @@ fi
 # =========================================================================== #
 
 # =========================================================================== #
+# Metis is used to partition graphs, PPM lib is only compatible with v4.0.3 (or the patched Metis available from PPM devs)
 if [[ -v INSTALL_METIS ]]; then
 	echo '*********************************************'
 	echo '*  ___  ___     _   _     '
@@ -257,9 +253,6 @@ if [[ -v INSTALL_METIS ]]; then
 	mkdir -p $DIR_DEPLOY_METIS
 	cd $SRC_METIS
 	
-	# ./MakeMETIS
-	# cp $SRC_METIS/lib/libmetis.a $DIR_DEPLOY_METIS
-
 	make realclean
 	make
 	cp -r $SRC_METIS/libmetis.a $DIR_DEPLOY_METIS
@@ -296,6 +289,7 @@ if [[ -v INSTALL_PPMCORE ]]; then
 	mkdir -p $DIR_DEPLOY_PPMCORE
 	cd $SRC_PPMCORE
 
+	# for the newest PPML, checkout the correct branch for the client
 	# if $branchDevelop; then
 	# 	git checkout develop
 	# else
@@ -324,6 +318,7 @@ if [[ -v INSTALL_PPMCORE ]]; then
 		# FUNIT_FLAGS="--procs=1,3" make ftest
 	fi
 	make install
+	# I find that unit testing requires to copy some more files
 	cp -r $SRC_PPMCORE/utils $DIR_DEPLOY_PPMCORE/utils
 	cp -r $SRC_PPMCORE/src $DIR_DEPLOY_PPMCORE/src
 fi
@@ -345,6 +340,7 @@ if [[ -v INSTALL_PPMNUMERICS ]]; then
 	mkdir -p $DIR_DEPLOY_PPMNUMERICS
 	cd $SRC_PPMNUMERICS
 
+	# for the newest PPML, checkout the correct branch for the client
 	# if $branchDevelop; then
 	# 	git checkout develop
 	# else
@@ -372,37 +368,40 @@ if [[ -v INSTALL_PPMNUMERICS ]]; then
 		# FUNIT_FLAGS="--procs=1,3" make ftest
 	fi
 	make install
+	# I find that unit testing requires to copy some more files
 	# cp -r $SRC_PPMNUMERICS/utils $DIR_DEPLOY_PPMNUMERICS/utils
 	cp -r $SRC_PPMNUMERICS/src $DIR_DEPLOY_PPMNUMERICS/src
 fi
 # =========================================================================== #
 
 
-# Example PPM clients - v1.2.1
+### test some example PPM clients just to make sure everything compiled okay
+### Example PPM clients - v1.2.1
 # * client template
 # * molecular gas dynamics - Lennard-Jones Potential
 if [[ -v INSTALL_LJ ]]; then 
+	# make the client
 	cd $SRC_LJ
 	make clean
-	make
-	# make DESTDIR=$DIR_DEPLOY_LJ PPMDIR=$DIR_DEPLOY_PPM_CORE PPMNUMDIR=$DIR_DEPLOY_PPMNUMERICS METISDIR=$DIR_DEPLOY_METIS
-	
-	# if $buildParallel; then 	
-	# 	# mpirun -n 1 ./lennardjones --debug 1
-	# 	mpirun -n 1 ./lennardjones
-	# else
-	# 	./lennardjones
-	# 	# ./lennardjones -N 300 -n 2000 -f 15
-	# fi
+	# make
+	make 
+
+	# run the client
+	if $buildParallel; then 	
+		# mpirun -np 1 ./lennardjones --debug 1
+		mpirun -np 1 ./lennardjones
+	else
+		# ./lennardjones
+		./lennardjones -N 300 -n 2000 -f 15
+	fi
 fi
 # * diffusion in complex spaces - Particle Strength Exchange
-# Example PPM clients - v1.2.2
-# * do above examples compile in v1.2.2?  What parts of codes break?
+### Example PPM clients - v1.2.2
 # PPML Client Generator examples
 # * web client for automatic code generation
 # * gray-scott client
 # if [[ -v INSTALL_GRAY ]]; then
-
+# 
 # fi
 
 
@@ -419,11 +418,19 @@ if [[ -v INSTALL_NAGA ]]; then
 	echo '*making Naga from: '$SRC_NAGA
 	echo '*********************************************'
 
+	# make the client
 	cd $SRC_NAGA
 	make clean
 	make
 
-	# # the -x LD_LIBRARY_PATH command exports the LD_LIBRARY_PATH to all connected nodes
+	# run the client
+	if $buildParallel; then 	
+		mpirun -np 1 ./Naga CTRL
+	else
+		./Naga CTRL
+	fi
+
+	# if you need, try the -x LD_LIBRARY_PATH command to export the LD_LIBRARY_PATH to all connected nodes, like:
 	# mpirun -np 1 -x LD_LIBRARY_PATH
 fi
 # =========================================================================== #

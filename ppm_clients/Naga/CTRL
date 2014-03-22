@@ -22,7 +22,7 @@ MAXITIME = 10
 # The resolution RES should be added 1 for periodic domains (64=>65)
 # BOUNDARY_CONDITION: 0=free-space, 1=periodic
 LAYOUT_SIZE      = 1,1
-LAYOUT           = 1,  0,  2,  0.0,0.0,0.0,  1.0,1.0,1.0 ,64,64,64
+LAYOUT           = 1,  0,  2,  0.0,0.0,0.0,  2.0,2.0,2.0 ,64,64,64
 BOUNDARY_CONDITION = 0
 
 #-------------------------------------------------
@@ -72,8 +72,8 @@ IDUMP_RHS           = 0
 FLOWCASE    = 2
 
 ## PARAMETERS FOR FLOWCASE 2
-TORUS_RADIUS1 = 4.00
-TORUS_RADIUS2 = 0.2
+TORUS_RADIUS1 = 1.00
+TORUS_RADIUS2 = 0.05
 
 ## PARAMETERS FOR FLOWCASE 3
 SPHERE_RADIUS = 0.25
@@ -126,6 +126,6 @@ TIMEINTEGRATIONSCHEME = 2
 PENALIZATIONSCHEME    = 2
 CLEARINTERIORRHS      = FALSE
 RHSSCHEME             = 2
-VELOCITYSCHEME        = 3
-FREESPACEKERNEL       = 1
+VELOCITYSCHEME        = 2
+FREESPACEKERNEL       = 3
 
