@@ -1,0 +1,485 @@
+m4trace:m4/ax_f90_header.m4:36: -1- AC_DEFUN([AX_F90_HEADER], [
+ AX_F90_INTERNAL_HEADMOD([$1 fortran 90 header],[$2],-I,
+                         [$3],AS_TR_SH(F90_HEADER_$1),[$4],[$5],[$6])
+])
+m4trace:m4/ax_f90_internal_headmod.m4:24: -1- AC_DEFUN([AX_F90_INTERNAL_HEADMOD], [
+AS_VAR_PUSHDEF([ax_include],[ax_cv_f90_headmod_$2])
+AC_MSG_CHECKING([$1])
+AC_LANG_PUSH(Fortran)
+AS_VAR_SET(ax_include,"not found")
+if test "x$6" = x ; then
+ax_search="$prefix:$ac_default_prefix"
+for ax_base in "" `echo $LD_LIBRARY_PATH | tr ':' '\012'` ; do
+  if test "x$ax_base" != x ; then
+    changequote(,)dnl
+    ax_base=`echo $ax_base | sed 's,/[^/]*$,,'`
+    changequote([,])dnl
+    ax_search="${ax_search}:${ax_base}"
+  fi
+done
+else
+ax_search="$6"
+fi
+for ax_base in `echo $ax_search | tr ':' '\012'` ; do
+ if test "AS_VAR_GET(ax_include)" = "not found" ; then
+   for ax_mod in "" `find $ax_base -follow -name $2 -print` ; do
+     if test "x$ax_mod" != x ; then
+       changequote(,)dnl
+       ax_dir=`echo $ax_mod | sed 's,/[^/]*$,,'`
+       changequote([,])dnl
+       ax_save_FCFLAGS="$FCFLAGS"
+       FCFLAGS="$ax_save_FCFLAGS $3$ax_dir"
+       AC_COMPILE_IFELSE([subroutine conftest_routine
+$4
+          end subroutine conftest_routine
+         ],AS_VAR_SET(ax_include,"$3$ax_dir"),[])
+       FCFLAGS="$ax_save_FCFLAGS"
+     fi
+   done
+ fi
+done
+AC_LANG_POP(Fortran)
+AC_MSG_RESULT([AS_VAR_GET(ax_include)])
+if test "AS_VAR_GET(ax_include)" = "not found"; then
+ $5=""
+ $8
+else
+ $5="AS_VAR_GET(ax_include)"
+ $7
+fi
+AC_SUBST($5)
+AS_VAR_POPDEF([ax_include])
+])
+m4trace:m4/ax_f90_library.m4:37: -1- AC_DEFUN([AX_F90_LIBRARY], [
+AS_VAR_PUSHDEF([ax_ldflags],[ax_cv_f90_ldflags_$1])
+AS_VAR_PUSHDEF([ax_libs],[ax_cv_f90_libs_$1])
+AC_MSG_CHECKING([$1 fortran 90 library])
+AC_LANG_PUSH(Fortran)
+AS_VAR_SET([ax_ldflags],"")
+AS_VAR_SET([ax_libs],"not found")
+if test "x$4" = x ; then
+ax_search="$prefix:$ac_default_prefix"
+for ax_base in "" `echo $LD_LIBRARY_PATH | tr ':' '\012'` ; do
+  if test "x$ax_base" != x ; then
+    changequote(,)dnl
+    ax_base=`echo $ax_base | sed 's,/[^/]*$,,'`
+    changequote([,])dnl
+    ax_search="${ax_search}:${ax_base}"
+  fi
+done
+else
+ax_search="$4"
+fi
+ax_save_LDFLAGS="$LDFLAGS"
+ax_save_LIBS="$LIBS"
+for ax_base in `echo $ax_search | tr ':' '\012'` ; do
+ if test "AS_VAR_GET(ax_libs)" = "not found" ; then
+   for ax_lib in "" `find $ax_base -follow -name '$2' -print` ; do
+     if test "x$ax_lib" != x ; then
+       changequote(,)dnl
+       ax_dir=`echo $ax_lib | sed 's,/[^/]*$,,'`
+       ax_lib=`echo $ax_lib | sed 's,.*/\([^/]*\)$,\1,'`
+       changequote([,])dnl
+       case "$ax_lib" in
+         lib*)
+           changequote(,)dnl
+           ax_lib="`echo $ax_lib | sed 's,lib\(.*\)\.[^.]*$,\1,'`"
+           changequote([,])dnl
+           AS_VAR_SET([ax_ldflags],"-L$ax_dir")
+           AS_VAR_SET([ax_libs],"-l$ax_lib")
+           ;;
+         *)
+           AS_VAR_SET([ax_ldflags],"")
+           AS_VAR_SET(ax_libs,"$ax_lib")
+           ;;
+       esac
+       LDFLAGS="$ax_save_LDFLAGS AS_VAR_GET(ax_ldflags)"
+       LIBS="AS_VAR_GET(ax_libs) $ax_save_LIBS"
+       AC_LINK_IFELSE([program conftest_program
+$3
+          end program conftest_program
+         ],[],[AS_VAR_SET(ax_ldflags,"")
+          AS_VAR_SET(ax_libs,"not found")
+         ])
+     fi
+   done
+ fi
+done
+AC_LANG_POP(Fortran)
+AC_MSG_RESULT([AS_VAR_GET(ax_ldflags) AS_VAR_GET(ax_libs)])
+if test "AS_VAR_GET(ax_libs)" = "not found"; then
+ AS_TR_SH(F90_LDFLAGS_$1)=""
+ AS_TR_SH(F90_LIBS_$1)=""
+ $6
+else
+ AS_TR_SH(F90_LDFLAGS_$1)=AS_VAR_GET(ax_ldflags)
+ AS_TR_SH(F90_LIBS_$1)=AS_VAR_GET(ax_libs)
+ $5
+fi
+AC_SUBST(AS_TR_SH(F90_LDFLAGS_$1))
+AC_SUBST(AS_TR_SH(F90_LIBS_$1))
+AS_VAR_POPDEF([ax_libs])
+AS_VAR_POPDEF([ax_ldflags])
+])
+m4trace:m4/ax_f90_library_setup.m4:62: -1- AC_DEFUN([AX_F90_LIBRARY_SETUP], [
+ AC_ARG_WITH([$1],[AS_HELP_STRING([--with-$1=path],[set the path to the ppm core library - THIS FLAG IS MANDATORY])],
+   [if test x${withval} = xno -o x${withval} = xyes; then
+     AC_MSG_ERROR([you must provide --with-$1=path to point to the $1 library])
+    fi],[
+     AC_MSG_ERROR([you must provide --with-$1=path to point to the $1 library])
+    ])
+ if test x$2 != x ; then
+   AX_F90_HEADER([$1],[$2],[$5],$withval,[
+      FCFLAGS="$FCFLAGS $AS_TR_SH(F90_HEADER_$1)"
+     ],[])
+ fi
+ if test x$3 != x ; then
+   AX_F90_MODULE([$1],[$3],[$5],$withval,[
+      FCFLAGS="$FCFLAGS $AS_TR_SH(F90_MODULE_$1)"
+     ],[])
+ fi
+ AX_F90_LIBRARY([$1],[$4],[$5],$withval,[
+    LDFLAGS="$LDFLAGS $AS_TR_SH(F90_LDFLAGS_$1)"
+    LIBS="$AS_TR_SH(F90_LIBS_$1) $LIBS"
+   ],[AC_MSG_ERROR([cannot compile ppm numerics without ppm core])])
+])
+m4trace:m4/ax_f90_module.m4:37: -1- AC_DEFUN([AX_F90_MODULE], [
+ AC_REQUIRE([AX_F90_MODULE_FLAG])
+ AX_F90_INTERNAL_HEADMOD([$1 fortran 90 module],[$2],"$ax_cv_f90_modflag",
+                         [$3],AS_TR_SH(F90_MODULE_$1),[$4],[$5],[$6])
+])
+m4trace:m4/ax_f90_module_extension.m4:27: -1- AC_DEFUN([AX_F90_MODULE_EXTENSION], [
+AC_CACHE_CHECK([fortran 90 modules extension],
+ax_cv_f90_modext,
+[AC_LANG_PUSH(Fortran)
+i=0
+while test \( -f tmpdir_$i \) -o \( -d tmpdir_$i \) ; do
+  i=`expr $i + 1`
+done
+mkdir tmpdir_$i
+cd tmpdir_$i
+AC_COMPILE_IFELSE([
+!234567
+      module conftest_module
+      contains
+      subroutine conftest_routine
+      write(*,'(a)') 'gotcha!'
+      end subroutine conftest_routine
+      end module conftest_module
+  ],
+  [ax_cv_f90_modext=`ls | sed -n 's,conftest_module\.,,p'`
+   if test x$ax_cv_f90_modext = x ; then
+dnl Some F90 compilers put module filename in uppercase letters
+     ax_cv_f90_modext=`ls | sed -n 's,CONFTEST_MODULE\.,,p'`
+     if test x$ax_cv_f90_modext = x ; then
+       ax_cv_f90_modext=""
+     fi
+   fi
+  ],
+  [ax_cv_f90_modext=""])
+cd ..
+rm -fr tmpdir_$i
+AC_LANG_POP(Fortran)
+])])
+m4trace:m4/ax_f90_module_flag.m4:30: -1- AC_DEFUN([AX_F90_MODULE_FLAG], [
+AC_CACHE_CHECK([fortran 90 modules inclusion flag],
+ax_cv_f90_modflag,
+[AC_LANG_PUSH(Fortran)
+i=0
+while test \( -f tmpdir_$i \) -o \( -d tmpdir_$i \) ; do
+  i=`expr $i + 1`
+done
+mkdir tmpdir_$i
+cd tmpdir_$i
+AC_COMPILE_IFELSE([
+!234567
+      module conftest_module
+      contains
+      subroutine conftest_routine
+      write(*,'(a)') 'gotcha!'
+      end subroutine conftest_routine
+      end module conftest_module
+  ],[],[])
+cd ..
+ax_cv_f90_modflag="not found"
+for ax_flag in "-I" "-J" "-M" "-p"; do
+  if test "$ax_cv_f90_modflag" = "not found" ; then
+    ax_save_FCFLAGS="$FCFLAGS"
+    FCFLAGS="$ax_save_FCFLAGS ${ax_flag}tmpdir_$i"
+    AC_COMPILE_IFELSE([
+!234567
+      program conftest_program
+      use conftest_module
+      call conftest_routine
+      end program conftest_program
+      ],[ax_cv_f90_modflag="$ax_flag"],[])
+    FCFLAGS="$ax_save_FCFLAGS"
+  fi
+done
+rm -fr tmpdir_$i
+if test "$ax_cv_f90_modflag" = "not found" ; then
+  AC_MSG_ERROR([unable to find compiler flag for modules inclusion])
+fi
+AC_LANG_POP(Fortran)
+])])
+m4trace:m4/ppm_check_mpi.m4:20: -1- AC_DEFUN([PPM_CHECK_MPI], [
+if test "x$1" = xyes; then
+    AC_MSG_NOTICE([*** Check for any MPI to compile and link with ***])
+else
+    AC_MSG_NOTICE([*** First check if I can use $1 to compile and link with ***])
+fi
+# check for one of the following MPI distributions
+# OpenMPI
+# LAMMPI
+# MPICH
+# MPICH2
+# intel MPI
+# Sun ClusterTools (tmcc,tmCC,tmf77,tmf90)
+# IBM AIX POE (mpcc_r,mpCC_r,mpxlf_r)
+# Many of thsoe implementation have same wrapper names
+if test "x$1" = xopenmpi; then
+    AC_CHECK_PROG(MPICC,[mpicc],[mpicc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpicc for OpenMPI])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpic++],[mpic++],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpic++ for OpenMPI])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpif90],[mpif90],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpif90 for OpenMPI])],[FC="$MPIFC"])
+elif test "x$1" = xlammpi; then
+    AC_CHECK_PROG(MPICC,[mpicc],[mpicc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpicc for LAM/MPI])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpiCC],[mpiCC],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpiCC for LAM/MPI])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpif90],[mpif90],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpif90 for LAM/MPI])],[FC="$MPIFC"])
+elif test "x$1" = xmpich; then
+    AC_CHECK_PROG(MPICC,[mpicc],[mpicc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpicc for MPICH])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpiCC],[mpiCC],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpiCC for MPICH])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpif90],[mpif90],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpif90 for MPICH])],[FC="$MPIFC"])
+elif test "x$1" = xmpich2; then
+    AC_CHECK_PROG(MPICC,[mpicc],[mpicc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpicc for MPICH 2])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpicxx],[mpicxx],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpicxx for MPICH 2])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpif90],[mpif90],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpif90 for MPICH 2])],[FC="$MPIFC"])
+elif test "x$1" = xintelmpi_gnu; then
+    AC_CHECK_PROG(MPICC,[mpigcc],[mpigcc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpigcc for Intel MPI + GNU Compilers])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpig++],[mpig++],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpig++ for Intel MPI + GNU Compilers])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpigfortran],[mpigfortran],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpigfortran for Intel MPI + GNU Compilers])],[FC="$MPIFC"])
+elif test "x$1" = xintelmpi_intel; then
+    AC_CHECK_PROG(MPICC,[mpiicc],[mpiicc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpigcc for Intel MPI + Intel Compilers])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpiicpc],[mpicpc],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpicpc for Intel MPI + Intel Compilers])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpiifort],[mpiifort],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpiifort for Intel MPI + Intel Compilers])],[FC="$MPIFC"])
+elif test "x$1" = xsun; then
+    AC_CHECK_PROG(MPICC,[tmcc],[tmcc],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find tmcc for Sun MPI])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[tmCC],[tmCC],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find tmCC for Sun MPI])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[tmf90],[tmf90],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find tmf90 for Sun MPI])],[FC="$MPIFC"])
+elif test "x$1" = xibm; then
+    AC_CHECK_PROG(MPICC,[mpcc_r],[mpcc_r],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_ERROR([Could not find mpcc_r for IBM AIX MPI])],[CC="$MPICC"])
+    AC_CHECK_PROG(MPICXX,[mpCC_r],[mpCC_r],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_ERROR([Could not find mpCC_r for IBM AIX MPI])],[CXX="$MPICXX"])
+    AC_CHECK_PROG(MPIFC,[mpxf90_r],[mpxf90_r],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_ERROR([Could not find mpxf90_ for IBM AIX MPI])],[FC="$MPIFC"])
+elif test "x$1" = xguess; then
+    AC_CHECK_PROGS(MPICC,[mpicc mpigcc mpiicc tmcc mpcc_r],[no])
+    AS_VAR_IF(MPICC,[no],[AC_MSG_WARN([Could not find any mpi wrapper for a C compiler])],[CC="$MPICC"])
+    AC_CHECK_PROGS(MPICXX,[mpic++ mpiCC mpicxx mpig++ mpiicpc tmCC mpCC_r],[no])
+    AS_VAR_IF(MPICXX,[no],[AC_MSG_WARN([Could not find any mpi wrapper for a C++ compiler])],[CXX="$MPICXX"])
+    AC_CHECK_PROGS(MPIFC,[mpif90 mpifc mpigfortran mpiifort tmf90 mpxf90_r],[no])
+    AS_VAR_IF(MPIFC,[no],[AC_MSG_WARN([Could not find any mpi wrapper for a Fortran compiler])],[FC="$MPIFC"])
+    AC_MSG_NOTICE([found $CC $CXX $FC])
+elif test "x$1" = xyes; then
+    AC_MSG_NOTICE([You would like to use $CC $CXX $FC to compile with MPI support])
+else
+    AC_MSG_ERROR([Could not reocgnize this MPI implementation: $1])
+fi
+])
+m4trace:configure.ac:21: -1- m4_pattern_allow([AS_TR_SH])
+m4trace:configure.ac:23: -1- m4_pattern_forbid([^_?A[CHUM]_])
+m4trace:configure.ac:23: -1- m4_pattern_forbid([_AC_])
+m4trace:configure.ac:23: -1- m4_pattern_forbid([^LIBOBJS$], [do not use LIBOBJS directly, use AC_LIBOBJ (see section `AC_LIBOBJ vs LIBOBJS'])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^AS_FLAGS$])
+m4trace:configure.ac:23: -1- m4_pattern_forbid([^_?m4_])
+m4trace:configure.ac:23: -1- m4_pattern_forbid([^dnl$])
+m4trace:configure.ac:23: -1- m4_pattern_forbid([^_?AS_])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^SHELL$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PATH_SEPARATOR$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_NAME$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_TARNAME$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_VERSION$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_STRING$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_BUGREPORT$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_URL$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^exec_prefix$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^prefix$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^program_transform_name$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^bindir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^sbindir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^libexecdir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^datarootdir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^datadir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^sysconfdir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^sharedstatedir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^localstatedir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^includedir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^oldincludedir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^docdir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^infodir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^htmldir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^dvidir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^pdfdir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^psdir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^libdir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^localedir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^mandir$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_NAME$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_TARNAME$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_VERSION$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_STRING$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_BUGREPORT$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^PACKAGE_URL$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^DEFS$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^ECHO_C$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^ECHO_N$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^ECHO_T$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^LIBS$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^build_alias$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^host_alias$])
+m4trace:configure.ac:23: -1- m4_pattern_allow([^target_alias$])
+m4trace:configure.ac:32: -1- PPM_CHECK_MPI([$enableval])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICC$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPICXX$])
+m4trace:configure.ac:32: -1- m4_pattern_allow([^MPIFC$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^CXX$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^CXXFLAGS$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^LDFLAGS$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^LIBS$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^CXX$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^ac_ct_CXX$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^EXEEXT$])
+m4trace:configure.ac:51: -1- m4_pattern_allow([^OBJEXT$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CFLAGS$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^LDFLAGS$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^LIBS$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^ac_ct_CC$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CPP$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:52: -1- m4_pattern_allow([^CPP$])
+m4trace:configure.ac:53: -1- m4_pattern_allow([^SET_MAKE$])
+m4trace:configure.ac:54: -1- m4_pattern_allow([^RANLIB$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^FC$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^FCFLAGS$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^LDFLAGS$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^LIBS$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^FC$])
+m4trace:configure.ac:55: -1- m4_pattern_allow([^ac_ct_FC$])
+m4trace:configure.ac:57: -1- m4_pattern_allow([^FCLIBS$])
+m4trace:configure.ac:59: -1- m4_pattern_allow([^GREP$])
+m4trace:configure.ac:59: -1- m4_pattern_allow([^EGREP$])
+m4trace:configure.ac:59: -1- m4_pattern_allow([^STDC_HEADERS$])
+m4trace:configure.ac:59: -1- m4_pattern_allow([^SIZEOF_LONG_DOUBLE$])
+m4trace:configure.ac:61: -1- AX_F90_MODULE_FLAG
+m4trace:configure.ac:62: -1- m4_pattern_allow([^ax_cv_f90_modflag$])
+m4trace:configure.ac:68: -1- _m4_warn([cross], [AC_RUN_IFELSE called without default to allow cross compiling], [../../lib/autoconf/general.m4:2749: AC_RUN_IFELSE is expanded from...
+configure.ac:68: the top level])
+m4trace:configure.ac:105: -1- m4_pattern_allow([^CPPFLAGS$])
+m4trace:configure.ac:154: -1- m4_pattern_allow([^HAVE_LIBM$])
+m4trace:configure.ac:157: -1- AX_F90_MODULE_EXTENSION
+m4trace:configure.ac:162: -1- AX_F90_LIBRARY_SETUP([ppm], [], [ppm_module_finalize.$ax_cv_f90_modext], [libppm*], [
+    use ppm_module_finalize
+    integer :: info
+    call ppm_finalize(info)
+   ])
+m4trace:configure.ac:162: -1- AX_F90_HEADER([ppm], [], [
+    use ppm_module_finalize
+    integer :: info
+    call ppm_finalize(info)
+   ], [$withval], [
+      FCFLAGS="$FCFLAGS $AS_TR_SH(F90_HEADER_ppm)"
+     ], [])
+m4trace:configure.ac:162: -1- AX_F90_INTERNAL_HEADMOD([ppm fortran 90 header], [], [-I], [
+    use ppm_module_finalize
+    integer :: info
+    call ppm_finalize(info)
+   ], [F90_HEADER_ppm], [$withval], [
+      FCFLAGS="$FCFLAGS $AS_TR_SH(F90_HEADER_ppm)"
+     ], [])
+m4trace:configure.ac:162: -1- m4_pattern_allow([^F90_HEADER_ppm$])
+m4trace:configure.ac:162: -1- AX_F90_MODULE([ppm], [ppm_module_finalize.$ax_cv_f90_modext], [
+    use ppm_module_finalize
+    integer :: info
+    call ppm_finalize(info)
+   ], [$withval], [
+      FCFLAGS="$FCFLAGS $AS_TR_SH(F90_MODULE_ppm)"
+     ], [])
+m4trace:configure.ac:162: -1- AX_F90_INTERNAL_HEADMOD([ppm fortran 90 module], [ppm_module_finalize.$ax_cv_f90_modext], ["$ax_cv_f90_modflag"], [
+    use ppm_module_finalize
+    integer :: info
+    call ppm_finalize(info)
+   ], [F90_MODULE_ppm], [$withval], [
+      FCFLAGS="$FCFLAGS $AS_TR_SH(F90_MODULE_ppm)"
+     ], [])
+m4trace:configure.ac:162: -1- m4_pattern_allow([^F90_MODULE_ppm$])
+m4trace:configure.ac:162: -1- AX_F90_LIBRARY([ppm], [libppm*], [
+    use ppm_module_finalize
+    integer :: info
+    call ppm_finalize(info)
+   ], [$withval], [
+    LDFLAGS="$LDFLAGS $AS_TR_SH(F90_LDFLAGS_ppm)"
+    LIBS="$AS_TR_SH(F90_LIBS_ppm) $LIBS"
+   ], [AC_MSG_ERROR([cannot compile ppm numerics without ppm core])])
+m4trace:configure.ac:162: -1- m4_pattern_allow([^F90_LDFLAGS_ppm$])
+m4trace:configure.ac:162: -1- m4_pattern_allow([^F90_LIBS_ppm$])
+m4trace:configure.ac:171: -1- m4_pattern_allow([^HAVE_LIBFFTW3$])
+m4trace:configure.ac:221: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:223: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:225: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:235: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:237: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:239: -1- m4_pattern_allow([^DEBUG$])
+m4trace:configure.ac:250: -1- m4_pattern_allow([^LIB@&t@OBJS$])
+m4trace:configure.ac:250: -1- m4_pattern_allow([^LTLIBOBJS$])

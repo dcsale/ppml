@@ -1,0 +1,824 @@
+      !-------------------------------------------------------------------------
+      !  Subroutine   : ppm_poisson_solve.f90
+      !-------------------------------------------------------------------------
+      ! Copyright (c) 2010 CSE Lab (ETH Zurich), MOSAIC Group (ETH Zurich),
+      !                    Center for Fluid Dynamics (DTU)
+      !
+      !-------------------------------------------------------------------------
+      SUBROUTINE __ROUTINE(topoid,meshid,ppmpoisson,fieldin,fieldout,gstw,info,&
+                         & tmpcase)
+      !!! Routine to perform the Greens function solution of the Poisson
+      !!! equation. All settings are defined in ppm_poisson_initdef and stored 
+      !!! in the ppmpoisson plan. 
+      !!!
+      !!! The tmpcase argument allows the use of a
+      !!! different Greens function or operation than initialised. This is 
+      !!! particularly useful for Helmholtz reprojection 
+      !!! (ppm_poisson_grn_reprojec).
+      !!!
+      !!! [NOTE]
+      !!! fieldin and fieldout must NOT be the same fields. In-place FFTs have
+      !!! not been implemented.
+
+      USE ppm_module_map_field
+      USE ppm_module_map_field_global
+      USE ppm_module_map
+#ifdef __DOTIMINGS
+      USE naga_mod_time, ONLY: naga_time_str,naga_time_stp
+#endif
+      !USE ppm_module_topo_get !@PERFREE
+
+      IMPLICIT NONE
+      include 'mpif.h'
+
+      !-------------------------------------------------------------------------
+      ! Arguments
+      !-------------------------------------------------------------------------
+      INTEGER, INTENT(IN)                                         :: topoid
+      !!! Topology ID
+      INTEGER, INTENT(IN)                                         :: meshid
+      !!! Mesh ID
+      TYPE(ppm_poisson_plan),INTENT(INOUT)                        :: ppmpoisson
+      !!! The PPM Poisson plan
+      REAL(__PREC),DIMENSION(:,:,:,:,:),POINTER                   :: fieldin
+      !!! Input data field
+      REAL(__PREC),DIMENSION(:,:,:,:,:),POINTER                   :: fieldout
+      !!! Output data field
+      INTEGER,DIMENSION(__DIM),INTENT(IN)                         :: gstw
+      !!! Ghost layer width
+      INTEGER, INTENT(OUT)                                        :: info
+      !!! Return status, 0 upon succes
+      INTEGER,OPTIONAL,INTENT(IN)                                 :: tmpcase
+      !!! Temporary operation (useful for ppm_poisson_grn_repr)
+
+      !-------------------------------------------------------------------------
+      ! Local variables
+      !-------------------------------------------------------------------------
+      INTEGER,PARAMETER                 :: MK = __PREC
+      REAL(__PREC)                      :: t0
+      INTEGER                           :: isub,isubl
+      INTEGER                           :: i,j,k
+      INTEGER                           :: info2
+      INTEGER                           :: presentcase
+      COMPLEX(__PREC)                   :: divomega
+      INTEGER                           :: gi,gj,gk
+      COMPLEX(__PREC)                   :: kx,ky,kz
+      COMPLEX(__PREC)                   :: phix,phiy,phiz
+      REAL(__PREC)                      :: normfac
+
+      !TYPE(ppm_t_topo),POINTER                :: topology=>NULL() !@PERFREE
+      !REAL(__PREC)                            :: Lx2,Ly2,Lz2 !@PERFREE
+      !REAL(__PREC),PARAMETER                  :: PI=ACOS(-1.0_MK) !@ use ppm piPERFREE
+
+      !CALL ppm_topo_get(topoid,topology,info) !@PERFREE
+      !IF (info .NE. 0) THEN !@PERFREE
+        !CALL ppm_write(ppm_rank,'ppm_poisson_init','Failed to get topology.',isub) !@PERFREE
+        !GOTO 9999 !@PERFREE
+      !ENDIF !@PERFREE
+
+      !Lx2 = 0.25_MK/(topology%max_physd(1)-topology%min_physd(1))**2 !@PERFREE
+      !Ly2 = 0.25_MK/(topology%max_physd(2)-topology%min_physd(2))**2 !@PERFREE
+      !Lz2 = 0.25_MK/(topology%max_physd(3)-topology%min_physd(3))**2 !@PERFREE
+
+      !-------------------------------------------------------------------------
+      ! Initialise routine
+      !-------------------------------------------------------------------------
+      CALL substart('ppm_poisson_solve',t0,info)
+
+      !-------------------------------------------------------------------------
+      ! Check if we run a different/temporary case
+      !-------------------------------------------------------------------------
+      IF (PRESENT(tmpcase)) THEN
+         presentcase = tmpcase
+      ELSE
+         presentcase = ppmpoisson%case
+      ENDIF
+
+      !-------------------------------------------------------------------------
+      !@ Perhaps check if ghostlayer suffices for a given fd stencil
+      !-------------------------------------------------------------------------
+
+
+      !-------------------------------------------------------------------------
+      ! Perhaps allocate (and deallocate) arrays
+      !-------------------------------------------------------------------------
+
+
+      !-----------------------------------------------------------------------
+      ! Set the real xy slabs 0 (part of the 0 padding) for free-space
+      !@ free-space calculations and reprojection may cause problems !why?
+      ! this should be valid for all freespace as repr_fd is only for freespace
+      !-----------------------------------------------------------------------
+      !!IF ((presentcase .EQ. ppm_poisson_grn_repr .AND. &
+        !!&  ppmpoisson%case .EQ. ppm_poisson_grn_pois_fre) .OR. &
+        !!&  presentcase .EQ. ppm_poisson_grn_repr_fd) THEN
+        !!ppmpoisson%fldxyr = 0.0_MK
+      !!ENDIF
+      IF (presentcase .EQ. ppm_poisson_grn_pois_fre) THEN
+        ppmpoisson%fldxyr = 0.0_MK
+      ENDIF
+
+      IF (presentcase .EQ. ppm_poisson_grn_repr) THEN
+        ppmpoisson%fldxyr = 0.0_MK
+      ENDIF
+
+      !-----------------------------------------------------------------------
+      ! For discontinuous vorticity at boundaries, calculate vort. divergence
+      !-----------------------------------------------------------------------
+      IF (presentcase .EQ. ppm_poisson_grn_repr_fd .AND. &
+        & ppmpoisson%case .EQ. ppm_poisson_grn_pois_fre) THEN
+        fieldout = 0.0_MK
+        CALL ppm_poisson_fd(topoid,meshid,fieldin,fieldout,&
+                             & ppm_poisson_drv_div_fd2,info)
+      ENDIF
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(70)
+#endif
+      !-----------------------------------------------------------------------
+      ! Map data globally to the slabs (XY)
+      ! This is where the vorticity is extended and padded with 0 for free-space
+      !-----------------------------------------------------------------------
+      !Initialise
+      CALL ppm_map_field_global(&
+      & topoid, &
+      & ppmpoisson%topoidxy, &
+      & meshid, &
+      & ppmpoisson%meshidxy,info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank,'ppm_poisson_solve','Failed to initialise field mapping.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(70)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(71)
+#endif
+      !Push the data
+      ! (in case of freespace reprojection push fieldout)
+      IF (presentcase .EQ. ppm_poisson_grn_repr_fd) THEN
+        CALL ppm_map_field_push(&
+        & topoid, &
+        & meshid,fieldout,__NCOM,info)
+        IF (info .NE. 0) THEN
+          CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to push vector field.',info2)
+          GOTO 9999
+        ENDIF
+      ELSE
+        CALL ppm_map_field_push(&
+        & topoid, &
+        & meshid,fieldin,__NCOM,info)
+        IF (info .NE. 0) THEN
+          CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to push vector field.',info2)
+          GOTO 9999
+        ENDIF
+      ENDIF
+
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(71)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(72)
+#endif
+      !Send
+      CALL ppm_map_field_send(info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to send field.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(72)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(73)
+#endif
+      !Retrieve
+      CALL ppm_map_field_pop(&
+      & ppmpoisson%topoidxy, &
+      & ppmpoisson%meshidxy,ppmpoisson%fldxyr, &
+      & __NCOM,__ZEROSI,info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to pop vector field.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(73)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(91)
+#endif
+      !-----------------------------------------------------------------------
+      ! Do slab FFT (XY) - use the xy topology as its extent has not been halved
+      !-----------------------------------------------------------------------
+      CALL ppm_fft_execute_2d(ppmpoisson%topoidxy,&
+      & ppmpoisson%meshidxy, ppmpoisson%planfxy, &
+      & ppmpoisson%fldxyr, ppmpoisson%fldxyc, &
+      & info)
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(91)
+#endif
+
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(74)
+#endif
+      !-----------------------------------------------------------------------
+      ! Map to the pencils (Z)
+      !-----------------------------------------------------------------------
+      !Initialise
+      CALL ppm_map_field_global(&
+      & ppmpoisson%topoidxy, &
+      & ppmpoisson%topoidz, &
+      & ppmpoisson%meshidxyc, &
+      & ppmpoisson%meshidz,info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to initialise field mapping.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(74)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(75)
+#endif
+      !Push the data
+      CALL ppm_map_field_push(&
+      & ppmpoisson%topoidxy, &
+      & ppmpoisson%meshidxyc,ppmpoisson%fldxyc,__NCOM,info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to push vector field.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(75)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(76)
+#endif
+      !Send
+      CALL ppm_map_field_send(info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to send field.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(76)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(77)
+#endif
+      !Retrieve
+      CALL ppm_map_field_pop(&
+      & ppmpoisson%topoidz, &
+      & ppmpoisson%meshidz,ppmpoisson%fldzc1, &
+      & __NCOM,__ZEROSI,info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to pop vector field.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(77)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(91)
+#endif
+
+      !-----------------------------------------------------------------------
+      ! Do pencil FFT (Z)
+      !-----------------------------------------------------------------------
+      CALL ppm_fft_execute_1d(ppmpoisson%topoidz,&
+      & ppmpoisson%meshidz, ppmpoisson%planfz, &
+      & ppmpoisson%fldzc1, ppmpoisson%fldzc2, &
+      & info)
+
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(91)
+#endif
+
+      !-----------------------------------------------------------------------
+      ! Apply the periodic Greens function
+      !-----------------------------------------------------------------------
+      IF (presentcase .EQ. ppm_poisson_grn_pois_per) THEN
+#ifdef __DOTIMINGS
+      CALL naga_time_str(92)
+#endif
+        DO isub=1,ppmpoisson%nsublistz
+          isubl=ppmpoisson%isublistz(isub)
+          DO k=1,ppmpoisson%ndataz(3,isubl)
+            DO j=1,ppmpoisson%ndataz(2,isubl)
+              DO i=1,ppmpoisson%ndataz(1,isubl)
+                ppmpoisson%fldzc2(1,i,j,k,isub) = ppmpoisson%fldgrnr( i,j,k,isub)*&
+                                                & ppmpoisson%fldzc2(1,i,j,k,isub)
+                ppmpoisson%fldzc2(2,i,j,k,isub) = ppmpoisson%fldgrnr( i,j,k,isub)*&
+                                                & ppmpoisson%fldzc2(2,i,j,k,isub)
+                ppmpoisson%fldzc2(3,i,j,k,isub) = ppmpoisson%fldgrnr( i,j,k,isub)*&
+                                                & ppmpoisson%fldzc2(3,i,j,k,isub)
+              ENDDO
+            ENDDO
+          ENDDO
+        ENDDO
+
+
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(92)
+#endif
+      !-----------------------------------------------------------------------
+      ! Apply the free-space Greens function
+      !-----------------------------------------------------------------------
+      ELSE IF (presentcase .EQ. ppm_poisson_grn_pois_fre) THEN
+#ifdef __DOTIMINGS
+      CALL naga_time_str(93)
+#endif
+        DO isub=1,ppmpoisson%nsublistz
+          isubl=ppmpoisson%isublistz(isub)
+          DO k=1,ppmpoisson%ndataz(3,isubl)
+            DO j=1,ppmpoisson%ndataz(2,isubl)
+              DO i=1,ppmpoisson%ndataz(1,isubl)
+#ifdef __GREENK
+                phix = ppmpoisson%fldzc2(1,i,j,k,isub)
+                phiy = ppmpoisson%fldzc2(2,i,j,k,isub)
+                phiz = ppmpoisson%fldzc2(3,i,j,k,isub)
+                ppmpoisson%fldzc2(1,i,j,k,isub) = &
+                &   ppmpoisson%fldgrnc(2,i,j,k,isub)*phiz &
+                & - ppmpoisson%fldgrnc(3,i,j,k,isub)*phiy
+                ppmpoisson%fldzc2(2,i,j,k,isub) = &
+                &   ppmpoisson%fldgrnc(3,i,j,k,isub)*phix &
+                & - ppmpoisson%fldgrnc(1,i,j,k,isub)*phiz
+                ppmpoisson%fldzc2(3,i,j,k,isub) = &
+                &   ppmpoisson%fldgrnc(1,i,j,k,isub)*phiy &
+                & - ppmpoisson%fldgrnc(2,i,j,k,isub)*phix
+#else
+                ppmpoisson%fldzc2(1,i,j,k,isub) = ppmpoisson%fldgrnc( i,j,k,isub)*&
+                                                & ppmpoisson%fldzc2(1,i,j,k,isub)
+                ppmpoisson%fldzc2(2,i,j,k,isub) = ppmpoisson%fldgrnc( i,j,k,isub)*&
+                                                & ppmpoisson%fldzc2(2,i,j,k,isub)
+                ppmpoisson%fldzc2(3,i,j,k,isub) = ppmpoisson%fldgrnc( i,j,k,isub)*&
+                                                & ppmpoisson%fldzc2(3,i,j,k,isub)
+#endif
+              ENDDO
+            ENDDO
+          ENDDO
+        ENDDO
+
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(93)
+#endif
+      !-----------------------------------------------------------------------
+      ! Vorticity reprojection
+      !-----------------------------------------------------------------------
+      ELSE IF (presentcase .EQ. ppm_poisson_grn_repr .OR. &
+             & presentcase .EQ. ppm_poisson_grn_repr_fd) THEN
+#ifdef __DOTIMINGS
+      CALL naga_time_str(94)
+#endif
+        normfac = 1.0_MK/ REAL((ppmpoisson%nmfft(1))* & !vertex
+                             & (ppmpoisson%nmfft(2))* &
+                             & (ppmpoisson%nmfft(3)),MK)
+
+        DO isub=1,ppmpoisson%nsublistz
+          isubl=ppmpoisson%isublistz(isub)
+          DO k=1,ppmpoisson%ndataz(3,isubl)
+            gk = k - 1 + (ppmpoisson%istartz(3,isubl)-1)
+            IF (gk .GT. (ppmpoisson%nmfft(3))/2) gk = gk-(ppmpoisson%nmfft(3))
+            kz = CMPLX(0.0_MK,REAL(gk,MK),MK)*ppmpoisson%normkz
+            DO j=1,ppmpoisson%ndataz(2,isubl)
+              gj = j - 1 + (ppmpoisson%istartz(2,isubl)-1)
+              IF (gj .GT. (ppmpoisson%nmfft(2))/2) gj = gj-(ppmpoisson%nmfft(2))
+              ky = CMPLX(0.0_MK,REAL(gj,MK),MK)*ppmpoisson%normky
+              DO i=1,ppmpoisson%ndataz(1,isubl)
+                gi = i - 1 + (ppmpoisson%istartz(1,isubl)-1)
+                IF (gi .GT. (ppmpoisson%nmfft(1))/2) gi = gi-(ppmpoisson%nmfft(1))
+                kx = CMPLX(0.0_MK,REAL(gi,MK),MK)*ppmpoisson%normkx
+
+
+               IF (presentcase .EQ. ppm_poisson_grn_repr_fd) THEN
+                 ppmpoisson%fldzc2(1,i,j,k,isub) = &
+                   & -ppmpoisson%fldzc2(1,i,j,k,isub)*kx * &
+#ifdef __GREENK
+                   & ppmpoisson%fldgrnc(1,i,j,k,isub)
+#else
+                   & ppmpoisson%fldgrnc( i,j,k,isub)
+#endif
+                 ppmpoisson%fldzc2(2,i,j,k,isub) = &
+                   & -ppmpoisson%fldzc2(2,i,j,k,isub)*ky * &
+#ifdef __GREENK
+                   & ppmpoisson%fldgrnc(1,i,j,k,isub)
+#else
+                   & ppmpoisson%fldgrnc( i,j,k,isub)
+#endif
+                 ppmpoisson%fldzc2(3,i,j,k,isub) = &
+                   & -ppmpoisson%fldzc2(3,i,j,k,isub)*kz * &
+#ifdef __GREENK
+                   & ppmpoisson%fldgrnc(1,i,j,k,isub)
+#else
+                   & ppmpoisson%fldgrnc( i,j,k,isub)
+#endif
+                 ELSE IF (ppmpoisson%case .EQ. ppm_poisson_grn_pois_fre) THEN
+                   !compute spectral divergence and solve poisson....
+                   divomega     = (ppmpoisson%fldzc2(1,i,j,k,isub) * kx +  &
+                                &  ppmpoisson%fldzc2(2,i,j,k,isub) * ky +  &
+                                &  ppmpoisson%fldzc2(3,i,j,k,isub) * kz) * &
+#ifdef __GREENK
+                                & ppmpoisson%fldgrnc(1,i,j,k,isub)
+#else
+                                & ppmpoisson%fldgrnc( i,j,k,isub)
+#endif
+                   !...and subtract its gradient
+                   ppmpoisson%fldzc2(1,i,j,k,isub) = &
+                     & (ppmpoisson%fldzc2(1,i,j,k,isub)*normfac + divomega    *kx)
+                   ppmpoisson%fldzc2(2,i,j,k,isub) = &
+                     & (ppmpoisson%fldzc2(2,i,j,k,isub)*normfac + divomega    *ky)
+                   ppmpoisson%fldzc2(3,i,j,k,isub) = &
+                     & (ppmpoisson%fldzc2(3,i,j,k,isub)*normfac + divomega    *kz)
+                ELSE IF (ppmpoisson%case .EQ. ppm_poisson_grn_pois_per) THEN
+                  !compute spectral divergence....
+                  divomega     = (ppmpoisson%fldzc2(1,i,j,k,isub) * kx +  &
+                               &  ppmpoisson%fldzc2(2,i,j,k,isub) * ky +  &
+                               &  ppmpoisson%fldzc2(3,i,j,k,isub) * kz) * &
+                               &  ppmpoisson%fldgrnr( i,j,k,isub)
+                  !...and subtract its gradient
+                  ppmpoisson%fldzc2(1,i,j,k,isub) = &
+                    & (ppmpoisson%fldzc2(1,i,j,k,isub)*normfac + divomega    *kx)
+                  ppmpoisson%fldzc2(2,i,j,k,isub) = &
+                    & (ppmpoisson%fldzc2(2,i,j,k,isub)*normfac + divomega    *ky)
+                  ppmpoisson%fldzc2(3,i,j,k,isub) = &
+                    & (ppmpoisson%fldzc2(3,i,j,k,isub)*normfac + divomega    *kz)
+                ENDIF
+              ENDDO
+            ENDDO
+          ENDDO
+        ENDDO
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(94)
+#endif
+      ENDIF
+
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(95)
+#endif
+      !-----------------------------------------------------------------------
+      ! Spectral derivatives
+      ! normkx, etc contains 2pi/Lx
+      !-----------------------------------------------------------------------
+      IF (ppmpoisson%derivatives .EQ. ppm_poisson_drv_curl_sp .AND. &
+        & (presentcase .NE. ppm_poisson_grn_repr .OR. &
+        &  presentcase .NE. ppm_poisson_grn_repr_fd)) THEN
+        normfac = 1.0_MK/ REAL((ppmpoisson%nmfft(1))* & !vertex
+                             & (ppmpoisson%nmfft(2))* &
+                             & (ppmpoisson%nmfft(3)),MK)
+        IF (presentcase .EQ. ppm_poisson_grn_pois_per .OR. &
+          & presentcase .EQ. ppm_poisson_grn_pois_fre) THEN
+          DO isub=1,ppmpoisson%nsublistz
+            isubl=ppmpoisson%isublistz(isub)
+            DO k=1,ppmpoisson%ndataz(3,isubl)
+              gk = k - 1 + (ppmpoisson%istartz(3,isubl)-1)
+              IF (gk .GT. (ppmpoisson%nmfft(3)/2)) gk = gk-(ppmpoisson%nmfft(3))
+              kz = CMPLX(0.0_MK,REAL(gk,MK),MK)*ppmpoisson%normkz
+              DO j=1,ppmpoisson%ndataz(2,isubl)
+                gj = j - 1 + (ppmpoisson%istartz(2,isubl)-1)
+                IF (gj .GT. (ppmpoisson%nmfft(2)/2)) gj = gj-(ppmpoisson%nmfft(2))
+                ky = CMPLX(0.0_MK,REAL(gj,MK),MK)*ppmpoisson%normky
+                DO i=1,ppmpoisson%ndataz(1,isubl)
+                  gi = i - 1 + (ppmpoisson%istartz(1,isubl)-1)
+                  IF (gi .GT. (ppmpoisson%nmfft(1)/2)) gi = gi-(ppmpoisson%nmfft(1))
+                  kx = CMPLX(0.0_MK,REAL(gi,MK),MK)*ppmpoisson%normkx
+
+                  phix = ppmpoisson%fldzc2(1,i,j,k,isub)
+                  phiy = ppmpoisson%fldzc2(2,i,j,k,isub)
+                  phiz = ppmpoisson%fldzc2(3,i,j,k,isub)
+
+                  ppmpoisson%fldzc2(1,i,j,k,isub) = (ky*phiz-kz*phiy)
+                  ppmpoisson%fldzc2(2,i,j,k,isub) = (kz*phix-kx*phiz)
+                  ppmpoisson%fldzc2(3,i,j,k,isub) = (kx*phiy-ky*phix)
+                ENDDO
+              ENDDO
+            ENDDO
+          ENDDO
+        ENDIF
+      ENDIF
+
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(95)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(96)
+#endif
+      !-----------------------------------------------------------------------
+      ! IFFT pencil (Z)
+      !-----------------------------------------------------------------------
+      CALL ppm_fft_execute_1d(ppmpoisson%topoidz,&
+      & ppmpoisson%meshidz, ppmpoisson%planbz, &
+      & ppmpoisson%fldzc2, ppmpoisson%fldzc1, &
+      & info)
+
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(96)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(80)
+#endif
+      !-----------------------------------------------------------------------
+      ! Map back to slabs (XY)
+      !-----------------------------------------------------------------------
+      !Initialise
+      CALL ppm_map_field_global(&
+      & ppmpoisson%topoidz, &
+      & ppmpoisson%topoidxy, &
+      & ppmpoisson%meshidz, &
+      & ppmpoisson%meshidxyc,info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to initialise field mapping.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(80)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(81)
+#endif
+      !Push the data
+      CALL ppm_map_field_push(&
+      & ppmpoisson%topoidz, &
+      & ppmpoisson%meshidz,ppmpoisson%fldzc1,__NCOM,info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to push vector field.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(81)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(82)
+#endif
+      !Send
+      CALL ppm_map_field_send(info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to send field.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(82)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(83)
+#endif
+      !Retrieve
+      CALL ppm_map_field_pop(&
+      & ppmpoisson%topoidxy, &
+      & ppmpoisson%meshidxyc,ppmpoisson%fldxyc, &
+      & __NCOM,__ZEROSI,info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to pop vector field.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(83)
+#endif
+
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(96)
+#endif
+      !-----------------------------------------------------------------------
+      ! IFFT (XY) use the non-reduced topology
+      !-----------------------------------------------------------------------
+      CALL ppm_fft_execute_2d(ppmpoisson%topoidxy,&
+      & ppmpoisson%meshidxy, ppmpoisson%planbxy, &
+      & ppmpoisson%fldxyc, ppmpoisson%fldxyr, &
+      & info)
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(96)
+#endif
+
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(84)
+#endif
+      !-----------------------------------------------------------------------
+      ! Map back to standard topology (XYZ)
+      !-----------------------------------------------------------------------
+      !Initialise
+      CALL ppm_map_field_global(&
+      & ppmpoisson%topoidxy, &
+      & topoid, &
+      & ppmpoisson%meshidxy, &
+      & meshid,info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to initialise field mapping.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(84)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(85)
+#endif
+      !Push the data
+      CALL ppm_map_field_push(&
+      & ppmpoisson%topoidxy, &
+      & ppmpoisson%meshidxy,ppmpoisson%fldxyr,__NCOM,info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to push vector field.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(85)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(86)
+#endif
+      !Send
+      CALL ppm_map_field_send(info)
+      IF (info .NE. 0) THEN
+        CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to send field.',info2)
+        GOTO 9999
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(86)
+#endif
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(87)
+#endif
+      !-------------------------------------------------------------------------
+      ! FINAL RETRIEVE - Here we do different things depending on the task
+      ! i.e. the receiver varies
+      !-------------------------------------------------------------------------
+      ! * Map to temporary array to accomodate FD curl
+      !-------------------------------------------------------------------------
+      IF ((ppmpoisson%derivatives .EQ. ppm_poisson_drv_curl_fd2 .OR. &
+        &  ppmpoisson%derivatives .EQ. ppm_poisson_drv_curl_fd4) .AND. &
+        & (presentcase .EQ. ppm_poisson_grn_pois_per .OR. &
+        &  presentcase .EQ. ppm_poisson_grn_pois_fre     )) THEN
+        CALL ppm_map_field_pop(&
+        & topoid, &
+        & meshid,ppmpoisson%drv_vr, &
+        & __NCOM,gstw,info)
+        IF (info .NE. 0) THEN
+          CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to pop vector field.',info2)
+          GOTO 9999
+        ENDIF
+        !-------------------------------------------------------------------------
+        ! Ghost the temporary array for derivatives (drv_vr)
+        !-------------------------------------------------------------------------
+        CALL ppm_map_field_ghost_get(topoid,meshid,gstw,info)
+        IF (info .NE. 0) THEN
+           CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to initialise ghosts.',info2)
+           GOTO 9999
+        ENDIF
+        CALL ppm_map_field_push(topoid,meshid,ppmpoisson%drv_vr,__NCOM,info)
+        IF (info .NE. 0) THEN
+           CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to push ghosts.',info2)
+           GOTO 9999
+        ENDIF
+        CALL ppm_map_field_send(info)
+        IF (info .NE. 0) THEN
+           CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to send ghosts.',info2)
+           GOTO 9999
+        ENDIF
+        CALL ppm_map_field_pop(topoid,meshid,ppmpoisson%drv_vr,__NCOM,gstw,info)
+        IF (info .NE. 0) THEN
+           CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to pop ghosts.',info2)
+           GOTO 9999
+        ENDIF
+
+      !-------------------------------------------------------------------------
+      ! * For reprojection of continuous fields: Map back to the input array
+      !-------------------------------------------------------------------------
+      ELSE IF (presentcase .EQ. ppm_poisson_grn_repr) THEN
+        CALL ppm_map_field_pop(&
+        & topoid, &
+        & meshid,fieldin, &
+        & __NCOM,gstw,info)
+        IF (info .NE. 0) THEN
+          CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to pop vector field.',info2)
+          GOTO 9999
+        ENDIF
+
+      !-------------------------------------------------------------------------
+      ! * For reprojection of dis-continuous fields: Map back to the output array
+      !-------------------------------------------------------------------------
+      ELSE IF (presentcase .EQ. ppm_poisson_grn_repr_fd) THEN
+        CALL ppm_map_field_pop(&
+        & topoid, &
+        & meshid,fieldout, &
+        & __NCOM,gstw,info)
+        IF (info .NE. 0) THEN
+          CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to pop vector field.',info2)
+          GOTO 9999
+        ENDIF
+        !-----------------------------------------------------------------------
+        ! Now subtract the correction (fieldout) from the vorticity (fieldin)
+        !-----------------------------------------------------------------------
+        CALL ppm_poisson_fd(topoid,meshid,fieldin,fieldout,&
+                             & ppm_poisson_drv_subtract,info)
+
+      !-------------------------------------------------------------------------
+      ! * Or map directly to the output array (spectral or no derivatives)
+      !-------------------------------------------------------------------------
+      ELSE
+        CALL ppm_map_field_pop(&
+        & topoid, &
+        & meshid,fieldout, &
+        & __NCOM,gstw,info)
+        IF (info .NE. 0) THEN
+          CALL ppm_write(ppm_rank, 'ppm_poisson_solve','Failed to pop vector field.',info2)
+          GOTO 9999
+        ENDIF
+      ENDIF
+
+
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(87)
+#endif
+      !-------------------------------------------------------------------------
+      ! Treat ghost layer to make FD stencils work
+      !-------------------------------------------------------------------------
+      IF (presentcase .NE. ppm_poisson_grn_repr .OR. &
+        & presentcase .NE. ppm_poisson_grn_repr_fd) THEN
+#ifdef __DOTIMINGS
+      CALL naga_time_str(98)
+#endif
+        IF (ppmpoisson%derivatives .EQ. ppm_poisson_drv_curl_fd2 .AND.&
+           & (presentcase .EQ. ppm_poisson_grn_pois_fre)) THEN
+           CALL ppm_poisson_extrapolateghost(topoid,meshid,ppmpoisson%drv_vr,&
+                                       & 2,4,gstw,info)
+        ENDIF
+        IF (ppmpoisson%derivatives .EQ. ppm_poisson_drv_curl_fd4 .AND.&
+           & (presentcase .EQ. ppm_poisson_grn_pois_fre)) THEN
+           CALL ppm_poisson_extrapolateghost(topoid,meshid,ppmpoisson%drv_vr,&
+                                       & 2,4,gstw,info)
+        ENDIF
+
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(98)
+#endif
+#ifdef __DOTIMINGS
+      CALL naga_time_str(99)
+#endif
+      !-------------------------------------------------------------------------
+      ! Optionally do derivatives
+      ! Perhaps make ppm_poisson_fd take _none as argument. Then maybe no
+      ! if-statement is required
+      !-------------------------------------------------------------------------
+        IF (ppmpoisson%derivatives .EQ. ppm_poisson_drv_curl_fd2) THEN
+           CALL ppm_poisson_fd(topoid,meshid,ppmpoisson%drv_vr,fieldout,&
+                             & ppm_poisson_drv_curl_fd2,info)
+        ENDIF
+        IF (ppmpoisson%derivatives .EQ. ppm_poisson_drv_curl_fd4) THEN
+           CALL ppm_poisson_fd(topoid,meshid,ppmpoisson%drv_vr,fieldout,&
+                             & ppm_poisson_drv_curl_fd4,info)
+        ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(99)
+#endif
+      ENDIF
+
+#ifdef __DOTIMINGS
+      CALL naga_time_str(88)
+#endif
+      !-------------------------------------------------------------------------
+      ! Finally ghost the velocity/stream function field before returning it
+      ! Also extrapolate if freespace
+      !-------------------------------------------------------------------------
+      CALL ppm_map_field_ghost_get(topoid,meshid,gstw,info)
+      CALL ppm_map_field_push(topoid,meshid,fieldout,__NCOM,info)
+      CALL ppm_map_field_send(info)
+      CALL ppm_map_field_pop(topoid,meshid,fieldout,__NCOM,gstw,info)
+      IF (presentcase .EQ. ppm_poisson_grn_pois_fre) THEN
+         CALL ppm_poisson_extrapolateghost(topoid,meshid,fieldout,&
+                                     & 2,4,gstw,info)
+      ENDIF
+#ifdef __DOTIMINGS
+      CALL naga_time_stp(90)
+#endif
+
+      !-------------------------------------------------------------------------
+      ! Perhaps allocate (and deallocate) arrays !@
+      !-------------------------------------------------------------------------
+      !-------------------------------------------------------------------------
+      ! Return
+      !-------------------------------------------------------------------------
+ 9999 CONTINUE
+      CALL substop('ppm_poisson_solve',t0,info)
+      RETURN
+
+      END SUBROUTINE __ROUTINE
+

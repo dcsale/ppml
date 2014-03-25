@@ -1,32 +1,34 @@
 
 # Directories where dependencies are installaed
-METISDIR  = /home/danny/workspace/deploy/Metis
-FFTWDIR   = /home/danny/workspace/deploy/FFTW
-PPMDIR    = /home/danny/workspace/deploy/PPM_Core
-# PPMNUMDIR = /home/danny/workspace/deploy/PPM_Numerics
+DIR_METIS  = /home/danny/workspace/deploy/Metis
+DIR_FFTW   = /home/danny/workspace/deploy/FFTW
+DIR_PPM    = /home/danny/workspace/deploy/PPM_Core
+DIR_PPMNUM = /home/danny/workspace/deploy/PPM_Numerics
 
 # Directory where to move the program when running 'make install'
 DESTDIR=.
 
 # Build settings (comment/uncomment)
-# build_Debug = true
-build_Local = true
+build_Debug = true
+# build_Local = true
 
 # Compiler flags and settings for my machine
 FC   = mpif90
 CPP  = cpp
-LIBS = -L$(PPMDIR)/lib64 -lppm -L$(METISDIR) -lmetis -L$(FFTWDIR)/lib64 -lfftw3
-INC  = -I$(PPMDIR)/include/ppm -I$(FFTWDIR)/include
+# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics
+LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics -L$(DIR_METIS) -lmetis
+# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_METIS) -lmetis -L$(DIR_FFTW)/lib64 -lfftw3
+INC  = -I$(DIR_PPM)/include/ppm -I$(DIR_PPMNUM)/include/ppm -I$(DIR_FFTW)/include
 
 # FCFLAGS = $(INC)
 # FCFLAGS = $(INC) -O3 -g -Wall -ffree-form -fimplicit-none -fbounds-check
-FCFLAGS = $(INC) -ffree-form -fimplicit-none -g -Wall -fbounds-check -fbacktrace
-# ifdef build_Debug
-# 	FCFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g -Wall -fbounds-check -fbacktrace
-# 	# FCFLAGS     = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g3
-# else
-# 	FCFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -O3
-# endif
+# FCFLAGS = $(INC) -ffree-form -fimplicit-none -g -Wall -fbounds-check -fbacktrace
+ifdef build_Debug
+	FCFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g -Wall -fbounds-check -fbacktrace
+	# FCFLAGS     = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g3
+else
+	FCFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -O3
+endif
 
 
 # DIR_BLD=/home/danny/workspace/ppml/ppm_clients/Naga

@@ -22,12 +22,12 @@ DIR_BLD=/home/danny/workspace/ppml
 # INSTALL_FFTW=true
 # INSTALL_METIS=true
 # INSTALL_PPMCORE=true
-# INSTALL_PPMNUMERICS=true
+INSTALL_PPMNUMERICS=true
 
 # PPM clients
 # INSTALL_exClient=true
 # INSTALL_LJ=true
-INSTALL_NAGA=true
+# INSTALL_NAGA=true
 # INSTALL_GRAY=true
 
 # =========================================================================== #

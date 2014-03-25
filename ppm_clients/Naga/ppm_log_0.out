@@ -1,8 +1,0 @@
-[0] (ppm_init) : 2014-03-21 21:10:16 --- *** This is the PPM library starting on openSUSE
-[0] (ppm_init) : 2014-03-21 21:10:16 --- Debug level set to  0
-[0] (ppm_print_defines) : 2014-03-21 21:10:16 --- __MPI defined
-[0] (ppm_print_defines) : 2014-03-21 21:10:16 --- __Linux defined
-[0] (ppm_print_defines) : 2014-03-21 21:10:16 --- __METIS defined
-[0] (ppm_init) : 2014-03-21 21:10:16 --- Space dimension set to  3
-[0] (ppm_init) : 2014-03-21 21:10:16 --- Precision set to DOUBLE
-[0] (ppm_init) : 2014-03-21 21:10:16 --- Floating point tolerance set to  0.1000000000E-09

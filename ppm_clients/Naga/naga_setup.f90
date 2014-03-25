@@ -480,10 +480,16 @@ END IF
 ALLOCATE(ppmpoisson(nlevels,maxpatches))
 DO ilevel=1,nlevels
   ipatch=1
+  ! This is the original way of calling Poisson solver
   CALL ppm_poisson_init(ptcset(ilevel,ipatch)%topoid,&
        &ptcset(ilevel,ipatch)%meshid,ppmpoisson(ilevel,ipatch),&
        &wf(ilevel,ipatch)%fld,uf(ilevel,ipatch)%fld,&
        &poissongreen,poissonbc,poissonoperation,poissonderivative,info)
+  ! using the newer PPM Numerics v1.2.2
+  !CALL ppm_poisson_init(ptcset(ilevel,ipatch)%topoid,&
+  !     &ptcset(ilevel,ipatch)%meshid,ppmpoisson(ilevel,ipatch),&
+  !     &wf(ilevel,ipatch)%fld,uf(ilevel,ipatch)%fld,&
+  !     &poissongreen,poissonbc,poissonoperation,poissonderivative,info)
   IF (info .NE. 0) THEN
     CALL naga_say(rank,'Naga_setup','Failed to initialise poisson routine.')
     GOTO 9999
