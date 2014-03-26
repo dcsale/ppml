@@ -58,7 +58,7 @@ USE naga_mod_setup
 USE naga_mod_integrate_rk1
 USE naga_mod_integrate_rk2
 USE naga_mod_validation
-USE ppm_module_poisson
+!USE ppm_module_poisson
 #ifdef __DOTIMING
 USE naga_mod_time
 #endif
@@ -152,10 +152,11 @@ ENDIF
 !-------------------------------------------------------------------------
 ! Finalize: Deallocate arrays etc. More to come here
 !-------------------------------------------------------------------------
-DO ilevel=1,nlevels
-  ipatch=1
-  CALL ppm_poisson_finalize(ppmpoisson(ilevel,ipatch),info)
-END DO
+! not sure this is needed anymore in v1.2.2
+!DO ilevel=1,nlevels
+!  ipatch=1
+!  CALL ppm_poisson_finalize(ppmpoisson(ilevel,ipatch),info)
+!END DO
 
 
 !-------------------------------------------------------------------------

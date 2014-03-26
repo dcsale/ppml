@@ -184,7 +184,7 @@ ENDIF
 
 !----------------------------------------------------------------------------
 ! Calculate velocity on mesh
-! Vorticity has not been ghosted but we don't need it for this
+! Vorticity has not been ghosted but we dont need it for this
 !----------------------------------------------------------------------------
 DO ilevel=1,nlevels
   DO ipatch=1,npatches(ilevel)
@@ -285,10 +285,28 @@ IF (doreprojection) THEN
 !CALL naga_ghost_fields(info,choice=2) !@
   DO ilevel=1,nlevels
     DO ipatch=1,npatches(ilevel) 
+      !CALL ppm_poisson_solve(ptcset(ilevel,ipatch)%topoid,&
+      !& ptcset(ilevel,ipatch)%meshid,ppmpoisson(ilevel,ipatch),&
+      !& wf(ilevel,ipatch)%fld,uf(ilevel,ipatch)%fld,gstw,info,&
+      !& tmpoperation = ppm_poisson_opr_repr)
+
+      ! to call the newer v1.2.2 Poisson solver
+      !ppm_poisson_solve(topoid,
+      !                  meshid,
+      !                  ppmpoisson,
+      !                  fieldin,
+      !                  fieldout,
+      !                  gstw,
+      !                  info,
+      !                  tmpcase)
       CALL ppm_poisson_solve(ptcset(ilevel,ipatch)%topoid,&
-      & ptcset(ilevel,ipatch)%meshid,ppmpoisson(ilevel,ipatch),&
-      & wf(ilevel,ipatch)%fld,uf(ilevel,ipatch)%fld,gstw,info,&
-      & tmpoperation = ppm_poisson_opr_repr)
+                            &ptcset(ilevel,ipatch)%meshid,&
+                            &ppmpoisson(ilevel,ipatch),&
+                            &wf(ilevel,ipatch)%fld,&
+                            &uf(ilevel,ipatch)%fld,&
+                            &gstw,&
+                            &info,&
+                            &ppm_poisson_grn_reprojec)
     ENDDO
   ENDDO
 ENDIF
