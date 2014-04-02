@@ -19,9 +19,9 @@ DIR_BLD=/home/danny/workspace/ppml
 # dependencies
 # INSTALL_MPI=true
 # INSTALL_RUBY=true
-# INSTALL_FFTW=true
-# INSTALL_METIS=true
-# INSTALL_PPMCORE=true
+INSTALL_FFTW=true
+INSTALL_METIS=true
+INSTALL_PPMCORE=true
 INSTALL_PPMNUMERICS=true
 
 # PPM clients
