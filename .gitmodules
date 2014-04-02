@@ -1,3 +1,9 @@
 [submodule "ppm"]
 	path = ppm
 	url = http://ppm.mpi-cbg.de/git/ppm.git
+[submodule "external/ppmcore"]
+	path = external/ppmcore
+	url = http://ppm.mpi-cbg.de/git/ppm.git
+[submodule "external/ppmnumerics"]
+	path = external/ppmnumerics
+	url = http://ppm.mpi-cbg.de/git/ppmnumerics.git
