@@ -299,14 +299,14 @@ IF (doreprojection) THEN
       !                  gstw,
       !                  info,
       !                  tmpcase)
-      CALL ppm_poisson_solve(ptcset(ilevel,ipatch)%topoid,&
-                            &ptcset(ilevel,ipatch)%meshid,&
-                            &ppmpoisson(ilevel,ipatch),&
-                            &wf(ilevel,ipatch)%fld,&
-                            &uf(ilevel,ipatch)%fld,&
-                            &gstw,&
-                            &info,&
-                            &ppm_poisson_grn_reprojec)
+!      CALL ppm_poisson_solve(ptcset(ilevel,ipatch)%topoid,&
+!                            &ptcset(ilevel,ipatch)%meshid,&
+!                            &ppmpoisson(ilevel,ipatch),&
+!                            &wf(ilevel,ipatch)%fld,&
+!                            &uf(ilevel,ipatch)%fld,&
+!                            &gstw,&
+!                            &info,&
+!                            &ppm_poisson_grn_reprojec)
     ENDDO
   ENDDO
 ENDIF

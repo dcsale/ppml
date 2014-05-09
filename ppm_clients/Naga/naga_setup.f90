@@ -524,15 +524,16 @@ DO ilevel=1,nlevels
       !!! curl=curl, grad=gradient,lapl=laplace operator,div=divergence
       !!! sp=spectrally, fd2=2nd order finite differences, fd4=4th order FD
 
-  CALL ppm_poisson_init(ptcset(ilevel,ipatch)%topoid,&
-                       &ptcset(ilevel,ipatch)%meshid,&
-                       &ppmpoisson(ilevel,ipatch),&
-                       &wf(ilevel,ipatch)%fld,&
-                       &uf(ilevel,ipatch)%fld,&
-                       &poissongreen,&
-                       &info,&
-                       &poissonbc,&
-                       &poissonderivative)
+      !!!__ROUTINE(topoid,meshid,ppmpoisson,fieldin,fieldout,green,info,bc,derive)
+!  CALL ppm_poisson_init(ptcset(ilevel,ipatch)%topoid,&
+!                       &ptcset(ilevel,ipatch)%meshid,&
+!                       &ppmpoisson(ilevel,ipatch),&
+!                       &wf(ilevel,ipatch)%fld,&
+!                       &uf(ilevel,ipatch)%fld,&
+!                      &poissongreen,&
+!                       &info,&
+!                       &poissonbc,&
+!                       &poissonderivative)
   write(*,*) '[naga_setup.f90] Danny 2 - calling Poisson solver v1.2.2 - success!'
   IF (info .NE. 0) THEN
     CALL naga_say(rank,'Naga_setup','Failed to initialise poisson routine.')

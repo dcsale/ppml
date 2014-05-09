@@ -19,9 +19,9 @@ DIR_BLD=/home/danny/workspace/ppml
 # dependencies
 # INSTALL_MPI=true
 # INSTALL_RUBY=true
-INSTALL_FFTW=true
-INSTALL_METIS=true
-INSTALL_PPMCORE=true
+# INSTALL_FFTW=true
+# INSTALL_METIS=true
+# INSTALL_PPMCORE=true
 INSTALL_PPMNUMERICS=true
 
 # PPM clients
@@ -291,9 +291,9 @@ if [[ -v INSTALL_PPMCORE ]]; then
 
 	# for the newest PPML, checkout the correct branch for the client
 	# if $branchDevelop; then
-	# 	git checkout develop
+		# git checkout develop
 	# else
-	# 	git checkout master
+		git checkout master
 	# fi
 
 	make clean
@@ -342,9 +342,9 @@ if [[ -v INSTALL_PPMNUMERICS ]]; then
 
 	# for the newest PPML, checkout the correct branch for the client
 	# if $branchDevelop; then
-	# 	git checkout develop
+		# git checkout develop
 	# else
-	# 	git checkout master
+		git checkout master
 	# fi
 
 	make clean
@@ -422,6 +422,9 @@ if [[ -v INSTALL_NAGA ]]; then
 	cd $SRC_NAGA
 	make clean
 	make
+
+    # copy the compiled Naga to the directory for output
+    
 
 	# run the client
 	if $buildParallel; then 	

@@ -58,7 +58,7 @@ USE naga_mod_setup
 USE naga_mod_integrate_rk1
 USE naga_mod_integrate_rk2
 USE naga_mod_validation
-!USE ppm_module_poisson
+USE ppm_module_poisson
 #ifdef __DOTIMING
 USE naga_mod_time
 #endif

@@ -6,19 +6,38 @@ DIR_PPM    = /home/danny/workspace/deploy/PPM_Core
 DIR_PPMNUM = /home/danny/workspace/deploy/PPM_Numerics
 
 # Directory where to move the program when running 'make install'
-DESTDIR=.
+DESTDIR=/data/Danny/simulation_output
+# DESTDIR=.
 
 # Build settings (comment/uncomment)
 build_Debug = true
 # build_Local = true
+build_Ubuntu = true
 
 # Compiler flags and settings for my machine
 FC   = mpif90
 CPP  = cpp
+# INC  = -I$(DIR_PPM)/include/ppm -I$(DIR_FFTW)/include
+# INC  = -I$(DIR_PPM)/include/ppm -I$(DIR_PPMNUM)/include/ppm -I$(DIR_FFTW)/include
+INC  = -I$(DIR_PPM)/include/ppm -I$(DIR_PPMNUM)/include/ppm
+
+
 # LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics
-LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics -L$(DIR_METIS) -lmetis
+# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics -L$(DIR_METIS) -lmetis
+# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics -L$(DIR_METIS) -lmetis
 # LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_METIS) -lmetis -L$(DIR_FFTW)/lib64 -lfftw3
-INC  = -I$(DIR_PPM)/include/ppm -I$(DIR_PPMNUM)/include/ppm -I$(DIR_FFTW)/include
+ifdef build_Ubuntu
+	# for some reason, Ubuntu installs to "lib" instead of "lib64" like most distros
+	LIBS = -L$(DIR_PPM)/lib -lppm -L$(DIR_PPMNUM)/lib -lppmnumerics -L$(DIR_FFTW)/lib -lfftw3 -L$(DIR_METIS) -lmetis
+	# LIBS = -L$(DIR_PPM)/lib -lppm -L$(DIR_PPMNUM)/lib -lppmnumerics -L$(DIR_METIS) -lmetis
+	# LIBS = -L$(DIR_PPM)/lib -lppm -L$(DIR_PPMNUM)/lib -lppmnumerics
+	# LIBS = -L$(DIR_PPM)/lib -lppm -L$(DIR_FFTW)/lib -lfftw3
+else
+	LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics -L$(DIR_FFTW)/lib64 -lfftw3 -L$(DIR_METIS) -lmetis
+	# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics -L$(DIR_METIS) -lmetis
+	# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics
+	# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_FFTW)/lib64 -lfftw3
+endif
 
 # FCFLAGS = $(INC)
 # FCFLAGS = $(INC) -O3 -g -Wall -ffree-form -fimplicit-none -fbounds-check
@@ -29,38 +48,6 @@ ifdef build_Debug
 else
 	FCFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -O3
 endif
-
-
-# DIR_BLD=/home/danny/workspace/ppml/ppm_clients/Naga
-# DIR_LINK=/home/danny/workspace/deploy
-
-
-
-# INC_PPM_CORE = -I$(DIR_LINK)/PPM_Core/include/ppm
-# # INC_PPM_NUM  = -I$(DIR_LINK)/PPM_Numerics/include/ppm
-# INC_FFTW     = -I$(DIR_LINK)/FFTW/include
-# # INC_PPM      = -I$(DIR_BLD)/ppm
-# # INC_FFT      = -I$(DIR_BLD)/ppm/fft
-# # INC_POISSON  = -I$(DIR_BLD)/ppm/poisson
-# # INC          = $(INC_PPM_CORE) $(INC_PPM_NUM) $(INC_POISSON) $(INC_FFT) $(INC_FFTW)
-# # INC          = $(INC_PPM_CORE) $(INC_FFTW) $(INC_POISSON) $(INC_FFT)
-# INC          = $(INC_PPM_CORE) $(INC_FFTW)
-# # INC          = $(INC_PPM_CORE) $(INC_FFTW) $(INC_PPM)
-# # INC          = $(INC_PPM_CORE) $(INC_FFTW) $(INC_PPM) $(INC_FFT) $(INC_POISSON)
-# # INC          = $(INC_PPM_CORE) $(INC_PPM_NUM) $(INC_FFTW)
-# # INC          = $(INC_PPM_CORE) $(INC_FFTW)
-# # INC          = $(INC_PPM_CORE) $(INC_PPM_NUM)
-
-# LIBS_METIS    = -L$(DIR_LINK)/Metis -lmetis
-# LIBS_PPM_CORE = -L$(DIR_LINK)/PPM_Core/lib64 -lppm
-# # LIBS_PPM_NUM  = -L$(DIR_LINK)/PPM_Numerics/lib64 -lppmnumerics
-# LIBS_FFTW     = -L$(DIR_LINK)/FFTW/lib64 -lfftw3
-# # LIBS          = $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_PPM_NUM) $(LIBS_FFTW)
-# # LIBS          = $(LIBS_PPM_CORE) $(LIBS_FFTW)
-# LIBS          = $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_FFTW)
-# # LIBS          = $(LIBS_METIS) $(LIBS_PPM_CORE) $(LIBS_PPM_NUM)
-# # LIBS          = $(LIBS_PPM_CORE) $(LIBS_PPM_NUM)
-# # LIBS          = $(LIBS_PPM_CORE)
 
 OBJ1 = Naga.o\
        naga_time.o\
