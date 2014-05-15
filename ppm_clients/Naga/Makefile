@@ -1,3 +1,6 @@
+# Directory where to move the program when running 'make install'
+# DESTDIR=/data/Danny/simulation_output
+DESTDIR=.
 
 # Directories where dependencies are installaed
 DIR_METIS  = /home/danny/workspace/deploy/Metis
@@ -5,43 +8,31 @@ DIR_FFTW   = /home/danny/workspace/deploy/FFTW
 DIR_PPM    = /home/danny/workspace/deploy/PPM_Core
 DIR_PPMNUM = /home/danny/workspace/deploy/PPM_Numerics
 
-# Directory where to move the program when running 'make install'
-DESTDIR=/data/Danny/simulation_output
-# DESTDIR=.
-
 # Build settings (comment/uncomment)
 build_Debug = true
-# build_Local = true
-build_Ubuntu = true
+build_Local = true
+# build_Ubuntu = true
 
 # Compiler flags and settings for my machine
 FC   = mpif90
 CPP  = cpp
-# INC  = -I$(DIR_PPM)/include/ppm -I$(DIR_FFTW)/include
-# INC  = -I$(DIR_PPM)/include/ppm -I$(DIR_PPMNUM)/include/ppm -I$(DIR_FFTW)/include
-INC  = -I$(DIR_PPM)/include/ppm -I$(DIR_PPMNUM)/include/ppm
 
-
-# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics
-# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics -L$(DIR_METIS) -lmetis
-# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics -L$(DIR_METIS) -lmetis
-# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_METIS) -lmetis -L$(DIR_FFTW)/lib64 -lfftw3
+# for some reason, Ubuntu installs to "lib" instead of "lib64" (which most distros use)
 ifdef build_Ubuntu
-	# for some reason, Ubuntu installs to "lib" instead of "lib64" like most distros
-	LIBS = -L$(DIR_PPM)/lib -lppm -L$(DIR_PPMNUM)/lib -lppmnumerics -L$(DIR_FFTW)/lib -lfftw3 -L$(DIR_METIS) -lmetis
-	# LIBS = -L$(DIR_PPM)/lib -lppm -L$(DIR_PPMNUM)/lib -lppmnumerics -L$(DIR_METIS) -lmetis
-	# LIBS = -L$(DIR_PPM)/lib -lppm -L$(DIR_PPMNUM)/lib -lppmnumerics
-	# LIBS = -L$(DIR_PPM)/lib -lppm -L$(DIR_FFTW)/lib -lfftw3
+	DIR_LIB = lib
 else
-	LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics -L$(DIR_FFTW)/lib64 -lfftw3 -L$(DIR_METIS) -lmetis
-	# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics -L$(DIR_METIS) -lmetis
-	# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_PPMNUM)/lib64 -lppmnumerics
-	# LIBS = -L$(DIR_PPM)/lib64 -lppm -L$(DIR_FFTW)/lib64 -lfftw3
+	DIR_LIB = lib64
 endif
 
-# FCFLAGS = $(INC)
-# FCFLAGS = $(INC) -O3 -g -Wall -ffree-form -fimplicit-none -fbounds-check
-# FCFLAGS = $(INC) -ffree-form -fimplicit-none -g -Wall -fbounds-check -fbacktrace
+# if building locally, Naga uses it's own version of PPM Numerics FFT Poisson solver -- the PPM Numerics FFT Poisson solver is not yet compatible
+ifdef build_Local
+	INC  = -I$(DIR_PPM)/include/ppm -I$(DIR_FFTW)/include
+	LIBS = -L$(DIR_PPM)/$(DIR_LIB) -lppm -L$(DIR_FFTW)/$(DIR_LIB) -lfftw3 -L$(DIR_METIS) -lmetis
+else
+	INC  = -I$(DIR_PPM)/include/ppm -I$(DIR_PPMNUM)/include/ppm -I$(DIR_FFTW)/include
+	LIBS = -L$(DIR_PPM)/$(DIR_LIB) -lppm -L$(DIR_PPMNUM)/$(DIR_LIB) -lppmnumerics -L$(DIR_FFTW)/$(DIR_LIB) -lfftw3 -L$(DIR_METIS) -lmetis
+endif
+
 ifdef build_Debug
 	FCFLAGS = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g -Wall -fbounds-check -fbacktrace
 	# FCFLAGS     = $(INC) -ffree-form -ffree-line-length-none -fimplicit-none -g3

@@ -21,8 +21,8 @@ DIR_BLD=/home/danny/workspace/ppml
 # INSTALL_RUBY=true
 # INSTALL_FFTW=true
 # INSTALL_METIS=true
-# INSTALL_PPMCORE=true
-INSTALL_PPMNUMERICS=true
+INSTALL_PPMCORE=true
+# INSTALL_PPMNUMERICS=true
 
 # PPM clients
 # INSTALL_exClient=true
@@ -36,7 +36,6 @@ INSTALL_PPMNUMERICS=true
 buildParallel=true
 buildDebug=false
 runTests=true
-branchDevelop=false
 
 # =========================================================================== #
 # User Parameters - source directories for PPM clients
@@ -99,6 +98,9 @@ else
 	c_CXX=g++
 	c_FC=gfortran
 fi
+
+# initialize all git submodules (like PPM Core and PPM Numerics)
+git submodule update --init --recursive
 
 # =========================================================================== #
 # echo '*******************************************************************************'
