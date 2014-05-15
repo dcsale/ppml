@@ -1,0 +1,64 @@
+The following instructions have been tested on a 64-bit installation of Kubuntu 12.04 and
+OpenMPI version 1.6.1
+Metis 4.0.1
+FFTW 3.3.2
+PPM 1.2.1
+PPMnumerics r1036+
+
+***************************************************
+***Downloade OpenMPI version 1.6.1
+***************************************************
+./configure --prefix=/usr/local/openmpi-1.6.1_gcc CC=gcc CXX=g++ FC=gfortran F90=gfortran
+make
+(sudo) make install
+
+*** and made the necessary changes to .bashrc
+export PATH=/usr/local/openmpi-1.6.1_gcc/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/openmpi-1.6.1_gcc/lib:$LD_LIBRARY_PATH
+
+
+***************************************************
+***Downloading metis 4.0.1 - newer versions of metis exist but are not tested here
+***Get the patch http://www.math-linux.com/spip.php?article109
+***************************************************
+chmod -R +r metis-4.0
+(sudo) cp -r metis-4.0 /usr/local/metis-4.0_gcc
+cd /usr/local/metis-4.0_gcc
+patch -p1 < metis-4.0.patch
+make
+
+
+***************************************************
+*** Download FFTW3 and configure and compile
+***************************************************
+./configure --prefix=/usr/local/fftw-3.3.2_gcc CC=gcc F77=gfortran
+make
+(sudo) make install
+
+
+***************************************************
+***NOW TO PPM
+***Download/checked out ppm and ppmnumerics
+***************************************************
+git clone git@ppm.mpi-cbg.de:ppm ppmcore
+*** enter libppm
+# aclocal -I m4
+# autoconf
+./configure --enable-mpi=openmpi --enable-linux --prefix=/usr/local/ppm CC=gxx CXX=g++ LDFLAGS="-L/usr/local/metis-4.0_gcc"
+make
+#(sudo) make install
+#***It is my experience that I have to copy libppmnumerices manually instead 
+#***of sudo make install (make install always recompiles and, with sudo, as root)
+sudo cp lib/libppmnumerics.a /usr/local/ppm/lib/
+sudo cp include/* /usr/local/ppm/include/
+
+***************************************************
+***Naga
+***************************************************
+#modify Makefile according to the above
+make
+
+
+
+
+

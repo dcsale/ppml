@@ -1,0 +1,131 @@
+#-------------------------------------------------
+# JOB INFORMATION
+#
+# TAG is appended to all output files
+TAG = sphere
+
+#-------------------------------------------------
+# TIME STEPPING
+#
+# ENDTIME physical time to end simulation
+# DT size of physical time step
+# MAXITIME maximum number of discrete time steps
+ENDTIME  = 5.0
+DT       = 0.020
+MAXITIME = 1000
+
+#-------------------------------------------------
+# GEOMETRY
+#
+# LAYOUT_SIZE = maxlevel,maxpatchesperlevel
+# LAYOUT = level,parent,buffer_width,MIN(3),MAX(3),RES(3)
+# The resolution RES should be added 1 for periodic domains (64=>65)
+# BOUNDARY_CONDITION: 0=free-space, 1=periodic
+LAYOUT_SIZE      = 1,1
+LAYOUT           = 1,  0,  2, -0.5,-0.5,-0.5, 1.5,0.5,0.5 ,128,64,64
+BOUNDARY_CONDITION = 0
+
+#-------------------------------------------------
+# PHYSICS
+#
+# UINFINITY set the far field velocity vector
+# PENALIZATION: 0=none, 1=interpolation, 2=explicit
+# PENALIZATIONPARAMETER: strength of penalization (penalization parameter)
+# PENALIZATIONADAPT: if true penal.param. = PENALIZATIONPARAMETER/dt
+# Note: if PENALIZATION=1 remeshing is always done
+# NU is the kinematic viscosity
+UINFINITY             = 1.0,0.0,0.0
+PENALIZATION          = 1
+PENALIZATIONPARAMETER = 1.0
+PENALIZATIONADAPT     = TRUE
+NU                    = 0.001
+
+#-------------------------------------------------
+# OUTPUT
+#
+# IDUMP_VORTICITY     interval to dump vti files containing vorticity
+# IDUMP_VELOCITY      interval to dump vti files containing velocity
+# IDUMP_MASK          interval to dump vti files containing solid mask
+# IDUMP_CONCENTRATION interval to dump vti files containing concentration field
+# IDUMP_RHS           interval to dump vti files containing vorticity derivative
+IDUMP_VORTICITY     = 10
+IDUMP_VELOCITY      = 10
+IDUMP_MASK          = 10000
+IDUMP_CONCENTRATION = 0
+IDUMP_RHS           = 0
+
+#-------------------------------------------------
+# FLOWCASE
+# 1  = not implemented
+# 2  = vortex ring
+# 3  = sphere
+# 31 = sphere and concentration field
+# 32 = sphere with velocity disruption (ploumhans)
+# 4  = not implemented
+# 5  = STL input
+# 6  = Taylor-Green vortices
+# 301 = test periodic Green's function
+# 302 = poisson validation: vortex ring test
+# 303 = periodic reprojection test
+# 304 = freespace reprojection test
+# 305 = test spectral derivatives
+FLOWCASE    = 3
+
+## PARAMETERS FOR FLOWCASE 2
+TORUS_RADIUS1 = 4.00
+TORUS_RADIUS2 = 0.2
+
+## PARAMETERS FOR FLOWCASE 3
+SPHERE_RADIUS = 0.25
+
+## PARAMETERS FOR FLOWCASE 5
+# If STL nodes are aligned with the mesh nodes the STL initialisation may fail
+# to identify the interior/exterior points of the domain. Solve by offsetting the
+# STL geometry with STL_TRANSLATE. Always check the initialised solid
+# STL_INOUT_DIRECTION determines which direction to do interior/exterior check
+STL_FILENAME  = cone.stl
+STL_SCALE     = 1.00
+STL_TRANSLATE = 0.50001,0.50002,0.50003
+STL_CHECK_BOUNDS        = FALSE
+STL_CHECK_INTERSECTIONS = FALSE
+STL_INOUT_DIRECTION     = 1
+
+
+#-------------------------------------------------
+# GENERAL PENALIZATION MASK SETTINGS
+STEP1_INTERVAL       = 3.0
+STEP1_LINEARFRACTION = 0.0
+STEP1_OFFSET         = 0.0
+
+
+#-------------------------------------------------
+# META
+#
+# VALIDATIONFIELD toggles an extra field for validation purposes
+DEBUG            = 0
+VALIDATIONFIELD  = 0
+
+
+#-------------------------------------------------
+# NUMERICS
+#
+# IREMESH sets remeshing interval
+# Note: if PENALIZATION==1 remeshing is always done
+# IREPROJECT sets the vorticity reprojection interval
+# GHOSTWIDTH sets the width of the ghost layer
+# TIMEINTEGRATIONSCHEME: 1=EULER, 2=RK2
+# PENALIZATIONSCHEME: 1=O(2) FD, 2=O(4) FD
+# CLEARINTERIORRHS: CLEARS ANY CONTRIBUTION INSIDE SOLIDS
+# RHSCHEME: 1=O(2) FD, 2=O(4) FD
+# VELOCITYSCHEME: 1=O(2) FD, 2=O(4) FD, 3=spectral
+# FREESPACEKERNEL: 1=TRUNCATED(0), 2=O(2), 3=O(4), 4=O(6), 5=O(8), 6=O(10)
+IREMESH               = 1 
+IREPROJECT            = 10
+GHOSTWIDTH            = 2,2,2
+TIMEINTEGRATIONSCHEME = 2
+PENALIZATIONSCHEME    = 2
+CLEARINTERIORRHS      = FALSE
+RHSSCHEME             = 2
+VELOCITYSCHEME        = 3
+FREESPACEKERNEL       = 1
+
