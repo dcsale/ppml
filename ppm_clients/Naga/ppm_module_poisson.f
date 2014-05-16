@@ -39,6 +39,11 @@
       !
       ! ANOTHER IDEA: Make a flag for doing both vorticity reprojection on the
       ! input vorticity field and output the corresponding velocity.
+      !
+      !  Changelog: 
+      !  5/16/2014 - Danny Sale - University of Washington - dsale@uw.edu - sale.danny@gmail.com
+      !              * Modify include directories for Poisson routines
+      !
       !-------------------------------------------------------------------------
 #define __SINGLE 0
 #define __DOUBLE 1

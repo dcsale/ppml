@@ -61,7 +61,7 @@ INTEGER, INTENT(INOUT) :: info
 !-------------------------------------------------------------------------
 REAL(MK)                        :: t0
 INTEGER                         :: ilevel,ipatch
-!INTEGER                         :: poissonoperation
+INTEGER                         :: poissonoperation
 INTEGER                         :: poissonderivative
 INTEGER                         :: poissonbc
 INTEGER                         :: poissongreen
@@ -235,56 +235,52 @@ IF (concentration .EQ. 1) THEN
   ENDIF
 ENDIF
 
+
 !----------------------------------------------------------------------------
 ! Determine velocity derivatives and other settings for poisson solver
 ! (these settings may be changed flow-specifically)
 !----------------------------------------------------------------------------
 IF (velocityscheme .EQ. 0) THEN
-  !spectral derivatives only for periodic BC
-  !poissonoperation  = ppm_poisson_opr_none
-  poissonderivative = ppm_poisson_drv_curl_sp
+  poissonoperation  = ppm_poisson_opr_none
+  poissonderivative = ppm_poisson_drv_sp
 ELSE IF (velocityscheme .EQ. 1) THEN
-  !poissonoperation  = ppm_poisson_opr_vel
-  poissonderivative = ppm_poisson_drv_curl_fd2
+  poissonoperation  = ppm_poisson_opr_vel
+  poissonderivative = ppm_poisson_drv_fd2
 ELSE IF (velocityscheme .EQ. 2) THEN
-  !poissonoperation  = ppm_poisson_opr_vel
-  poissonderivative = ppm_poisson_drv_curl_fd4
+  poissonoperation  = ppm_poisson_opr_vel
+  poissonderivative = ppm_poisson_drv_fd4
 ELSE IF (velocityscheme .EQ. 3) THEN
-  !poissonoperation  = ppm_poisson_opr_vel
-  poissonderivative = ppm_poisson_drv_curl_sp
+  poissonoperation  = ppm_poisson_opr_vel
+  poissonderivative = ppm_poisson_drv_sp
 ELSE
   CALL naga_say(rank,'Naga_setup','Undefined velocity scheme specified.')
   info = -1
   GOTO 9999
 ENDIF
 
-
 IF (domainbc .EQ. 0) THEN
-  poissonbc    = ppm_poisson_grn_pois_fre
-  poissongreen = ppm_poisson_grn_pois_fre
-  !IF (freespacekernel .EQ. 0) THEN
-  !  poissongreen = ppm_poisson_grn_pois_per
-  !ELSE IF (freespacekernel .EQ. 1) THEN
-  !  poissongreen = ppm_poisson_grn_pois_fre
-  !  ! this is now assigned using DEFINE __GFREESPACE
-  !ELSE IF (freespacekernel .EQ. 2) THEN
-  !  poissongreen = ppm_poisson_grn_pois_blob2
-  !  ! this is now assigned using DEFINE __GBLOB2, and similarly for other mollification orders
-  !ELSE IF (freespacekernel .EQ. 3) THEN
-  !  poissongreen = ppm_poisson_grn_pois_blob4
-  !ELSE IF (freespacekernel .EQ. 4) THEN
-  !  poissongreen = ppm_poisson_grn_pois_blob6
-  !ELSE IF (freespacekernel .EQ. 5) THEN
-  !  poissongreen = ppm_poisson_grn_pois_blob8
-  !ELSE IF (freespacekernel .EQ. 6) THEN
-  !  poissongreen = ppm_poisson_grn_pois_blob10
-  !ELSE
-  !  CALL naga_say(rank,'Naga_setup','Undefined Greens function specified.')
-  !  info = -1
-  !  GOTO 9999
-  !ENDIF
+  poissonbc    = ppm_poisson_bc_fre
+  IF (freespacekernel .EQ. 0) THEN
+    poissongreen = ppm_poisson_grn_pois_per
+  ELSE IF (freespacekernel .EQ. 1) THEN
+    poissongreen = ppm_poisson_grn_pois_fre
+  ELSE IF (freespacekernel .EQ. 2) THEN
+    poissongreen = ppm_poisson_grn_pois_blob2
+  ELSE IF (freespacekernel .EQ. 3) THEN
+    poissongreen = ppm_poisson_grn_pois_blob4
+  ELSE IF (freespacekernel .EQ. 4) THEN
+    poissongreen = ppm_poisson_grn_pois_blob6
+  ELSE IF (freespacekernel .EQ. 5) THEN
+    poissongreen = ppm_poisson_grn_pois_blob8
+  ELSE IF (freespacekernel .EQ. 6) THEN
+    poissongreen = ppm_poisson_grn_pois_blob10
+  ELSE
+    CALL naga_say(rank,'Naga_setup','Undefined Greens function specified.')
+    info = -1
+    GOTO 9999
+  ENDIF
 ELSE IF (domainbc .EQ. 1) THEN
-  poissonbc    = ppm_poisson_grn_pois_per
+  poissonbc    = ppm_poisson_bc_per
   poissongreen = ppm_poisson_grn_pois_per
 ENDIF
 
@@ -484,57 +480,10 @@ END IF
 ALLOCATE(ppmpoisson(nlevels,maxpatches))
 DO ilevel=1,nlevels
   ipatch=1
-  ! This is the original way of calling Poisson solver
-  !CALL ppm_poisson_init(ptcset(ilevel,ipatch)%topoid,&
-  !                     &ptcset(ilevel,ipatch)%meshid,&
-  !                     &ppmpoisson(ilevel,ipatch),&
-  !                     &wf(ilevel,ipatch)%fld,&
-  !                     &uf(ilevel,ipatch)%fld,&
-  !                     &poissongreen,&
-  !                     &poissonbc,&
-  !                     &poissonoperation,&
-  !                    &poissonderivative,&
-  !                     &info)
-  ! using the newer PPM Numerics v1.2.2
-    ! ppm_poisson_init(topoid,
-    !                  meshid,
-    !                  ppmpoisson,
-    !                  fieldin,
-    !                  fieldout,
-    !                  green,
-    !                  info,
-    !                  bc,
-    !                  derive)
-  ! NOTE: variables no longer used: poissonoperation
-  write(*,*) '[naga_setup.f90] Danny 0 - poissongreen = ', poissongreen
-  write(*,*) '[naga_setup.f90] Danny 0 - poissonbc    = ', poissonbc
-  write(*,*) '[naga_setup.f90] Danny 1 - calling Poisson solver v1.2.2 - trying...'
-      
-      !!!boundary condition for the convolution. Can be one of the following:
-      !!!ppm_poisson_grn_pois_per, ppm_poisson_grn_pois_fre.
-      !!!One could argue that this is redundant in the build-in case
-
-      !!!flag to toggle various derivatives of the solution (not to be used with
-      !!!green=ppm_poisson_grn_reprojec):
-      !!! * ppm_poisson_drv_none
-      !!! * ppm_poisson_drv_curl_sp  (only for periodic BC)
-      !!! * ppm_poisson_drv_curl_fd2
-      !!! * ppm_poisson_drv_curl_fd4
-      !!!
-      !!! curl=curl, grad=gradient,lapl=laplace operator,div=divergence
-      !!! sp=spectrally, fd2=2nd order finite differences, fd4=4th order FD
-
-      !!!__ROUTINE(topoid,meshid,ppmpoisson,fieldin,fieldout,green,info,bc,derive)
-!  CALL ppm_poisson_init(ptcset(ilevel,ipatch)%topoid,&
-!                       &ptcset(ilevel,ipatch)%meshid,&
-!                       &ppmpoisson(ilevel,ipatch),&
-!                       &wf(ilevel,ipatch)%fld,&
-!                       &uf(ilevel,ipatch)%fld,&
-!                      &poissongreen,&
-!                       &info,&
-!                       &poissonbc,&
-!                       &poissonderivative)
-  write(*,*) '[naga_setup.f90] Danny 2 - calling Poisson solver v1.2.2 - success!'
+  CALL ppm_poisson_init(ptcset(ilevel,ipatch)%topoid,&
+       &ptcset(ilevel,ipatch)%meshid,ppmpoisson(ilevel,ipatch),&
+       &wf(ilevel,ipatch)%fld,uf(ilevel,ipatch)%fld,&
+       &poissongreen,poissonbc,poissonoperation,poissonderivative,info)
   IF (info .NE. 0) THEN
     CALL naga_say(rank,'Naga_setup','Failed to initialise poisson routine.')
     GOTO 9999

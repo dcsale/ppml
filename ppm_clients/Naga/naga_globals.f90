@@ -21,10 +21,8 @@ MODULE naga_mod_globals
 USE ppm_module_data
 USE ppm_module_substart
 USE ppm_module_substop
-!USE ppm_module_fft,     ONLY:ppm_fft_plan
-!USE ppm_module_poisson, ONLY:ppm_poisson_plan
-USE ppm_module_fft
-USE ppm_module_poisson
+USE ppm_module_fft,     ONLY:ppm_fft_plan
+USE ppm_module_poisson, ONLY:ppm_poisson_plan
 !!USE naga_mod_stl      , ONLY:stl_data,stl_data_temporary
 
 include 'mpif.h'

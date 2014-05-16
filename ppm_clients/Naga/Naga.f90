@@ -152,11 +152,10 @@ ENDIF
 !-------------------------------------------------------------------------
 ! Finalize: Deallocate arrays etc. More to come here
 !-------------------------------------------------------------------------
-! not sure this is needed anymore in v1.2.2
-!DO ilevel=1,nlevels
-!  ipatch=1
-!  CALL ppm_poisson_finalize(ppmpoisson(ilevel,ipatch),info)
-!END DO
+DO ilevel=1,nlevels
+  ipatch=1
+  CALL ppm_poisson_finalize(ppmpoisson(ilevel,ipatch),info)
+END DO
 
 
 !-------------------------------------------------------------------------

@@ -1,0 +1,34 @@
+! Wishlist
+! Add routine to output the input from CTRL file
+! Implement restart functionality
+! Extend diagnostics to automatically handle more numerical parameters
+! Some GUI?
+! Optimise memory in poisson solver
+! Make optional flag to the Poisson solver to reproject vorticity along with
+!  the velocity computation
+! Add elapsed time for one time step to diagnostics
+! Make domain dirichlet boundary conditions in velocity or vorticity by penalization
+! Adaptive time (strain,fourier,(max(omega)?),
+!  maybe solid force or flow acceleration (penalization work))
+! Probably the vorticity should be ramped to zero at the domain bounds such that
+!  reprojection does not introduce funky stuff
+! Dump fields at maxitime if it corresponds to the requested frequency
+! Do general input option of BC's on the domain (using penalization)
+! When reading input dump dx and bounds
+! Optionally do reprojection with a fixed time interval
+! Or reproject whenever the divergence of the flow reaches a certain threshold
+! New diagnostics: vorticity on the domain boundaries (to evaluate domain size)
+! Do pencil FFT Poisson solver
+! Subroutine :  naga_output: warn when too many parameters are being output
+! naga_rhs: Determine what to be executed through logicals before any calls
+! Higher order FD for penalization curl. and maybe for other operations
+! Make diagnostics output compatible with different programs. Setting in CTRL file
+! Make option for K and make option for K AND G (for reprojection)
+! In the header of the diag file or some other auxillary file, write setup parameters
+! Use bump function to window patch buffers
+! Doing reprojection, the Poisson equation is solved for an expected zero mean.
+!  However, the mean may not be zero and an offset might be required. This could
+!  be done if only the delta omega is IFFTed and offset using some reference point
+!  where the level e.g. is expected to be zero. And finally added to omega
+! Time using a variable 'global cursor' that is multiplied and divided by a prime
+!  number when entering/leaving each routine.

@@ -38,6 +38,11 @@
       !  but also does full domain FFTs for freespace BC
       !  It does not work on mixed periodic/freespace BC in the XY direction
       !  topo%bcdef(1) is assumed to be in x, (2) to be in y, (3) z, (4) x...
+      !
+      !  Changelog: 
+      !  5/16/2014 - Danny Sale - University of Washington - dsale@uw.edu - sale.danny@gmail.com
+      !              * Modify include directories for FFT routines
+      !
       !-------------------------------------------------------------------------
 #define __SINGLE 0
 #define __DOUBLE 1
