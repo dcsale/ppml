@@ -3,15 +3,15 @@
 DESTDIR=.
 
 # Directories where dependencies are installaed
-DIR_METIS  = /home/danny/workspace/deploy/Metis
-DIR_FFTW   = /home/danny/workspace/deploy/FFTW
-DIR_PPM    = /home/danny/workspace/deploy/PPM_Core
-DIR_PPMNUM = /home/danny/workspace/deploy/PPM_Numerics
+DIR_METIS  = ./../../../deploy/Metis
+DIR_FFTW   = ./../../../deploy/FFTW
+DIR_PPM    = ./../../../deploy/PPM_Core
+DIR_PPMNUM = ./../../../deploy/PPM_Numerics
 
 # Build settings (comment/uncomment)
-build_Debug = true
+#build_Debug = true
 build_Local = true
-# build_Ubuntu = true
+build_Ubuntu = true
 
 # Compiler flags and settings for my machine
 FC   = mpif90

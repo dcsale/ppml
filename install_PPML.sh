@@ -7,11 +7,38 @@
 # * packages: make, BLAS, LAPACK, curl, OpenMPI
 # * other: Ruby, Python
 
+# test: how can you check if a variable has been defined in bash <4.2 and >=4.2?
+# in bash >= 4.2 use
+# if [[ -v foobar ]]
+#
+# in bash < 4.2
+# declare -p foobar $>/dev/null
+#
+# or can try (this seems to work just fine in bash 4.1 - on Hyak computer):
+#
+#foobar=false
+#echo $foobar
+#if [ -n "${foobar+1}" ] && $foobar
+#  then
+#  echo "foobar is defined. foobar is true."
+#else
+#  echo "foobar is not defined as true"
+#fi
+
+#install_foobar=true
+#echo $install_foobar
+#if [ -n "${install_foobar+1}" ] && $install_foobar
+#  then
+#  echo "foobar will be installed"
+#else
+#  echo "foobar will NOT be installed"
+#fi
+
 # =========================================================================== #
 # User Parameters - build & install directories
 # =========================================================================== #
-DIR_DEPLOY=/home/danny/workspace/deploy
-DIR_BLD=/home/danny/workspace/ppml
+DIR_DEPLOY=$PWD/../deploy
+DIR_BLD=$PWD
 
 # =========================================================================== #
 # User Parameters - Specify which software to install (set comment/uncomment)
@@ -21,13 +48,13 @@ DIR_BLD=/home/danny/workspace/ppml
 # INSTALL_RUBY=true
 # INSTALL_FFTW=true
 # INSTALL_METIS=true
-INSTALL_PPMCORE=true
+# INSTALL_PPMCORE=true
 # INSTALL_PPMNUMERICS=true
 
 # PPM clients
 # INSTALL_exClient=true
 # INSTALL_LJ=true
-# INSTALL_NAGA=true
+ INSTALL_NAGA=true
 # INSTALL_GRAY=true
 
 # =========================================================================== #
@@ -137,7 +164,8 @@ git submodule update --init --recursive
 
 # =========================================================================== #
 # Ruby is only needed for the new PPML Fortran 2003+ versions
-if [[ -v INSTALL_RUBY ]]; then
+if [ -n "${INSTALL_RUBY+1}" ] && $INSTALL_RUBY; then
+#if [[ -v INSTALL_RUBY ]]; then
 	echo '*********************************************'
 	echo '* ______      _           '
 	echo '* | ___ \    | |          '
@@ -162,7 +190,8 @@ fi
 
 # =========================================================================== #
 # NOTE: I think most clusters will already have MPI installed and configured optimally, probably better to use system MPI instead of building?
-if [[ -v INSTALL_MPI ]]; then
+if [ -n "${INSTALL_MPI+1}" ] && $INSTALL_MPI; then
+#if [[ -v INSTALL_MPI ]]; then
 	echo '*********************************************'
 	echo '*  _____                 ___  _________ _____ '
 	echo '* |  _  |                |  \/  || ___ \_   _|'
@@ -206,7 +235,8 @@ fi
 
 # =========================================================================== #
 # most clusters will probably have FFTW installed, but we sometimes need to compile and include sources
-if [[ -v INSTALL_FFTW ]]; then
+if [ -n "${INSTALL_FFTW+1}" ] && $INSTALL_FFTW; then
+#if [[ -v INSTALL_FFTW ]]; then
 	echo '*********************************************'
 	echo '*____________ _____ _    _ '
 	echo '*|  ___|  ___|_   _| |  | |'
@@ -240,7 +270,8 @@ fi
 
 # =========================================================================== #
 # Metis is used to partition graphs, PPM lib is only compatible with v4.0.3 (or the patched Metis available from PPM devs)
-if [[ -v INSTALL_METIS ]]; then
+if [ -n "${INSTALL_METIS+1}" ] && $INSTALL_METIS; then
+#if [[ -v INSTALL_METIS ]]; then
 	echo '*********************************************'
 	echo '*  ___  ___     _   _     '
 	echo '*  |  \/  |    | | (_)    '
@@ -276,7 +307,8 @@ fi
 # =========================================================================== #
 
 # =========================================================================== #
-if [[ -v INSTALL_PPMCORE ]]; then
+if [ -n "${INSTALL_PPMCORE+1}" ] && $INSTALL_PPMCORE; then
+#if [[ -v INSTALL_PPMCORE ]]; then
 	echo '*********************************************'
 	echo '*_______________  ___      _____ ___________ _____ '
 	echo '*| ___ \ ___ \  \/  |     /  __ \  _  | ___ \  ___|'
@@ -327,7 +359,8 @@ fi
 # =========================================================================== #
 
 # =========================================================================== #
-if [[ -v INSTALL_PPMNUMERICS ]]; then
+if [ -n "${INSTALL_PPMNUMERICS+1}" ] && $INSTALL_PPMNUMERICS; then
+#if [[ -v INSTALL_PPMNUMERICS ]]; then
 	echo '*********************************************'
 	echo '*_______________  ___   __   ___   ____  ___ ___________ _____ _____  _____ '
 	echo '*| ___ \ ___ \  \/  |   | \ | | | | |  \/  ||  ___| ___ \_   _/  __ \/  ___|'
@@ -381,7 +414,8 @@ fi
 ### Example PPM clients - v1.2.1
 # * client template
 # * molecular gas dynamics - Lennard-Jones Potential
-if [[ -v INSTALL_LJ ]]; then 
+if [ -n "${INSTALL_LJ+1}" ] && $INSTALL_LJ; then
+#if [[ -v INSTALL_LJ ]]; then 
 	# make the client
 	cd $SRC_LJ
 	make clean
@@ -408,7 +442,8 @@ fi
 
 
 # =========================================================================== #
-if [[ -v INSTALL_NAGA ]]; then
+if [ -n "${INSTALL_NAGA+1}" ] && $INSTALL_NAGA; then
+#if [[ -v INSTALL_NAGA ]]; then
 	echo '*********************************************'
 	echo '* _   _   ___  _____   ___  '
 	echo '*| \ | | / _ \|  __ \ / _ \ '
