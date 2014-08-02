@@ -46,15 +46,15 @@ DIR_BLD=$PWD
 # dependencies
 # INSTALL_MPI=true
 # INSTALL_RUBY=true
-# INSTALL_FFTW=true
-# INSTALL_METIS=true
-# INSTALL_PPMCORE=true
-# INSTALL_PPMNUMERICS=true
+INSTALL_FFTW=true
+INSTALL_METIS=true
+INSTALL_PPMCORE=true
+INSTALL_PPMNUMERICS=true
 
 # PPM clients
 # INSTALL_exClient=true
 # INSTALL_LJ=true
- INSTALL_NAGA=true
+INSTALL_NAGA=true
 # INSTALL_GRAY=true
 
 # =========================================================================== #
@@ -265,6 +265,7 @@ if [ -n "${INSTALL_FFTW+1}" ] && $INSTALL_FFTW; then
 	# 	make check
 	# fi
 	make install
+	make clean
 fi
 # =========================================================================== #
 
@@ -303,6 +304,7 @@ if [ -n "${INSTALL_METIS+1}" ] && $INSTALL_METIS; then
 		../mesh2dual metis.mesh
 		../kmetis metis.mesh.dgraph 10
 	fi
+	make realclean
 fi
 # =========================================================================== #
 
@@ -355,6 +357,8 @@ if [ -n "${INSTALL_PPMCORE+1}" ] && $INSTALL_PPMCORE; then
 	# I find that unit testing requires to copy some more files
 	cp -r $SRC_PPMCORE/utils $DIR_DEPLOY_PPMCORE/utils
 	cp -r $SRC_PPMCORE/src $DIR_DEPLOY_PPMCORE/src
+
+	make clean
 fi
 # =========================================================================== #
 
@@ -406,6 +410,8 @@ if [ -n "${INSTALL_PPMNUMERICS+1}" ] && $INSTALL_PPMNUMERICS; then
 	# I find that unit testing requires to copy some more files
 	# cp -r $SRC_PPMNUMERICS/utils $DIR_DEPLOY_PPMNUMERICS/utils
 	cp -r $SRC_PPMNUMERICS/src $DIR_DEPLOY_PPMNUMERICS/src
+
+	make clean
 fi
 # =========================================================================== #
 
@@ -464,14 +470,17 @@ if [ -n "${INSTALL_NAGA+1}" ] && $INSTALL_NAGA; then
     
 
 	# run the client
-	if $buildParallel; then 	
-		mpirun -np 1 ./Naga CTRL
-	else
-		./Naga CTRL
-	fi
+	# if $buildParallel; then 	
+	# 	mpirun -np 1 ./Naga CTRL
+	# else
+	# 	./Naga CTRL
+	# fi
 
 	# if you need, try the -x LD_LIBRARY_PATH command to export the LD_LIBRARY_PATH to all connected nodes, like:
 	# mpirun -np 1 -x LD_LIBRARY_PATH
+
+
+	make clean
 fi
 # =========================================================================== #
 
