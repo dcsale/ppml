@@ -37,7 +37,7 @@
 # =========================================================================== #
 # User Parameters - build & install directories
 # =========================================================================== #
-DIR_DEPLOY=$PWD/../deploy
+DIR_DEPLOY=/home/danny/workspace/deploy_ppml
 DIR_BLD=$PWD
 
 # =========================================================================== #
@@ -46,10 +46,10 @@ DIR_BLD=$PWD
 # dependencies
 # INSTALL_MPI=true
 # INSTALL_RUBY=true
-INSTALL_FFTW=true
-INSTALL_METIS=true
-INSTALL_PPMCORE=true
-INSTALL_PPMNUMERICS=true
+# INSTALL_FFTW=true
+# INSTALL_METIS=true
+# INSTALL_PPMCORE=true
+# INSTALL_PPMNUMERICS=true
 
 # PPM clients
 # INSTALL_exClient=true
@@ -467,7 +467,7 @@ if [ -n "${INSTALL_NAGA+1}" ] && $INSTALL_NAGA; then
 	make
 
     # copy the compiled Naga to the directory for output
-    
+    cp Naga $DIR_DEPLOY
 
 	# run the client
 	# if $buildParallel; then 	
