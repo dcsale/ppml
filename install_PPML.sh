@@ -42,14 +42,15 @@ DIR_BLD=$PWD
 
 # =========================================================================== #
 # User Parameters - Specify which software to install (set comment/uncomment)
+#                   Usually best to only try installing one client at a time
 # =========================================================================== #
 # dependencies
 # INSTALL_MPI=true
 # INSTALL_RUBY=true
 # INSTALL_FFTW=true
-# INSTALL_METIS=true
-# INSTALL_PPMCORE=true
-# INSTALL_PPMNUMERICS=true
+INSTALL_METIS=true
+INSTALL_PPMCORE=true
+INSTALL_PPMNUMERICS=true
 
 # PPM clients
 # INSTALL_exClient=true
@@ -189,7 +190,8 @@ fi
 # =========================================================================== #
 
 # =========================================================================== #
-# NOTE: I think most clusters will already have MPI installed and configured optimally, probably better to use system MPI instead of building?
+# NOTE: I think most clusters will already have MPI installed and configured 
+#       optimally, probably better to use system MPI instead of building?
 if [ -n "${INSTALL_MPI+1}" ] && $INSTALL_MPI; then
 #if [[ -v INSTALL_MPI ]]; then
 	echo '*********************************************'
@@ -483,16 +485,6 @@ if [ -n "${INSTALL_NAGA+1}" ] && $INSTALL_NAGA; then
 	make clean
 fi
 # =========================================================================== #
-
-
-
-
-
-
-
-
-
-
 
 #                        @@@@+   
 #                       '@# @@                          
