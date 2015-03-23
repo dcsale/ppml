@@ -21,7 +21,6 @@ website](http://mosaic.mpi-cbg.de/?q=downloads/ppm_lib)
 ## Ongoing work - May 2014
 ### Naga PPM client
 * adding ADMESH and Shapes codes for manipulation of STL files, this will be used to add moving solid boundaries and interactive analysis
-* adding control files for NACA 3D wing (from recent GMREC 2014 presentation Sale et al.)
-* adding control files for Remotely Operated Vehicle (from recent GMREC 2014 presentation Joslin et al.)
+* adding control files for generating 3D wings with NACA profiles
 * adding VTK writers from PPM Core v1.2.2 - hopefully this will improve the VisIt / Paraview output capability
 * adding python scripting to control VisIt and Paraview sessions - automation of creating figures and analysis

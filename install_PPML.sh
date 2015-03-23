@@ -1,4 +1,5 @@
 #!/bin/bash
+
 # Description: 
 # * A bash script to compile the Parallel-Particle Mesh (PPM) library and dependencies from scratch
 # 
@@ -47,10 +48,10 @@ DIR_BLD=$PWD
 # dependencies
 # INSTALL_MPI=true
 # INSTALL_RUBY=true
-# INSTALL_FFTW=true
-INSTALL_METIS=true
-INSTALL_PPMCORE=true
-INSTALL_PPMNUMERICS=true
+#INSTALL_FFTW=true
+#INSTALL_METIS=true
+#INSTALL_PPMCORE=true
+#INSTALL_PPMNUMERICS=true
 
 # PPM clients
 # INSTALL_exClient=true
@@ -212,7 +213,7 @@ if [ -n "${INSTALL_MPI+1}" ] && $INSTALL_MPI; then
 	make clean
 	cd $SRC_MPI
 	./configure --prefix=$DIR_DEPLOY_MPI CC=gcc CPP=cpp CXX=g++ FC=gfortran F90=gfortran
-	make
+	make 2>&1 | tee $DIR_BLD/log.compile-OpenMPI
 	make install
 
 	# Add environmental variables (by making changes to .bashrc)
@@ -261,7 +262,7 @@ if [ -n "${INSTALL_FFTW+1}" ] && $INSTALL_FFTW; then
 		./configure --prefix=$DIR_DEPLOY_FFTW CC=$c_CC F77=$c_FC
 	fi
 	make clean
-	make
+	make 2>&1 | tee $DIR_BLD/log.compile-FFTW
 	# FFTW tests can take a very long time to run
 	# if $runTests; then
 	# 	make check
@@ -290,7 +291,7 @@ if [ -n "${INSTALL_METIS+1}" ] && $INSTALL_METIS; then
 	cd $SRC_METIS
 	
 	make realclean
-	make
+	make 2>&1 | tee $DIR_BLD/log.compile-Metis
 	cp -r $SRC_METIS/libmetis.a $DIR_DEPLOY_METIS
 	# cp -r $SRC_METIS/* $DIR_DEPLOY_METIS
 	if $runTests; then
@@ -348,11 +349,11 @@ if [ -n "${INSTALL_PPMCORE+1}" ] && $INSTALL_PPMCORE; then
 			./configure --prefix=$DIR_DEPLOY_PPMCORE --enable-linux CC=$c_CC CXX=$c_CXX FC=$c_FC LDFLAGS=-L$DIR_DEPLOY_METIS
 		fi	
 	fi
-	make
+	make 2>&1 | tee $DIR_BLD/log.compile-PPM-Core
 	if $runTests; then
 		# NOTE: the tests will crash unless compiled with MPI
 		# make test
-		make ftest
+		make ftest 2>&1 | tee logfiles2>&1/log.compile-PPM-Core-ftest
 		# FUNIT_FLAGS="--procs=1,3" make ftest
 	fi
 	make install
@@ -403,9 +404,9 @@ if [ -n "${INSTALL_PPMNUMERICS+1}" ] && $INSTALL_PPMNUMERICS; then
 		fi	
 	fi
 	
-	make
+	make 2>&1 | tee $DIR_BLD/log.compile-PPM-Numerics
 	if $runTests; then
-		make ftest
+		make ftest 2>&1 | tee log.compile-PPM-Numerics-ftest
 		# FUNIT_FLAGS="--procs=1,3" make ftest
 	fi
 	make install
@@ -428,7 +429,7 @@ if [ -n "${INSTALL_LJ+1}" ] && $INSTALL_LJ; then
 	cd $SRC_LJ
 	make clean
 	# make
-	make 
+	make 2>&1 | tee $DIR_BLD/log.compile-client-LennardJones 
 
 	# run the client
 	if $buildParallel; then 	
@@ -466,10 +467,13 @@ if [ -n "${INSTALL_NAGA+1}" ] && $INSTALL_NAGA; then
 	# make the client
 	cd $SRC_NAGA
 	make clean
-	make
+	make 2>&1 | tee $DIR_BLD/log.compile-client-Naga
 
     # copy the compiled Naga to the directory for output
-    cp Naga $DIR_DEPLOY
+    mkdir -p $DIR_DEPLOY/Naga
+    cp Naga $DIR_DEPLOY/Naga/Naga
+    mkdir -p $DIR_DEPLOY/Naga/inputs
+    cp inputs/* $DIR_DEPLOY/Naga/inputs
 
 	# run the client
 	# if $buildParallel; then 	

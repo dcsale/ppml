@@ -17,6 +17,9 @@ src/ppm_define.h
 *.o
 *.mod
 *.log
+log.*
+
+
 
 # pre-processed and compiled system-specific files
 __*.f90
@@ -35,3 +38,6 @@ src/neighlist/test/ppm_test_inl3d_2
 # temporary files
 *.swp
 *~
+# log files because they can become large and 
+# also system dependent
+ /logfiles/*
